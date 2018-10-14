@@ -18,11 +18,32 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Domain\Board\Board.h" />
+    <ClInclude Include="Domain\Game\Game.h" />
+    <ClInclude Include="Domain\Game\Linux\Game_linux.h" />
+    <ClInclude Include="Domain\Game\Windows\Game_win.h" />
+    <ClInclude Include="Domain\Piece\Piece.h" />
+    <ClInclude Include="Services\Game_server.h" />
+    <ClInclude Include="UI\Linux\UI_console_linux.h" />
+    <ClInclude Include="UI\UI_console.h" />
+    <ClInclude Include="UI\Windows\UI_console_win.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Domain\Board\Board.cpp" />
+    <ClCompile Include="Domain\Game\Linux\Game_linux.cpp" />
+    <ClCompile Include="Domain\Game\Windows\Game_win.cpp" />
+    <ClCompile Include="Domain\Piece\Piece.cpp" />
+    <ClCompile Include="Services\Game_server.cpp" />
+    <ClCompile Include="UI\Linux\UI_console_linux.cpp" />
+    <ClCompile Include="UI\UI_console.cpp" />
+    <ClCompile Include="UI\Windows\UI_console_win.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D795789F-CDDE-4D99-B85F-B8BD1A696165}</ProjectGuid>
     <RootNamespace>TuffyTetris</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -114,14 +135,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="Board.h" />
-    <ClInclude Include="Piece.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Board.cpp" />
-    <ClCompile Include="Piece.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

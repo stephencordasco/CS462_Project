@@ -13,21 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Domain">
+      <UniqueIdentifier>{b390e651-7f91-4e52-b434-14f0c13b61f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UI">
+      <UniqueIdentifier>{690f467a-22b9-4577-b19a-8adafb509efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Services">
+      <UniqueIdentifier>{f34050b7-c2b6-407f-80a2-a60b88d327fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain">
+      <UniqueIdentifier>{ebf8e25f-8202-424f-bd07-a7215eff5ba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services">
+      <UniqueIdentifier>{35e54df3-e18d-4a2b-8219-8414b7a204d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UI">
+      <UniqueIdentifier>{cde80118-f2f6-4899-b384-3df56ed1229a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Piece.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Services\Game_server.h">
+      <Filter>Header Files\Services</Filter>
     </ClInclude>
-    <ClInclude Include="Board.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Domain\Board\Board.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Game\Game.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Game\Linux\Game_linux.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Game\Windows\Game_win.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\UI_console.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Windows\UI_console_win.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Linux\UI_console_linux.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Piece.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Domain\Board\Board.cpp">
+      <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Board.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Domain\Game\Linux\Game_linux.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Game_server.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Game\Windows\Game_win.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\UI_console.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Linux\UI_console_linux.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Windows\UI_console_win.cpp">
+      <Filter>Source Files\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
