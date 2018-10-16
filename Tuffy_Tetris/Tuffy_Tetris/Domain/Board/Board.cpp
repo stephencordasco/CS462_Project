@@ -19,9 +19,9 @@ bool Board::generate_Frame(std::string & output)
 	if (update_frame == true)
 	{
 		output.clear();
-		for (int i = 0; i < 10; i++) //iterate over length
+		for (int i = 0; i < 20; i++) //iterate over length
 		{
-			for (int j = 0; j < 7; j++) //iterate over width 
+			for (int j = 0; j < 10; j++) //iterate over width 
 			{
 				if (board_state[i][j])
 				{

@@ -20,8 +20,8 @@ namespace Domain
 		// T U Y F F respectively
 		int display_symbol[5] = { 84,85,121,70,70 };
 
-		bool board_state[7][10];
-		bool piece_state[7][10];
+		bool board_state[10][20];
+		bool piece_state[10][20];
 		bool update_frame;
 		Piece * current_piece;
 	};
