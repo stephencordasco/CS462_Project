@@ -8,6 +8,7 @@ namespace UI
 	{
 	public:
 		UI_console_win();
+		void printMainMenu() const;
 	private:
 	};
 }

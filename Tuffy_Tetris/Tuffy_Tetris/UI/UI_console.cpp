@@ -4,4 +4,5 @@ using UI::UI_console;
 
 UI_console::UI_console()
 {
+
 }
