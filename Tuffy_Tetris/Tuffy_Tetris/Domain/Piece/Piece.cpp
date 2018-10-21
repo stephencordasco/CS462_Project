@@ -69,14 +69,40 @@ void Piece::rotate()
 
 void Piece::undo_rot()
 {
+	// swap R1 <-> R4, R2 <-> R3
+		std::swap(points[0], points[3]);
+		std::swap(points[1], points[2]);
+	
+	//swap along diagonal X==Y then skip
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = i; j < 4; j++)
+		{
+			if (i == j) continue;
+			std::swap(points[i][j], points[j][i]);
+		}
+	}
+	
+	// get new skirt for rotated piece
+	gen_skirt();
+
 }
 
-void Piece::move_vert(int)
+//increment or decrement y by 1 (0,0) is top left, 
+//positive value for down one, negative value or 0 for up one
+void Piece::move_vert(int y)
 {
+
+	if (y < 0) set_y((get_y()+1));
+	else set_y((get_y()-1));
 }
 
-void Piece::move_horiz(int)
+//increment or decrement x by 1 (0, 0) is top left,
+//positive value or 0 for right one, negative value for left one
+void Piece::move_horiz(int x)
 {
+	if (x < 0) set_x((get_x() - 1));
+	else set_x((get_x() + 1));
 }
 
 void Piece::gen_skirt()
