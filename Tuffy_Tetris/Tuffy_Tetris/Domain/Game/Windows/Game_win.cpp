@@ -1,4 +1,6 @@
-#include "Game_win.h"
+#pragma once
+
+#include "./Game_win.h"
 
 using Domain::Game_win;
 

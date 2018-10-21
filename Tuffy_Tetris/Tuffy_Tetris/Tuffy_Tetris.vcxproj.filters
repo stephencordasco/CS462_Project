@@ -87,7 +87,7 @@
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="Domain\main_win.cpp">
-      <Filter>Header Files\Domain</Filter>
+      <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

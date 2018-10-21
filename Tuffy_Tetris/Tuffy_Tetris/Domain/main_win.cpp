@@ -1,11 +1,9 @@
 //main for windows app
+#pragma once
 
-#include "Game/Windows/Game_win.h";
+#include "Game/Windows/Game_win.h"
 #include "../UI/Windows/UI_console_win.h"
-namespace Domain 
+int main(void) 
 {
-	int main() 
-	{
-		
-	}
+	return 0;
 }
