@@ -25,18 +25,18 @@ bool Board::generate_Frame(std::string & output)
 	if (update_frame == true)
 	{
 		output.clear();
-		for (int i = 0; i < 20; i++) //iterate over length
+		for (int i = 0; i < 21; i++) //iterate over length
 		{
-			for (int j = 0; j < 10; j++) //iterate over width 
+			for (int j = 1; j < 11; j++) //iterate over width 
 			{
-				if (board_state[i][j])
-				{
-					output += "X";
-				}
-				else if (piece_state[i][j])
+				if (piece_state[i][j])
 				{
 					//output the character corresponding to the piece type
-					output += (char)(display_symbol[current_piece->get_type()]);
+					output += (char)(display_symbol[current_piece->get_type()-1]);
+				}
+				else if (board_state[i][j])
+				{
+					output += "X";
 				}
 				else
 				{
@@ -60,9 +60,10 @@ void Board::spawn_Piece(int type, int x, int y)
 	{
 		//increment piece type_count to cycle through each piece type in order
 		type_holder = type_count+1;
-		type_count = (type_count + 1) % 5;
 	}
+	type_count = (type_count + 1) % 5;
 	current_piece = new Piece(type_holder, x, y);
+	draw_Piece_State();
 }
 
 void Board::draw_Board_State() 
@@ -71,7 +72,7 @@ void Board::draw_Board_State()
 	{
 		for (int j = 0; j < 12; j++)
 		{
-			board_state[j][i] = board_state[j][i] || piece_state[j][i];
+			board_state[i][j] = board_state[i][j] || piece_state[i][j];
 		}
 	}
 	update_frame = true;
@@ -80,6 +81,7 @@ void Board::draw_Board_State()
 //draw piece onto board if it cannot move down anymore
 bool Board::draw_Piece_State()
 {
+	init_piece();
 	int abs_x = current_piece->get_x();
 	int abs_y = current_piece->get_y();
 
@@ -94,7 +96,7 @@ bool Board::draw_Piece_State()
 			//otherwise draw the point
 			else 
 			{
-				piece_state[abs_x + j][abs_y + i] = row[j];
+				piece_state[abs_y + i][abs_x + j] = row[j];
 			}
 		}
 	}
@@ -105,7 +107,7 @@ bool Board::draw_Piece_State()
 // validate move by comparing with board_state
 bool Board::validate_Move()
 {
-	for (int i = 1; i < 21; i++) 
+	for (int i = 1; i < 22; i++) 
 	{
 		for (int j = 1; j < 11; j++) 
 		{
@@ -120,11 +122,11 @@ bool Board::validate_Move()
 
 bool Domain::Board::move_Down()
 {
-	current_piece->move_vert(1);
+	current_piece->move_vert(-1);
 
 	if (!(draw_Piece_State() || validate_Move())) 
 	{
-		current_piece->move_vert(-1);
+		current_piece->move_vert(1);
 		draw_Piece_State();
 		return false;
 	}
@@ -172,14 +174,15 @@ bool Domain::Board::rotate_Piece()
 
 bool Domain::Board::system_Move()
 {
-	current_piece->move_vert(1);
+	current_piece->move_vert(-1);
 
 	if (!(draw_Piece_State() || validate_Move()))
 	{
-		current_piece->move_horiz(-1);
+		current_piece->move_vert(1);
 		draw_Piece_State();
 		draw_Board_State();
 		init_piece();
+		spawn_Piece(-1, 5, 0);
 		return false;
 	}
 	return false;
@@ -187,6 +190,7 @@ bool Domain::Board::system_Move()
 
 void Domain::Board::init_board()
 {	
+	update_frame = true;
 	//initialize all false
 	for (int i = 0; i < 22; i++) 
 	{
@@ -211,7 +215,7 @@ void Domain::Board::init_board()
 		piece_state[i][11] = true;
 	}
 
-	spawn_Piece(1, 0, 0);
+	spawn_Piece(1, 5, 0);
 
 }
 
@@ -237,5 +241,4 @@ void Domain::Board::init_piece()
 		piece_state[i][11] = true;
 	}
 
-	spawn_Piece(-1, 0, 0);
 }

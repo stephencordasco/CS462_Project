@@ -7,7 +7,7 @@
 
 int main() 
 {
-	Test::test_Piece_Functions();
+	//Test::test_Piece_Functions();
 	Test::test_Board_Functions();
 	system("pause");
 }
