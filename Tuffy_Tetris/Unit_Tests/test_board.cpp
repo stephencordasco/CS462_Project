@@ -1,3 +1,4 @@
+#pragma once
 
 #include "../Tuffy_Tetris/Domain/Board/Board.h"
 #include <string>
@@ -7,7 +8,7 @@ using Domain::Board;
 namespace Test 
 {
 
-	void test_Board_Functions() 
+	inline void test_Board_Functions() 
 	{
 		Board test_board = Board();
 

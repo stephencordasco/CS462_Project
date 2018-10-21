@@ -8,40 +8,82 @@ using Domain::Piece;
 
 namespace Test
 {
-	std::string output_piece(Piece & input) 
+	//rough function for printing piece without using board class
+	inline std::string output_piece(Piece & input) 
 	{
 		std::string ostring;
 		for (int i = 0; i < 4; i++) 
 		{
+			bool * row = (input.get_points())+(4*i);
 			for (int j = 0; j < 4; j++) 
 			{
-				ostring += (input.get_points())[i][j];
-				if (j == 3) ostring += "/n";
+				bool val = row[j];
+				if (val == true) ostring += 'X';
+				else ostring += "_";
+				if (j == 3) ostring += "\n";
 			}
 		}
+		return ostring;
 	}
 
-	void test_Piece_Functions()
+	//tests the skirt function
+	inline void test_skirt_fun(Piece& test) 
 	{
-		Piece test_piece = Piece(1, 0, 0);
+		test.gen_skirt();
 
-		output_piece(test_piece);
+		int * test_skirt = test.get_skirt();
 
-		test_piece.rotate();
+		std::cout << "Skirt: ";
 
-		output_piece(test_piece);
-
-		test_piece.undo_rot();
-
-		output_piece(test_piece);
-
-		test_piece.gen_skirt();
-
-		int * test_skirt = test_piece.get_skirt();
-
-		for (int k = 0; k < 4; k++) 
+		for (int k = 0; k < 4; k++)
 		{
-			std::cout << test_skirt[k] << std::endl;
+			std::cout << test_skirt[k] << ", ";
+		}
+		std::cout << std::endl;
+	}
+
+	//test routine, tests all piece functions on each type of piece
+	inline void test_Piece_Functions()
+	{
+
+		for (int i = 1; i < 6; i++)
+		{
+			Piece test_piece = Piece(i, 0, 0);
+
+			std::cout << "Default piece: \n";
+
+			std::cout << output_piece(test_piece);
+
+			test_skirt_fun(test_piece);
+
+			std::cout << "Rotated: \n";
+
+			test_piece.rotate();
+
+			std::cout << output_piece(test_piece);
+
+			test_skirt_fun(test_piece);
+
+			std::cout << "Undo rot: \n";
+			
+			test_piece.undo_rot();
+
+			std::cout << output_piece(test_piece);
+
+			test_skirt_fun(test_piece);
+
+			std::cout << "Default x and y: \n";
+
+			std::cout << "( " << test_piece.get_x() << ", " << test_piece.get_y() << " )" << std::endl;
+
+			std::cout << "X and Y after setting: \n";
+
+			test_piece.set_x(3);
+			test_piece.set_y(3);
+
+			std::cout << "( " << test_piece.get_x() << ", " << test_piece.get_y() << " )" << std::endl;
+
+
 		}
 	}
 	

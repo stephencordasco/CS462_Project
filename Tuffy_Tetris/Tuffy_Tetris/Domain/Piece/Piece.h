@@ -20,6 +20,7 @@ namespace Domain
 		int get_x();
 		int get_y();
 		int get_type();
+		bool * get_points();
 		int * get_skirt();
 		void set_x(int x);
 		void set_y(int y);
