@@ -12,8 +12,6 @@ namespace Test
 	{
 		Board test_board = Board();
 
-		test_board.spawn_Piece(1, 0, 0);
-
 		std::string test_output;
 
 		test_board.generate_Frame(test_output);
