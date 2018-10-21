@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E9F67AD5-626B-4839-A12B-1F49057C7805}</ProjectGuid>
     <RootNamespace>UnitTests</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -117,11 +117,6 @@
   <ItemGroup>
     <ClCompile Include="..\Tuffy_Tetris\Domain\Piece\Piece.cpp" />
     <ClCompile Include="main_test.cpp" />
-    <ClCompile Include="test_board.cpp" />
-    <ClCompile Include="test_piece.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\Tuffy_Tetris\Domain\Piece\Piece.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
