@@ -18,5 +18,19 @@
     <ClCompile Include="main_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test_piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tuffy_Tetris\Domain\Piece\Piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Tuffy_Tetris\Domain\Piece\Piece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

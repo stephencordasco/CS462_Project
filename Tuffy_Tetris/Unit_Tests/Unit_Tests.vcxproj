@@ -115,7 +115,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Tuffy_Tetris\Domain\Piece\Piece.cpp" />
     <ClCompile Include="main_test.cpp" />
+    <ClCompile Include="test_board.cpp" />
+    <ClCompile Include="test_piece.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Tuffy_Tetris\Domain\Piece\Piece.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
