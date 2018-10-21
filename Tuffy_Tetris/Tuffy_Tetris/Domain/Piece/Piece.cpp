@@ -1,4 +1,6 @@
-#include "Piece.h"
+#pragma once
+
+#include "./Piece.h"
 
 using Domain::Piece;
 

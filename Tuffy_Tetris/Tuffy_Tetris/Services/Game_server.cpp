@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Game_server.h"
 
 using Services::Game_server;

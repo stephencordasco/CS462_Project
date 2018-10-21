@@ -1,4 +1,7 @@
-#include "Board.h"
+#pragma once
+
+#include "./Board.h"
+#include <string>
 
 using Domain::Board;
 
@@ -10,6 +13,11 @@ Board::Board()
 Board::~Board()
 {
 	delete current_piece;
+}
+
+bool Domain::Board::generate_Frame(std::string & output)
+{
+	return false;
 }
 
 //iterate over the board_state and piece_state and see if either are on, 
