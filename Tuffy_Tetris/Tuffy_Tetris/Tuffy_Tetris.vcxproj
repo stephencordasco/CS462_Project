@@ -31,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp" />
+    <ClCompile Include="Domain\Game\Game.cpp" />
     <ClCompile Include="Domain\Game\Linux\Game_linux.cpp" />
     <ClCompile Include="Domain\Game\Windows\Game_win.cpp" />
     <ClCompile Include="Domain\main_win.cpp" />
