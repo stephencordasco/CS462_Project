@@ -14,7 +14,7 @@ UI_console_win::UI_console_win()
 }
 
 // displays the first menu on application startup
-void UI_console_win::displayLoginScreen() const
+void UI_console_win::displayLoginScreen()
 {
 	std::cout << "============================\n";
 	std::cout << "1.) Login\n";
@@ -68,7 +68,7 @@ bool UI_console_win::login()
 }
 
 // displays the main menu after user has logged in successfully or registered an account successfully
-void UI_console_win::displayMainMenu() const
+void UI_console_win::displayMainMenu()
 {
 	std::cout << "============================\n";
 	std::cout << "1.) Play Game\n";
@@ -106,7 +106,7 @@ bool UI_console_win::mainMenu()
 }
 
 // displays the account menu
-void UI_console_win::displayAccountMenu() const
+void UI_console_win::displayAccountMenu()
 {
 	std::cout << "============================\n";
 	std::cout << "1.) Change Username\n";
@@ -119,7 +119,7 @@ void UI_console_win::displayAccountMenu() const
 // displays the purchase subscription screen
 //  going to use a stub here so that any values entered will always be accepted
 //    and a subscription purchase will be successful
-void UI_console_win::displayPurchaseSubscriptionScreen() const
+void UI_console_win::displayPurchaseSubscriptionScreen()
 {
 	// temp variables to hold the user input
 	std::string cardNumber = " ";
@@ -151,6 +151,14 @@ void UI_console_win::displayPurchaseSubscriptionScreen() const
 	{
 		accountMenu();
 	}
+}
+
+void UI::UI_console_win::displayPauseMenu()
+{
+	std::cout << "============================\n";
+	std::cout << "1.) Continue Game\n";
+	std::cout << "2.) Exit to Main Menu\n";
+	std::cout << "============================\n";
 }
 
 // returns true if the user selected "Change Username", "Change Password", or "Purchase Subscription";
@@ -187,26 +195,39 @@ bool UI_console_win::accountMenu()
 	return true;
 }
 
+bool UI::UI_console_win::pauseMenu()
+{
+	//stub
+	return true;
+}
+
 // gets user input for a menu selection
 char UI_console_win::getMenuChoice()
 {
-	std::cin >> menuChoice;
+	std::string choice = "";
+	std::cin >> choice;
+	menuChoice = choice[0];
+	return choice[0];
+
 }
 
 // stores the username: (Might not need?)
 std::string UI_console_win::getUserName()
 {
 	getline(std::cin, username);
+	return username;
 }
 
 // stores the password: (Might not need?)
 std::string UI_console_win::getPassword()
 {
 	getline(std::cin, password);
+	return password;
 }
 
 // stores the email: (Might not need?)
 std::string UI_console_win::getEmail()
 {
 	getline(std::cin, email);
+	return email;
 }

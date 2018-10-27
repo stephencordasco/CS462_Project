@@ -13,7 +13,10 @@ Game_win::Game_win()
 
 void Game_win::start_Game()
 {
-
+	UI::UI_console* new_UI = new UI::UI_console_win();
+	set_UI(new_UI);
+	get_UI()->displayMainMenu();
+	process_Input(get_UI()->getMenuChoice());
 }
 
 void Game_win::game_Loop()
@@ -24,63 +27,71 @@ void Game_win::game_Loop()
 	}
 }
 
-bool Game_win::process_Input()
+void Game_win::process_Input(char input)
 {
-	switch (/*input*/)
+	
+
+	switch (input)
 	{
 		// rotate piece
 		case 'w':
 
 		case 'W':
-
-			return true;
+			if (is_Started() && !is_Paused()) {
+				get_Board()->rotate_Piece();
+			}
 			break;
 		// left move
 		case 'a':
 
 		case 'A':
-
-			return true;
+			if (is_Started() && !is_Paused()) {
+				get_Board()->move_Left();
+			}
 			break;
 		// down move
 		case 's':
 
 		case 'S':
-
-			return true;
+			if (is_Started() && !is_Paused()) {
+				get_Board()->move_Down();
+			}
 			break;
 		// right move
 		case 'd':
-
+			
 		case 'D':
-
-			return true;
+			if (is_Started() && !is_Paused()) {
+				get_Board()->move_Right();
+			}
 			break;
-
+		// pause
 		case 'p':
 
 		case 'P':
-			
-			return true;
+			if (is_Started() && !is_Paused()) {
+				get_UI()->displayPauseMenu();
+				process_Input(get_UI()->getMenuChoice());
+			}
 			break;
-
-		case 'q':
-
-		case 'Q':
-
-			return false;
+		//continue game
+		case '1':
+			if (is_Started() && is_Paused()) {
+				set_paused(false);
+			}
+			break;
+		//exit game
+		case '2':
+			if (is_Started() && is_Paused()) {
+				end_Game();
+			}
 			break;
 		default:
 			// no input
+			break;
 	}
 }
 
-void Game_win::get_Score()
+void Domain::Game_win::end_Game()
 {
-	return score;
-}
-
-void Game_win::get_Level()
-{
-	return level;
 }

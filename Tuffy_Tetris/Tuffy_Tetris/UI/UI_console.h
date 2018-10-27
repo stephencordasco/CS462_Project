@@ -1,8 +1,7 @@
 #pragma once
 
-#include <string>
-#include "../Domain/Game/Game.h"
 #include "../Services/Game_server.h"
+#include <string>
 
 namespace UI 
 {
@@ -12,15 +11,17 @@ namespace UI
 		UI_console();
 
 		// printing menus to screen
-		virtual void displayLoginScreen() const = 0;
-		virtual void displayMainMenu() const = 0;
-		virtual void displayAccountMenu() const = 0;
-		virtual void displayPurchaseSubscriptionScreen() const = 0;
+		virtual void displayLoginScreen() = 0;
+		virtual void displayMainMenu() = 0;
+		virtual void displayAccountMenu() = 0;
+		virtual void displayPurchaseSubscriptionScreen() = 0;
+		virtual void displayPauseMenu() = 0;
 
 		// menu functionality
 		virtual bool login() = 0;
 		virtual bool mainMenu() = 0;
 		virtual bool accountMenu() = 0;
+		virtual bool pauseMenu() = 0;
 
 		// get user data
 		virtual char getMenuChoice() = 0;

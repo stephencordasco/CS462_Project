@@ -4,22 +4,24 @@
 
 namespace UI
 {
-	class UI_console_win : UI_console 
+	class UI_console_win : public UI_console 
 	{
 	public:
 		// constructor
 		UI_console_win();
 
 		// printing menus to screen
-		void displayLoginScreen() const;
-		void displayMainMenu() const;
-		void displayAccountMenu() const;
-		void displayPurchaseSubscriptionScreen() const;
+		void displayLoginScreen();
+		void displayMainMenu();
+		void displayAccountMenu();
+		void displayPurchaseSubscriptionScreen() override;
+		void displayPauseMenu();
 
 		// menu functionality
 		bool login();
 		bool mainMenu();
 		bool accountMenu();
+		bool pauseMenu();
 
 		// get user data
 		char getMenuChoice();
