@@ -18,7 +18,7 @@ void Game_win::start_Game()
 
 void Game_win::game_Loop()
 {
-	while (process_Input())
+	while (true)
 	{
 		
 	}

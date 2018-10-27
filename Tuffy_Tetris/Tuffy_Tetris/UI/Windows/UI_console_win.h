@@ -12,15 +12,15 @@ namespace UI
 		void displayMainMenu() const;
 		bool login();
 		char getMenuChoice();
-		string getUserName();
-		string getPassword();
-		string getEmail();
+		std::string getUserName();
+		std::string getPassword();
+		std::string getEmail();
 
 	private:
 		char menuChoice;
-		string username;
-		string password;
-		string email;
+		std::string username;
+		std::string password;
+		std::string email;
 		
 	};
 }

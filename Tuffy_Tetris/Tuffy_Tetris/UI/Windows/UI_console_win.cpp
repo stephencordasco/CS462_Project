@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UI_console_win.h"
+#include <iostream>
 
 using UI::UI_console_win;
 
@@ -11,26 +12,26 @@ UI_console_win::UI_console_win()
 
 void UI_console_win::displayLoginScreen() const
 {
-	cout << "============================\n";
-	cout << "1.) Login\n";
-	cout << "2.) Register\n";
-	cout << "3.) Quit\n";
-	cout << "============================\n";
+	std::cout << "============================\n";
+	std::cout << "1.) Login\n";
+	std::cout << "2.) Register\n";
+	std::cout << "3.) Quit\n";
+	std::cout << "============================\n";
 }
 
 void displayLogin()
 {
-	cout << "Username: ";
-	cout << "Password: ";
-	cout << "email: ";
+	std::cout << "Username: ";
+	std::cout << "Password: ";
+	std::cout << "email: ";
 }
 
 void displayRegister()
 {
-	cout << "Please fill in the following fields:\n";
-	cout << "\tUsername: ";
-	cout << "\tPassword: ";
-	cout << "\tCSUF email: ";
+	std::cout << "Please fill in the following fields:\n";
+	std::cout << "\tUsername: ";
+	std::cout << "\tPassword: ";
+	std::cout << "\tCSUF email: ";
 }
 
 bool UI_console_win::login()
@@ -50,36 +51,36 @@ bool UI_console_win::login()
 			return false;
 
 		default:
-			cout << "\nINVALID MENU CHOICE\n";
+			std::cout << "\nINVALID MENU CHOICE\n";
 	}
 	return true;
 }
 
 void UI_console_win::displayMainMenu() const
 {
-	cout << "============================\n";
-	cout << "1.) Play Game\n";
-	cout << "2.) Account Information\n";
-	cout << "3.) Quit\n";
-	cout << "============================\n";
+	std::cout << "============================\n";
+	std::cout << "1.) Play Game\n";
+	std::cout << "2.) Account Information\n";
+	std::cout << "3.) Quit\n";
+	std::cout << "============================\n";
 }
 
 char UI_console_win::getMenuChoice()
 {
-	cin >> menuChoice;
+	std::cin >> menuChoice;
 }
 
-string UI_console_win::getUserName()
+std::string UI_console_win::getUserName()
 {
-	getline(cin, username);
+	getline(std::cin, username);
 }
 
-string UI_console_win::getPassword()
+std::string UI_console_win::getPassword()
 {
-	getline(cin, password);
+	getline(std::cin, password);
 }
 
-string UI_console_win::getEmail()
+std::string UI_console_win::getEmail()
 {
-	getline(cin, email);
+	getline(std::cin, email);
 }
