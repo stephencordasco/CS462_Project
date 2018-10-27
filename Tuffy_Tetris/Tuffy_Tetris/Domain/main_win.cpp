@@ -11,10 +11,10 @@ int main(void)
 	
 	game_UI->set_Game(game);
 
-	bool exit = false;
-	while (!exit) 
+	bool cont = true;
+	while (cont) 
 	{
-		exit = game_UI->mainMenu();
+		cont = game_UI->mainMenu();
 	}
 
 	return 0;

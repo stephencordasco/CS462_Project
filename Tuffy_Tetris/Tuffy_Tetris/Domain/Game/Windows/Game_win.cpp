@@ -47,11 +47,13 @@ void Game_win::game_Loop()
 				}
 				end_time = clock();	
 			}
+			if (!endloop) break;
 		}
 		board_ptr->system_Move();
 		board_ptr->generate_Frame(frame);
 		ui_ptr->print_Frame(frame);
 	}
+	end_Game();
 }
 
 bool Game_win::process_Input(char input)
@@ -97,8 +99,9 @@ bool Game_win::process_Input(char input)
 
 		case 'P':
 			if (is_Started() && !is_Paused()) {
+				set_paused(true);
 				get_UI()->displayPauseMenu();
-				process_Input(get_UI()->getMenuChoice());
+				return process_Input(get_UI()->getMenuChoice());
 			}
 			break;
 		//continue game
@@ -110,6 +113,7 @@ bool Game_win::process_Input(char input)
 		//exit game
 		case '2':
 			if (is_Started() && is_Paused()) {
+				set_paused(false);
 				end_Game();
 				return false;
 			}
@@ -123,4 +127,5 @@ bool Game_win::process_Input(char input)
 
 void Domain::Game_win::end_Game()
 {
+	set_started(false);
 }
