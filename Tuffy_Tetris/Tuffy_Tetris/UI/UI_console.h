@@ -3,12 +3,21 @@
 #include "../Services/Game_server.h"
 #include <string>
 
+namespace Domain 
+{
+	class Game;
+}
+
 namespace UI 
 {
 	class UI_console 
 	{
 	public:
 		UI_console();
+
+		// print board
+
+		virtual void print_Frame(std::string) = 0;
 
 		// printing menus to screen
 		virtual void displayLoginScreen() = 0;
@@ -28,7 +37,10 @@ namespace UI
 		virtual std::string getUserName() = 0;
 		virtual std::string getPassword() = 0;
 		virtual std::string getEmail() = 0;
+		Domain::Game* get_Game();
+		void set_Game(Domain::Game*);
 
+		virtual ~UI_console();
 	private:
 		//common fields
 		char menuChoice;
@@ -36,6 +48,7 @@ namespace UI
 		std::string password;
 		std::string email;
 		bool hasSubscription;
+		Domain::Game* game;
 
 	};
 }

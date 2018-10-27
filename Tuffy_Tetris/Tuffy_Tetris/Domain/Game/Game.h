@@ -8,10 +8,11 @@ namespace Domain {
 	class Game
 	{
 	public:
+		Game(UI::UI_console*);
 		virtual void start_Game() = 0;
 		virtual void end_Game() = 0;
 		virtual void game_Loop() = 0;
-		virtual void process_Input(char) = 0;
+		virtual bool process_Input(char) = 0;
 		int get_Score();
 		int get_Level();
 		void set_Score(int);

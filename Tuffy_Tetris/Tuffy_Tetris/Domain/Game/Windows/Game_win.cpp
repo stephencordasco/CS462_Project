@@ -4,30 +4,57 @@
 
 using Domain::Game_win;
 
-Game_win::Game_win() 
+Game_win::Game_win(UI::UI_console * ui) : Game(ui)
 {
 	set_Score(0);
 	set_Level(0);
-
 }
 
 void Game_win::start_Game()
 {
-	UI::UI_console* new_UI = new UI::UI_console_win();
-	set_UI(new_UI);
-	get_UI()->displayMainMenu();
-	process_Input(get_UI()->getMenuChoice());
+	set_Board(&Board());
+	set_started(true);
+	game_Loop();
 }
 
 void Game_win::game_Loop()
 {
-	while (true)
+	bool endloop = false;
+	Board* board_ptr = get_Board();
+	UI::UI_console* ui_ptr = get_UI();
+	std::string frame = "";
+	clock_t start_time, end_time;
+	float tick = 0.5f;
+	while (!endloop)
 	{
-		
+		for (int i = 0; i < 3; i++) 
+		{
+			start_time = clock();
+			end_time = 0;
+			while(((float)(end_time-start_time)/CLOCKS_PER_SEC) < tick)
+			{
+				Sleep(400);
+				if (_kbhit())
+				{
+					char inputchar = (char)_getch();
+					if (!process_Input(inputchar))
+				    {
+						endloop = true;
+						break;
+					}
+					board_ptr->generate_Frame(frame);
+					ui_ptr->print_Frame(frame);
+				}
+				end_time = clock();	
+			}
+		}
+		board_ptr->system_Move();
+		board_ptr->generate_Frame(frame);
+		ui_ptr->print_Frame(frame);
 	}
 }
 
-void Game_win::process_Input(char input)
+bool Game_win::process_Input(char input)
 {
 	
 
@@ -84,12 +111,14 @@ void Game_win::process_Input(char input)
 		case '2':
 			if (is_Started() && is_Paused()) {
 				end_Game();
+				return false;
 			}
 			break;
 		default:
 			// no input
 			break;
 	}
+	return true;
 }
 
 void Domain::Game_win::end_Game()

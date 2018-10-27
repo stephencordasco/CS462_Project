@@ -1,5 +1,7 @@
 #include "Game.h"
 
+Domain::Game::Game(UI::UI_console * ui) : game_UI(ui) {}
+
 int Domain::Game::get_Score()
 {
 	return score;
@@ -63,4 +65,5 @@ void Domain::Game::set_paused(bool p)
 Domain::Game::~Game()
 {
 	delete game_UI;
+	delete game_Board;
 }

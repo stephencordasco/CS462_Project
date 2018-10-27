@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UI_console_win.h"
+#include "../../Domain/Game/Game.h"
 #include <iostream>
 
 using UI::UI_console_win;
@@ -11,6 +12,13 @@ UI_console_win::UI_console_win()
 	password = " ";
 	email = " ";
 	hasSubscription = false;
+}
+
+void UI::UI_console_win::print_Frame(std::string frame)
+{
+	// stub
+	//todo
+	std::cout << frame;
 }
 
 // displays the first menu on application startup
@@ -88,7 +96,10 @@ bool UI_console_win::mainMenu()
 	switch (choice)
 	{
 		case '1':	// user chose to play game
-			// call start_game?
+			if (!(get_Game()->is_Started()))
+			{
+				get_Game()->start_Game();
+			}
 			break;
 
 		case '2':	// user chose to access account information
@@ -143,6 +154,7 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	getline(std::cin, zipCode);
 
 	// stub: payment is successful, hasSubscription assigned true
+	//todo
 	std::cout << "\nPurchase successful!\n";
 	hasSubscription = true;
 
@@ -198,6 +210,7 @@ bool UI_console_win::accountMenu()
 bool UI::UI_console_win::pauseMenu()
 {
 	//stub
+	//todo
 	return true;
 }
 

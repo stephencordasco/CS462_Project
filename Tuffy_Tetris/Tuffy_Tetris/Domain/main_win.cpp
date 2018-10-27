@@ -1,14 +1,21 @@
 //main for windows app
 #pragma once
 
-#include "Game/Windows/Game_win.h"
 #include "../UI/Windows/UI_console_win.h"
+#include "Game/Windows/Game_win.h"
+
 int main(void) 
 {
-	UI::UI_console_win game_UI = UI::UI_console_win();
-	Domain::Game_win game = Domain::Game_win::Game_win();
+	UI::UI_console_win * game_UI = new UI::UI_console_win();
+	Domain::Game * game = new Domain::Game_win(game_UI);
+	
+	game_UI->set_Game(game);
 
-	game.start_Game();
+	bool exit = false;
+	while (!exit) 
+	{
+		exit = game_UI->mainMenu();
+	}
 
 	return 0;
 }

@@ -9,6 +9,7 @@ Board::Board()
 {
 	type_count = 0;
 	update_frame = false;
+	current_piece = nullptr;
 	init_board();
 }
 
@@ -54,7 +55,6 @@ bool Board::generate_Frame(std::string & output)
 //setting a type < 0 will use type_count value to cycle each piece in order
 void Board::spawn_Piece(int type, int x, int y)
 {
-	if (current_piece) delete current_piece;
 	int type_holder = type;
 	if (type_holder < 0)
 	{

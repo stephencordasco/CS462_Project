@@ -2,6 +2,11 @@
 
 #include "../UI_console.h"
 
+namespace Domain 
+{
+	class Game_win;
+}
+
 namespace UI
 {
 	class UI_console_win : public UI_console 
@@ -9,6 +14,10 @@ namespace UI
 	public:
 		// constructor
 		UI_console_win();
+
+		// print board
+
+		void print_Frame(std::string);
 
 		// printing menus to screen
 		void displayLoginScreen();
