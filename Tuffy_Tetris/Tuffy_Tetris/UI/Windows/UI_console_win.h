@@ -8,7 +8,19 @@ namespace UI
 	{
 	public:
 		UI_console_win();
-		void printMainMenu() const;
+		void displayLoginScreen() const;
+		void displayMainMenu() const;
+		bool login();
+		char getMenuChoice();
+		string getUserName();
+		string getPassword();
+		string getEmail();
+
 	private:
+		char menuChoice;
+		string username;
+		string password;
+		string email;
+		
 	};
 }

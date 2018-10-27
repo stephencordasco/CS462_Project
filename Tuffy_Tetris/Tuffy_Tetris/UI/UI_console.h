@@ -11,8 +11,18 @@ namespace UI
 		UI_console();
 
 		//virtual methods
-
+		virtual void displayLoginScreen() const = 0;
+		virtual void displayMainMenu() const = 0;
+		virtual bool login() = 0;
+		virtual char getMenuChoice() = 0;
+		virtual string getUserName() = 0;
+		virtual string getPassword() = 0;
+		virtual string getEmail() = 0;
 	private:
-		//commmon fields
+		//common fields
+		char menuChoice;
+		string username;
+		string password;
+		string email;
 	};
 }
