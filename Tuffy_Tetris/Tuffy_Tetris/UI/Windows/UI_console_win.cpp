@@ -62,7 +62,7 @@ bool UI_console_win::login()
 			return false;
 
 		default:	// user entered an invalid key
-			cout << "\nINVALID MENU CHOICE\n";
+			std::cout << "\nINVALID MENU CHOICE\n";
 	}
 	return true;
 }
@@ -100,7 +100,7 @@ bool UI_console_win::mainMenu()
 			return false;
 
 		default:	// user entered an invalid key
-			cout << "\nINVALID MENU CHOICE\n";
+			std::cout << "\nINVALID MENU CHOICE\n";
 	}
 	return true;
 }
@@ -108,12 +108,12 @@ bool UI_console_win::mainMenu()
 // displays the account menu
 void UI_console_win::displayAccountMenu() const
 {
-	cout << "============================\n";
-	cout << "1.) Change Username\n";
-	cout << "2.) Change Password\n";
-	cout << "3.) Purchase Subscription\n";
-	cout << "4.) Main Menu\n";
-	cout << "============================\n";
+	std::cout << "============================\n";
+	std::cout << "1.) Change Username\n";
+	std::cout << "2.) Change Password\n";
+	std::cout << "3.) Purchase Subscription\n";
+	std::cout << "4.) Main Menu\n";
+	std::cout << "============================\n";
 }
 
 // displays the purchase subscription screen
@@ -122,28 +122,28 @@ void UI_console_win::displayAccountMenu() const
 void UI_console_win::displayPurchaseSubscriptionScreen() const
 {
 	// temp variables to hold the user input
-	string cardNumber = " ";
-	string accountHolder = " ";
-	string securityNumber = " ";
-	string expirationDate = " ";
-	string billingAddress = " ";
-	string zipCode = " ";
+	std::string cardNumber = " ";
+	std::string accountHolder = " ";
+	std::string securityNumber = " ";
+	std::string expirationDate = " ";
+	std::string billingAddress = " ";
+	std::string zipCode = " ";
 
-	cout << "Card Number: ";
-	getline(cin, cardNumber);
-	cout << "Account Holder: ";
-	getline(cin, accountHolder);
-	cout << "Security Number: ";
-	getline(cin, securityNumber);
-	cout << "Expiration Date: ";
-	getline(cin, expirationDate);
-	cout << "Billing Address: ";
-	getline(cin, billingAddress);
-	cout << "Zip Code: ";
-	getline(cin, zipCode);
+	std::cout << "Card Number: ";
+	getline(std::cin, cardNumber);
+	std::cout << "Account Holder: ";
+	getline(std::cin, accountHolder);
+	std::cout << "Security Number: ";
+	getline(std::cin, securityNumber);
+	std::cout << "Expiration Date: ";
+	getline(std::cin, expirationDate);
+	std::cout << "Billing Address: ";
+	getline(std::cin, billingAddress);
+	std::cout << "Zip Code: ";
+	getline(std::cin, zipCode);
 
 	// stub: payment is successful, hasSubscription assigned true
-	cout << "\nPurchase successful!\n";
+	std::cout << "\nPurchase successful!\n";
 	hasSubscription = true;
 
 	// if the payment was successful take the user back to the account menu
@@ -182,7 +182,7 @@ bool UI_console_win::accountMenu()
 			break;
 
 		default:
-			cout << "\nINVALID MENU CHOICE\n";
+			std::cout << "\nINVALID MENU CHOICE\n";
 	}
 	return true;
 }
@@ -194,19 +194,19 @@ char UI_console_win::getMenuChoice()
 }
 
 // stores the username: (Might not need?)
-string UI_console_win::getUserName()
+std::string UI_console_win::getUserName()
 {
 	getline(std::cin, username);
 }
 
 // stores the password: (Might not need?)
-string UI_console_win::getPassword()
+std::string UI_console_win::getPassword()
 {
 	getline(std::cin, password);
 }
 
 // stores the email: (Might not need?)
-string UI_console_win::getEmail()
+std::string UI_console_win::getEmail()
 {
 	getline(std::cin, email);
 }

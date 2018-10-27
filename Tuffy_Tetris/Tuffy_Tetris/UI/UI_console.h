@@ -24,16 +24,16 @@ namespace UI
 
 		// get user data
 		virtual char getMenuChoice() = 0;
-		virtual string getUserName() = 0;
-		virtual string getPassword() = 0;
-		virtual string getEmail() = 0;
+		virtual std::string getUserName() = 0;
+		virtual std::string getPassword() = 0;
+		virtual std::string getEmail() = 0;
 
 	private:
 		//common fields
 		char menuChoice;
-		string username;
-		string password;
-		string email;
+		std::string username;
+		std::string password;
+		std::string email;
 		bool hasSubscription;
 
 	};

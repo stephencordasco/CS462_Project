@@ -30,9 +30,9 @@ namespace UI
 	private:
 		// member values
 		char menuChoice;
-		string username;
-		string password;
-		string email;
+		std::string username;
+		std::string password;
+		std::string email;
 		bool hasSubscription;
 		
 	};
