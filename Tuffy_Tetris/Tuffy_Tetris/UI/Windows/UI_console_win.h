@@ -8,7 +8,7 @@ namespace UI
 	{
 	public:
 		UI_console_win();
-		void printMainMenu() const;
+		void printMainMenu() const override;
 	private:
 	};
 }

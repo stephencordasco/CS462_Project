@@ -10,7 +10,7 @@ namespace UI
 	public:
 		UI_console();
 
-		//virtual methods
+		virtual void printMainMenu() const = 0;
 
 	private:
 		//commmon fields

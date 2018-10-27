@@ -4,11 +4,11 @@
 
 using Domain::Game_win;
 
-Game_win::Game_win(UI::UI_console) 
+Game_win::Game_win() 
 {
-	score = 0;
-	level = 1;
-	this->
+	set_Score(0);
+	set_Level(0);
+
 }
 
 void Game_win::start_Game()
