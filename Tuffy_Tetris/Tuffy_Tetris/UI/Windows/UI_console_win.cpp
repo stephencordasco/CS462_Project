@@ -150,6 +150,16 @@ void UI_console_win::displayAccountMenu()
 //    and a subscription purchase will be successful
 void UI_console_win::displayPurchaseSubscriptionScreen()
 {
+	// check if the user already has a subscription
+	if (this->hasSubscription)
+	{
+		// inform user they already have a subscription
+		std::cout << "\nYou already have a subscription!\n";
+		// return to the account menu
+		accountMenu();
+		return;
+	}
+
 	// temp variables to hold the user input
 	std::string cardNumber = " ";
 	std::string accountHolder = " ";
@@ -224,10 +234,28 @@ bool UI_console_win::accountMenu()
 	{
 		case '1':	// user chose to change username
 			// print the change username screen
+			std::cin.get();
+			// print current username
+			std::cout << "\nYour current username: " << this->getUserName() << "\n";
+			std::cout << "Enter a new username: ";
+			setUserName();
+			// print new username
+			std::cout << "\nThank you! Your new username is " << this->getUserName() << "\n";
+			// in this case, take user back to account menu
+			accountMenu();
 			break;
 
 		case '2':	// user chose to change password
 			// print the change password screen
+			std::cin.get();
+			// print current password
+			std::cout << "\nYour current password: " << this->getPassword() << "\n";
+			std::cout << "Enter a new password: ";
+			setPassword();
+			// print new password
+			std::cout << "\nThank your! Your new password is " << this->getPassword() << "\n\n";
+			// in this case, take user back to account menu
+			accountMenu();
 			break;
 
 		case '3':	// user chose to purchase subscription
