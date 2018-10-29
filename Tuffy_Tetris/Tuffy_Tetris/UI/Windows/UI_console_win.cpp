@@ -41,6 +41,9 @@ void UI_console_win::displayLogin()
 	setPassword();
 	std::cout << "email: ";
 	setEmail();
+
+	// print welcome message
+	std::cout << "\nWelcome, " << getUserName() << "\n\n";
 }
 
 // displays a new menu on "Register" selection
@@ -54,6 +57,9 @@ void UI_console_win::displayRegister()
 	setPassword();
 	std::cout << "\tCSUF email: ";
 	setEmail();
+
+	// print welcome message
+	std::cout << "\nWelcome, " << getUserName() << "\n\n";
 }
 
 // returns true if the user selected "Login" or "Register"; returns false otherwise
