@@ -62,6 +62,7 @@ void Domain::Game::set_paused(bool p)
 	game_paused = p;
 }
 
+
 Domain::Game::~Game()
 {
 	delete game_UI;

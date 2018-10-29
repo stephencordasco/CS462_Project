@@ -129,4 +129,7 @@ bool Game_win::process_Input(char input)
 void Domain::Game_win::end_Game()
 {
 	set_started(false);
+	UI::UI_console* ui_ptr = get_UI();
+	ui_ptr->displayHighScoreScreen(this->get_Score());
+
 }

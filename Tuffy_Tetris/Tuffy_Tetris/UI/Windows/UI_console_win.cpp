@@ -188,6 +188,23 @@ void UI::UI_console_win::displayPauseMenu()
 	std::cout << "============================\n";
 }
 
+void UI::UI_console_win::displayHighScoreScreen(int score)
+{
+	std::cout << "\n======== New High Score ========\n";
+	std::cout << "\n======== " << score << " ========\n";
+	std::cout << "1.)Save New High Score";
+	std::cout << "2.) Exit to Main Menu\n";
+	std::cout << "============================\n";
+}
+
+void UI::UI_console_win::saveNewHighScoreScreen(int score)
+{
+	std::cout << "\n======== Congratulations ========\n";
+	std::cout << "\nYour score has been saved.\n";
+	std::cout << "1.) Exit to Main Menu\n";
+	std::cout << "============================\n";
+}
+
 // returns true if the user selected "Change Username", "Change Password", or "Purchase Subscription";
 //  returns false otherwise
 bool UI_console_win::accountMenu()
@@ -222,6 +239,8 @@ bool UI_console_win::accountMenu()
 	}
 	return true;
 }
+
+
 
 bool UI::UI_console_win::pauseMenu()
 {

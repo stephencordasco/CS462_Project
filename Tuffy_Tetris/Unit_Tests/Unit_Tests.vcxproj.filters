@@ -30,6 +30,9 @@
     <ClCompile Include="..\Tuffy_Tetris\Domain\Board\Board.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Tuffy_Tetris\UI\UI_console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Tuffy_Tetris\Domain\Board\Board.h">

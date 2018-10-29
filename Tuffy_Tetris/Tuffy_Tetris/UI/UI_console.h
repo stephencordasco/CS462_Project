@@ -25,6 +25,7 @@ namespace UI
 		virtual void displayAccountMenu() = 0;
 		virtual void displayPurchaseSubscriptionScreen() = 0;
 		virtual void displayPauseMenu() = 0;
+		virtual void displayHighScoreScreen(int) = 0;
 
 		// menu functionality
 		virtual bool login() = 0;

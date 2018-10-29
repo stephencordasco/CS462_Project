@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="..\Tuffy_Tetris\Domain\Board\Board.cpp" />
     <ClCompile Include="..\Tuffy_Tetris\Domain\Piece\Piece.cpp" />
+    <ClCompile Include="..\Tuffy_Tetris\UI\UI_console.cpp" />
     <ClCompile Include="main_test.cpp" />
     <ClCompile Include="test_board.cpp" />
     <ClCompile Include="test_piece.cpp" />
