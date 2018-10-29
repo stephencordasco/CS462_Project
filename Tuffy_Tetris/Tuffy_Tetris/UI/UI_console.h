@@ -32,11 +32,18 @@ namespace UI
 		virtual bool accountMenu() = 0;
 		virtual bool pauseMenu() = 0;
 
+		// helper functions
+		virtual void displayLogin() = 0;
+		virtual void displayRegister() = 0;
+
 		// get user data
 		virtual char getMenuChoice() = 0;
 		virtual std::string getUserName() = 0;
 		virtual std::string getPassword() = 0;
 		virtual std::string getEmail() = 0;
+		virtual void setUserName() = 0;
+		virtual void setPassword() = 0;
+		virtual void setEmail() = 0;
 		Domain::Game* get_Game();
 		void set_Game(Domain::Game*);
 

@@ -26,6 +26,10 @@ namespace UI
 		void displayPurchaseSubscriptionScreen() override;
 		void displayPauseMenu();
 
+		// helper functions
+		void displayLogin();
+		void displayRegister();
+
 		// menu functionality
 		bool login();
 		bool mainMenu();
@@ -37,6 +41,9 @@ namespace UI
 		std::string getUserName();
 		std::string getPassword();
 		std::string getEmail();
+		void setUserName();
+		void setPassword();
+		void setEmail();
 
 	private:
 		// member values

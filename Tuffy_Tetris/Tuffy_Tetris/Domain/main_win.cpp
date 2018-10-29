@@ -14,8 +14,16 @@ int main(void)
 	bool cont = true;
 	while (cont) 
 	{
-		cont = game_UI->mainMenu();
+		// login first
+		cont = game_UI->login();
+		// if cont is still true (user did not choose to quit application), continue execution
+		while (cont)
+		{
+			// now print main menu
+			cont = game_UI->mainMenu();
+		}
 	}
 
+	system("pause");
 	return 0;
 }
