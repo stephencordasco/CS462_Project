@@ -12,7 +12,8 @@ Game_win::Game_win(UI::UI_console * ui) : Game(ui)
 
 void Game_win::start_Game()
 {
-	set_Board(&Board());
+	
+	set_Board(new Board());
 	set_started(true);
 	game_Loop();
 }

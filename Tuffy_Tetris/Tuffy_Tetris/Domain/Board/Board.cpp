@@ -107,7 +107,7 @@ bool Board::draw_Piece_State()
 // validate move by comparing with board_state
 bool Board::validate_Move()
 {
-	for (int i = 1; i < 22; i++) 
+	for (int i = 0; i < 21; i++) 
 	{
 		for (int j = 1; j < 11; j++) 
 		{
@@ -124,7 +124,7 @@ bool Domain::Board::move_Down()
 {
 	current_piece->move_vert(-1);
 
-	if (!(draw_Piece_State() || validate_Move())) 
+	if ((!draw_Piece_State() || !validate_Move())) 
 	{
 		current_piece->move_vert(1);
 		draw_Piece_State();
@@ -137,7 +137,7 @@ bool Domain::Board::move_Left()
 {
 	current_piece->move_horiz(-1);
 
-	if (!(draw_Piece_State() || validate_Move()))
+	if ((!draw_Piece_State() || !validate_Move()))
 	{
 		current_piece->move_horiz(1);
 		draw_Piece_State();
@@ -150,7 +150,7 @@ bool Domain::Board::move_Right()
 {
 	current_piece->move_horiz(1);
 
-	if (!(draw_Piece_State() || validate_Move()))
+	if ((!draw_Piece_State() || !validate_Move()))
 	{
 		current_piece->move_horiz(-1);
 		draw_Piece_State();
@@ -163,7 +163,7 @@ bool Domain::Board::rotate_Piece()
 {
 	current_piece->rotate();
 
-	if (!(draw_Piece_State() || validate_Move()))
+	if ((!draw_Piece_State() || !validate_Move()))
 	{
 		current_piece->undo_rot();
 		draw_Piece_State();
@@ -176,7 +176,7 @@ bool Domain::Board::system_Move()
 {
 	current_piece->move_vert(-1);
 
-	if (!(draw_Piece_State() || validate_Move()))
+	if ((!draw_Piece_State() || !validate_Move()))
 	{
 		current_piece->move_vert(1);
 		draw_Piece_State();
@@ -215,6 +215,7 @@ void Domain::Board::init_board()
 		piece_state[i][11] = true;
 	}
 
+	init_piece();
 	spawn_Piece(1, 5, 0);
 
 }

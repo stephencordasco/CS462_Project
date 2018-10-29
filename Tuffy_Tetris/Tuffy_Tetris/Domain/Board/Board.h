@@ -27,7 +27,7 @@ namespace Domain
 		bool validate_Move();
 		// ASCII values for displaying letters in output
 		// T U Y F F respectively
-		int display_symbol[5] = { 84,85,121,70,70 };
+		int display_symbol[5] = { 84,85,89,70,70 };
 		bool board_state[22][12];
 		bool piece_state[22][12];
 		bool update_frame;
