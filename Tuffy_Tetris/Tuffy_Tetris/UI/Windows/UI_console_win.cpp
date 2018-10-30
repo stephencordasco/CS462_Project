@@ -65,7 +65,7 @@ void UI_console_win::displayRegister()
 
 	if (get_Server()->register_acct(getUserName(), getPassword(), getEmail()))
 	{	// print welcome message
-		std::cout << "\nWelcome, " << getUserName() << "\n\n";
+		//std::cout << "\nWelcome, " << getUserName() << "\n\n";
 	}
 	else 
 	{
@@ -107,6 +107,9 @@ bool UI_console_win::login()
 void UI_console_win::displayMainMenu()
 {
 	system("cls");
+	// display username
+	std::cout << "\nWelcome, " << getUserName() << "\n";
+	// print main menu
 	std::cout << "\n========== MAIN MENU =======\n";
 	std::cout << "1.) Play Game\n";
 	std::cout << "2.) Account Information\n";
