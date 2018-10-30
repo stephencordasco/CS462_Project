@@ -212,16 +212,21 @@ void UI::UI_console_win::displayHighScoreScreen(int score)
 {
 	std::cout << "\n======== New High Score ========\n";
 	std::cout << "\n======== " << score << " ========\n";
-	std::cout << "1.)Save New High Score";
+	std::cout << "1.)Save New High Score\n";
 	std::cout << "2.) Exit to Main Menu\n";
 	std::cout << "============================\n";
 }
 
 void UI::UI_console_win::saveNewHighScoreScreen(int score)
 {
-	std::cout << "\n======== Congratulations ========\n";
+	std::cin.get();
+	std::string nickname = " ";
+	std::cout << "\nPlease enter a name for your score.";
+	getline(std::cin, nickname);
+	std::cout << "\nsaving Score...\n";
+	std::cout << "\n======== Congratulations " <<nickname<<" ========\n";
 	std::cout << "\nYour score has been saved.\n";
-	std::cout << "1.) Exit to Main Menu\n";
+	std::cout << "Enter any button to exit to Main Menu\n";
 	std::cout << "============================\n";
 }
 
