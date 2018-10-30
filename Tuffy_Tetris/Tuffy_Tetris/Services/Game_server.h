@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 
 namespace Services 
 {
@@ -8,12 +9,14 @@ namespace Services
 	public:
 		Game_server();
 
-		virtual void login();
-		virtual void logout();
-		virtual void save_hs();
-		virtual void check_hs();
-		virtual void update_sub();
-		virtual void check_sub();
+		virtual bool login(std::string user, std::string pass, std::string email = "");
+		virtual bool logout(std::string user);
+		virtual bool register_acct(std::string user, std::string pass, std::string email);
+		virtual bool save_hs(int current_score);
+		virtual bool check_hs(int current_score);
+		virtual bool update_sub(std::string cNum, std::string accName, std::string secNum,
+								std::string dExp, std::string addr, std::string zip);
+		virtual bool check_sub();
 	
 	};
 	

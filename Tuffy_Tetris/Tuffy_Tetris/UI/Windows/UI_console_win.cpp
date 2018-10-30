@@ -12,12 +12,14 @@ void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub
 	//todo
+	system("cls");
 	std::cout << frame;
 }
 
 // displays the first menu on application startup
 void UI_console_win::displayLoginScreen()
 {
+	system("cls");
 	std::cout << "======= WELCOME USER =======\n";
 	std::cout << "1.) Login\n";
 	std::cout << "2.) Register\n";
@@ -35,9 +37,17 @@ void UI_console_win::displayLogin()
 	setPassword();
 	std::cout << "email: ";
 	setEmail();
-
-	// print welcome message
-	std::cout << "\nWelcome, " << getUserName() << "\n\n";
+	
+	if (get_Server()->login(getUserName(), getPassword(), getEmail()))
+	{	// print welcome message
+		std::cout << "\nWelcome, " << getUserName() << "\n\n";
+	}
+	else
+	{
+		std::cout << "Login failed. Please try again.\n";
+		system("pause");
+		login();
+	}
 }
 
 // displays a new menu on "Register" selection
@@ -52,8 +62,16 @@ void UI_console_win::displayRegister()
 	std::cout << "\tCSUF email: ";
 	setEmail();
 
-	// print welcome message
-	std::cout << "\nWelcome, " << getUserName() << "\n\n";
+	if (get_Server()->register_acct(getUserName(), getPassword(), getEmail()))
+	{	// print welcome message
+		std::cout << "\nWelcome, " << getUserName() << "\n\n";
+	}
+	else 
+	{
+		std::cout << "Registration failed. Please try again.";
+		system("pause");
+		accountMenu();
+	}
 }
 
 // returns true if the user selected "Login" or "Register"; returns false otherwise
@@ -87,6 +105,7 @@ bool UI_console_win::login()
 // displays the main menu after user has logged in successfully or registered an account successfully
 void UI_console_win::displayMainMenu()
 {
+	system("cls");
 	std::cout << "\n========== MAIN MENU =======\n";
 	std::cout << "1.) Play Game\n";
 	std::cout << "2.) Account Information\n";
@@ -131,6 +150,7 @@ bool UI_console_win::mainMenu()
 // displays the account menu
 void UI_console_win::displayAccountMenu()
 {
+	system("cls");
 	std::cout << "\n======= ACCOUNT MENU =======\n";
 	std::cout << "Current Username: " << this->getUserName() << "\n";
 	std::cout << "Current e-mail: " << this->getEmail() << "\n";
@@ -148,6 +168,7 @@ void UI_console_win::displayAccountMenu()
 //    and a subscription purchase will be successful
 void UI_console_win::displayPurchaseSubscriptionScreen()
 {
+	setHasSubscription(get_Server()->check_sub());
 	// check if the user already has a subscription
 	if (this->getHasSubscription())
 	{
@@ -182,20 +203,30 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	getline(std::cin, zipCode);
 
 	// stub: payment is successful, hasSubscription assigned true
-	//todo
-	std::cout << "\nPurchase successful!\n";
-	std::cout << "You now have access to online scores!\n";
-	setHasSubscription(true);
-
+	if(get_Server()->update_sub(cardNumber, accountHolder, securityNumber,
+								expirationDate, billingAddress, zipCode))
+	{
+		std::cout << "\nPurchase successful!\n";
+		std::cout << "You now have access to online scores!\n";
+		setHasSubscription(true);
+	}
+	else 
+	{
+		std::cout << "Transaction denied. Please try again.\n";
+		system("pause");
+		accountMenu();
+	}
 	// if the payment was successful take the user back to the account menu
 	if (getHasSubscription())
 	{
+		system("pause");
 		accountMenu();
 	}
 }
 
 void UI::UI_console_win::displayPauseMenu()
 {
+	system("cls");
 	std::cout << "\n======== PAUSE MENU ========\n";
 	std::cout << "1.) Continue Game\n";
 	std::cout << "2.) Exit to Main Menu\n";
@@ -204,6 +235,7 @@ void UI::UI_console_win::displayPauseMenu()
 
 void UI::UI_console_win::displayHighScoreScreen(int score)
 {
+	system("cls");
 	std::cout << "\n======== New High Score ========\n";
 	std::cout << "\n======== " << score << " ========\n";
 	std::cout << "1.)Save New High Score\n";
@@ -213,6 +245,7 @@ void UI::UI_console_win::displayHighScoreScreen(int score)
 
 void UI::UI_console_win::saveNewHighScoreScreen(int score)
 {
+	system("cls");
 	std::cin.get();
 	std::string nickname = " ";
 	std::cout << "\nPlease enter a name for your score.";
@@ -244,6 +277,7 @@ bool UI_console_win::accountMenu()
 			setUserName();
 			// print new username
 			std::cout << "\nThank you! Your new username is " << this->getUserName() << "\n";
+			system("pause");
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -257,6 +291,7 @@ bool UI_console_win::accountMenu()
 			setPassword();
 			// print new password
 			std::cout << "\nThank your! Your new password is " << this->getPassword() << "\n\n";
+			system("pause");
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -268,11 +303,13 @@ bool UI_console_win::accountMenu()
 
 		case '4':	// user chose to return to main menu
 			std::cout << "\nGoing back to main menu...\n";
+			system("pause");
 			return false;
 			break;
 
 		default:
 			std::cout << "\nINVALID MENU CHOICE\n";
+			system("pause");
 	}
 	return true;
 }

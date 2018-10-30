@@ -24,6 +24,8 @@ namespace Domain {
 		void set_UI(UI::UI_console * set_UI) { game_UI = set_UI; }
 		Domain::Board* get_Board() { return game_Board; }
 		void set_Board(Domain::Board * b) { game_Board = b; }
+		Services::Game_server* get_game_Server() { return game_Server; }
+		void set_game_Server(Services::Game_server * s) { game_Server = s; }
 		void set_started(bool b) { game_started = b; }
 		void set_paused(bool b) { game_paused = b; }
 		bool is_Started() { return game_started; }
@@ -35,6 +37,7 @@ namespace Domain {
 		int level;
 		UI::UI_console *game_UI;
 		Domain::Board *game_Board;
+		Services::Game_server * game_Server;
 	};
 
 }

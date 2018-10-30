@@ -54,6 +54,8 @@ namespace UI
 		void setHasSubscription(bool s) { hasSubscription = s; }
 		Domain::Game* get_Game() { return game; }
 		void set_Game(Domain::Game* g) { game = g; }
+		Services::Game_server* get_Server() { return server; }
+		void set_Server(Services::Game_server* s) { server = s; }
 	private:
 		//common fields
 		char menuChoice;
@@ -62,6 +64,7 @@ namespace UI
 		std::string email;
 		bool hasSubscription;
 		Domain::Game* game;
+		Services::Game_server* server;
 
 	};
 }
