@@ -37,6 +37,7 @@ namespace UI
 		bool mainMenu() override;
 		bool accountMenu() override;
 		bool pauseMenu() override;
+		void hsMenu() override;
 
 		// get user data
 		char getMenuChoice() override;

@@ -3,6 +3,7 @@
 #include "UI_console_win.h"
 #include "../../Domain/Game/Game.h"
 #include <iostream>
+#include <conio.h>
 
 using UI::UI_console_win;
 
@@ -137,7 +138,14 @@ bool UI_console_win::mainMenu()
 			
 		case '3':	// user chose to quit
 			std::cout << "\nLogging out...\n";
-			std::cout << "...Log out successful!\n";
+			if(get_Server()->logout(getUserName()))
+			{
+				std::cout << "...Log out successful!\n";
+			}
+			else 
+			{
+				std::cout << "...Log out unsuccessful, quitting.\n";
+			}
 			std::cout << "Goodbye!\n\n";
 			return false;
 
@@ -168,12 +176,13 @@ void UI_console_win::displayAccountMenu()
 //    and a subscription purchase will be successful
 void UI_console_win::displayPurchaseSubscriptionScreen()
 {
-	setHasSubscription(get_Server()->check_sub());
+	//setHasSubscription(get_Server()->check_sub());
 	// check if the user already has a subscription
 	if (this->getHasSubscription())
 	{
 		// inform user they already have a subscription
 		std::cout << "\nYou already have a subscription!\n";
+		system("pause");
 		// return to the account menu
 		accountMenu();
 		return;
@@ -238,23 +247,38 @@ void UI::UI_console_win::displayHighScoreScreen(int score)
 	system("cls");
 	std::cout << "\n======== New High Score ========\n";
 	std::cout << "\n======== " << score << " ========\n";
-	std::cout << "1.)Save New High Score\n";
+	std::cout << "1.) Save New High Score\n";
 	std::cout << "2.) Exit to Main Menu\n";
 	std::cout << "============================\n";
 }
 
 void UI::UI_console_win::saveNewHighScoreScreen(int score)
-{
-	system("cls");
-	std::cin.get();
-	std::string nickname = " ";
-	std::cout << "\nPlease enter a name for your score.";
-	getline(std::cin, nickname);
-	std::cout << "\nsaving Score...\n";
-	std::cout << "\n======== Congratulations " <<nickname<<" ========\n";
-	std::cout << "\nYour score has been saved.\n";
-	std::cout << "Enter any button to exit to Main Menu\n";
-	std::cout << "============================\n";
+{	
+
+	if( getHasSubscription() )
+	{
+		std::cin.get();
+		std::string nickname = " ";
+		std::cout << "\nPlease enter a name for your score: ";
+		getline(std::cin, nickname);
+		std::cout << "\nsaving Score...\n";
+		if (get_Server()->save_hs(get_Game()->get_Score()))
+		{
+			std::cout << "\n======== Congratulations " << nickname << " ========\n";
+			std::cout << "\nYour score has been saved.\n";
+			std::cout << "Enter any button to exit to Main Menu\n";
+			std::cout << "============================\n";
+		}
+		else
+		{
+			std::cout << "Unable to save score. Please try again.\n";
+		}
+	}
+	else 
+	{
+		std::cout << "You must purchase a subscription to use this feature.\n";
+	}
+	
 }
 
 // returns true if the user selected "Change Username", "Change Password", or "Purchase Subscription";
@@ -318,9 +342,35 @@ bool UI_console_win::accountMenu()
 
 bool UI::UI_console_win::pauseMenu()
 {
-	//stub
-	//todo
-	return true;
+	displayPauseMenu();
+	char inputchar = getMenuChoice();
+	switch (inputchar)
+	{
+	case '1':
+		return true;
+	case '2':
+		return false;
+	default:
+		return true;
+	}
+}
+
+void UI::UI_console_win::hsMenu()
+{
+	displayHighScoreScreen(get_Game()->get_Score());
+	char inputchar = getMenuChoice();
+	switch (inputchar)
+	{
+		//save high score screen
+	case '1':
+		saveNewHighScoreScreen(get_Game()->get_Score());
+		//enter key to go to main menu
+		system("pause");
+		break;
+		//go directly to main menu
+	case '2':
+		break;
+	}
 }
 
 // gets user input for a menu selection

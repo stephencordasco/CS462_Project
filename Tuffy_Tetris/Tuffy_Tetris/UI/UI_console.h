@@ -35,6 +35,7 @@ namespace UI
 		virtual bool mainMenu() = 0;
 		virtual bool accountMenu() = 0;
 		virtual bool pauseMenu() = 0;
+		virtual void hsMenu() = 0;
 
 		// helper functions
 		virtual void displayLogin() = 0;

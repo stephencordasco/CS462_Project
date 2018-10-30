@@ -29,6 +29,8 @@ int main(void)
 
 	delete game_UI;
 	delete game;
+	delete server;
+
 	system("pause");
 	return 0;
 }

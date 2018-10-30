@@ -102,22 +102,15 @@ bool Game_win::process_Input(char input)
 		case 'P':
 			if (is_Started() && !is_Paused()) {
 				set_paused(true);
-				get_UI()->displayPauseMenu();
-				return process_Input(get_UI()->getMenuChoice());
-			}
-			break;
-		//continue game
-		case '1':
-			if (is_Started() && is_Paused()) {
-				set_paused(false);
-			}
-			break;
-		//exit game
-		case '2':
-			if (is_Started() && is_Paused()) {
-				set_paused(false);
-				end_Game();
-				return false;
+				if (get_UI()->pauseMenu()) 
+				{
+					set_paused(false);
+				}
+				else 
+				{
+					set_paused(false);
+					return false;
+				}
 			}
 			break;
 		default:
@@ -131,19 +124,13 @@ void Domain::Game_win::end_Game()
 {
 	set_started(false);
 	UI::UI_console* ui_ptr = get_UI();
-	ui_ptr->displayHighScoreScreen(this->get_Score());
-	char inputchar = (char)_getch();
-	switch (inputchar) 
+	if(get_game_Server()->check_hs(1000))
 	{
-		//save high score screen
-		case '1':
-			ui_ptr->saveNewHighScoreScreen(this->get_Score());
-			//enter key to go to main menu
-			getchar();
-			break;
-		//go directly to main menu
-		case '2':
-			ui_ptr->displayMainMenu();
-			break;
+		ui_ptr->hsMenu();
+	}
+	else 
+	{
+		std::cout << "No new highscore.\n";
+		system("pause");
 	}
 }
