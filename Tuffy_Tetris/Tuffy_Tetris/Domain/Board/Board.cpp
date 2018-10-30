@@ -16,6 +16,7 @@ Board::Board()
 
 Board::~Board()
 {
+	if(current_piece)
 	delete current_piece;
 }
 

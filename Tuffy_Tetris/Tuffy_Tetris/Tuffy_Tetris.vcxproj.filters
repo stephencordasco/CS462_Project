@@ -90,7 +90,7 @@
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="Domain\Game\Game.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

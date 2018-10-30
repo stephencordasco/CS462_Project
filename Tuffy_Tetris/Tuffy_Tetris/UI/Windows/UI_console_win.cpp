@@ -6,6 +6,8 @@
 
 using UI::UI_console_win;
 
+UI::UI_console_win::UI_console_win() : UI_console() {}
+
 void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub

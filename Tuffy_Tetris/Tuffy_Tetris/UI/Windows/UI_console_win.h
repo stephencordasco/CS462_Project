@@ -2,6 +2,7 @@
 
 #include "../UI_console.h"
 
+//forward declaration for Game_win class
 namespace Domain 
 {
 	class Game_win;
@@ -13,28 +14,29 @@ namespace UI
 	{
 	public:
 		// constructor
+		UI_console_win();
 		// print board
 
-		void print_Frame(std::string);
+		void print_Frame(std::string) override;
 
 		// printing menus to screen
-		void displayLoginScreen();
-		void displayMainMenu();
-		void displayAccountMenu();
+		void displayLoginScreen() override;
+		void displayMainMenu() override;
+		void displayAccountMenu() override;
 		void displayPurchaseSubscriptionScreen() override;
-		void displayPauseMenu();
-		void displayHighScoreScreen(int);
-		void saveNewHighScoreScreen(int);
+		void displayPauseMenu() override;
+		void displayHighScoreScreen(int) override;
+		void saveNewHighScoreScreen(int) override;
 
 		// helper functions
-		void displayLogin();
-		void displayRegister();
+		void displayLogin() override;
+		void displayRegister() override;
 
 		// menu functionality
-		bool login();
-		bool mainMenu();
-		bool accountMenu();
-		bool pauseMenu();
+		bool login() override;
+		bool mainMenu() override;
+		bool accountMenu() override;
+		bool pauseMenu() override;
 
 		// get user data
 		char getMenuChoice() override;

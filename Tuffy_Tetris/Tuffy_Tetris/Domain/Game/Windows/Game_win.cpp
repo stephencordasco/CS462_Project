@@ -26,7 +26,7 @@ void Game_win::game_Loop()
 	UI::UI_console* ui_ptr = get_UI();
 	std::string frame = "";
 	clock_t start_time, end_time;
-	float tick = 0.5f;
+	float tick = 0.33f;
 	while (!endloop)
 	{
 		for (int i = 0; i < 3; i++) 
@@ -35,7 +35,7 @@ void Game_win::game_Loop()
 			end_time = 0;
 			while(((float)(end_time-start_time)/CLOCKS_PER_SEC) < tick)
 			{
-				Sleep(400);
+				Sleep(10);
 				if (_kbhit())
 				{
 					char inputchar = (char)_getch();

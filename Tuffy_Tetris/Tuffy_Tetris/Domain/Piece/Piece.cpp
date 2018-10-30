@@ -40,11 +40,6 @@ Piece::Piece(int t, int x, int y)
 	gen_skirt();
 }
 
-
-Piece::~Piece()
-{
-}
-
 void Piece::rotate()
 {
 	//swap along diagonal X==Y then skip
@@ -122,27 +117,6 @@ void Piece::gen_skirt()
 
 	}
 }
-// Properties
-int Piece::get_x() { return abs_x; }
-int Piece::get_y() { return abs_y; }
-
-int Piece::get_type()
-{
-	return type;
-}
-
-bool * Domain::Piece::get_points()
-{
-	return points[0];
-}
-
-int * Piece::get_skirt()
-{
-	return skirt;
-}
-
-void Piece::set_x(int x) { abs_x = x; }
-void Piece::set_y(int y) { abs_y = y; }
 
 void Piece::get_initial(bool(&piece)[4][4])
 {

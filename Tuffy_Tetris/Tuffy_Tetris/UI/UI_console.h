@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 
+//forward declaration for Game class
 namespace Domain 
 {
 	class Game;
@@ -41,18 +42,18 @@ namespace UI
 
 		// get user data
 		virtual char getMenuChoice() = 0;
-		std::string getUserName();
-		std::string getPassword();
-		std::string getEmail();
-		bool getHasSubscription();
-		void setHasSubscription(bool);
 		void setUserName();
 		void setPassword();
 		void setEmail();
-		Domain::Game* get_Game();
-		void set_Game(Domain::Game*);
 
-		virtual ~UI_console();
+		//trivial properties
+		std::string getUserName() { return username; }
+		std::string getPassword() { return password; }
+		std::string getEmail() { return email; }
+		bool getHasSubscription() { return hasSubscription; }
+		void setHasSubscription(bool s) { hasSubscription = s; }
+		Domain::Game* get_Game() { return game; }
+		void set_Game(Domain::Game* g) { game = g; }
 	private:
 		//common fields
 		char menuChoice;

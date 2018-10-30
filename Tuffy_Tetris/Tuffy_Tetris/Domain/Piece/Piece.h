@@ -10,20 +10,23 @@ namespace Domain
 	public:
 		Piece();
 		Piece(int t, int x, int y);
-		~Piece();
 		void rotate();
 		void undo_rot();
 		void move_vert(int y);
 		void move_horiz(int x);
 		//generate skirt array
 		void gen_skirt();
-		int get_x();
-		int get_y();
-		int get_type();
-		bool * get_points();
-		int * get_skirt();
-		void set_x(int x);
-		void set_y(int y);
+
+		//trivial properties
+		int get_x() { return abs_x; }
+		int get_y() { return abs_y; }
+		int get_type() { return type; }
+		bool * get_points() { return points[0]; }
+		int * get_skirt() { return skirt; }
+		void set_x(int x) { abs_x = x; }
+		void set_y(int y) { abs_y = y; }
+		//
+
 	private:
 		int type;
 		bool points[4][4];
