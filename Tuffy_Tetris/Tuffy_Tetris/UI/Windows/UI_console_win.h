@@ -13,8 +13,6 @@ namespace UI
 	{
 	public:
 		// constructor
-		UI_console_win();
-
 		// print board
 
 		void print_Frame(std::string);
@@ -39,21 +37,9 @@ namespace UI
 		bool pauseMenu();
 
 		// get user data
-		char getMenuChoice();
-		std::string getUserName();
-		std::string getPassword();
-		std::string getEmail();
-		void setUserName();
-		void setPassword();
-		void setEmail();
+		char getMenuChoice() override;
 
 	private:
-		// member values
-		char menuChoice;
-		std::string username;
-		std::string password;
-		std::string email;
-		bool hasSubscription;
 		
 	};
 }

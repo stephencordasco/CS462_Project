@@ -48,7 +48,7 @@ void Game_win::game_Loop()
 				}
 				end_time = clock();	
 			}
-			if (!endloop) break;
+			if (endloop) break;
 		}
 		board_ptr->system_Move();
 		board_ptr->generate_Frame(frame);

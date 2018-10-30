@@ -6,7 +6,7 @@
 
 int main(void) 
 {
-	UI::UI_console_win * game_UI = new UI::UI_console_win();
+	UI::UI_console * game_UI = new UI::UI_console_win();
 	Domain::Game * game = new Domain::Game_win(game_UI);
 	
 	game_UI->set_Game(game);
@@ -24,6 +24,8 @@ int main(void)
 		}
 	}
 
+	delete game_UI;
+	delete game;
 	system("pause");
 	return 0;
 }

@@ -6,14 +6,6 @@
 
 using UI::UI_console_win;
 
-UI_console_win::UI_console_win()
-{
-	username = " ";
-	password = " ";
-	email = " ";
-	hasSubscription = false;
-}
-
 void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub
@@ -151,7 +143,7 @@ void UI_console_win::displayAccountMenu()
 void UI_console_win::displayPurchaseSubscriptionScreen()
 {
 	// check if the user already has a subscription
-	if (this->hasSubscription)
+	if (this->getHasSubscription())
 	{
 		// inform user they already have a subscription
 		std::cout << "\nYou already have a subscription!\n";
@@ -187,10 +179,10 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	//todo
 	std::cout << "\nPurchase successful!\n";
 	std::cout << "You now have access to online scores!\n";
-	hasSubscription = true;
+	setHasSubscription(true);
 
 	// if the payment was successful take the user back to the account menu
-	if (hasSubscription)
+	if (getHasSubscription())
 	{
 		accountMenu();
 	}
@@ -289,40 +281,7 @@ char UI_console_win::getMenuChoice()
 	std::cout << "Enter a menu choice: ";
 	std::string choice = "";
 	std::cin >> choice;
-	menuChoice = choice[0];
 	return choice[0];
 
 }
 
-// stores the username: (Might not need?)
-std::string UI_console_win::getUserName()
-{
-	return username;
-}
-
-// stores the password: (Might not need?)
-std::string UI_console_win::getPassword()
-{
-	return password;
-}
-
-// stores the email: (Might not need?)
-std::string UI_console_win::getEmail()
-{
-	return email;
-}
-
-void UI_console_win::setUserName()
-{
-	std::getline(std::cin, username);
-}
-
-void UI_console_win::setPassword()
-{
-	std::getline(std::cin, password);
-}
-
-void UI_console_win::setEmail()
-{
-	std::getline(std::cin, email);
-}
