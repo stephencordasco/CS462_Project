@@ -1,6 +1,7 @@
 #pragma once
 
 #include "./Game_win.h"
+#include <iostream>
 
 using Domain::Game_win;
 
@@ -131,5 +132,18 @@ void Domain::Game_win::end_Game()
 	set_started(false);
 	UI::UI_console* ui_ptr = get_UI();
 	ui_ptr->displayHighScoreScreen(this->get_Score());
-
+	char inputchar = (char)_getch();
+	switch (inputchar) 
+	{
+		//save high score screen
+		case '1':
+			ui_ptr->saveNewHighScoreScreen(this->get_Score());
+			//enter key to go to main menu
+			getchar();
+			break;
+		//go directly to main menu
+		case '2':
+			ui_ptr->displayMainMenu();
+			break;
+	}
 }
