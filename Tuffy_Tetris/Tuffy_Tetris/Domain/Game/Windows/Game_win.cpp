@@ -124,7 +124,8 @@ void Domain::Game_win::end_Game()
 {
 	set_started(false);
 	UI::UI_console* ui_ptr = get_UI();
-	if(get_game_Server()->check_hs(1000))
+	set_Score(1000);
+	if(get_game_Server()->check_hs(get_Score()))
 	{
 		ui_ptr->hsMenu();
 	}
