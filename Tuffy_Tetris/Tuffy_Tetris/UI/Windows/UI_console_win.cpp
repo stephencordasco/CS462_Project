@@ -50,7 +50,7 @@ void UI_console_win::displayLogin()
 void UI_console_win::displayRegister()
 {
 	std::cin.get();
-	std::cout << "Please fill in the following fields:\n";
+	std::cout << "\nPlease fill in the following fields:\n";
 	std::cout << "\tUsername: ";
 	setUserName();
 	std::cout << "\tPassword: ";
@@ -138,9 +138,13 @@ bool UI_console_win::mainMenu()
 void UI_console_win::displayAccountMenu()
 {
 	std::cout << "\n======= ACCOUNT MENU =======\n";
+	std::cout << "Current Username: " << this->getUserName() << "\n";
+	std::cout << "Current e-mail: " << this->getEmail() << "\n";
+	std::cout << "============================\n";
 	std::cout << "1.) Change Username\n";
 	std::cout << "2.) Change Password\n";
 	std::cout << "3.) Purchase Subscription\n";
+	//std::cout << "4.) High Score\n";
 	std::cout << "4.) Main Menu\n";
 	std::cout << "============================\n";
 }
