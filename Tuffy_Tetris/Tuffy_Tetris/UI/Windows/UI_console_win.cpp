@@ -42,7 +42,7 @@ void UI_console_win::displayLogin()
 void UI_console_win::displayRegister()
 {
 	std::cin.get();
-	std::cout << "Please fill in the following fields:\n";
+	std::cout << "\nPlease fill in the following fields:\n";
 	std::cout << "\tUsername: ";
 	setUserName();
 	std::cout << "\tPassword: ";
@@ -130,9 +130,13 @@ bool UI_console_win::mainMenu()
 void UI_console_win::displayAccountMenu()
 {
 	std::cout << "\n======= ACCOUNT MENU =======\n";
+	std::cout << "Current Username: " << this->getUserName() << "\n";
+	std::cout << "Current e-mail: " << this->getEmail() << "\n";
+	std::cout << "============================\n";
 	std::cout << "1.) Change Username\n";
 	std::cout << "2.) Change Password\n";
 	std::cout << "3.) Purchase Subscription\n";
+	//std::cout << "4.) High Score\n";
 	std::cout << "4.) Main Menu\n";
 	std::cout << "============================\n";
 }
@@ -200,16 +204,21 @@ void UI::UI_console_win::displayHighScoreScreen(int score)
 {
 	std::cout << "\n======== New High Score ========\n";
 	std::cout << "\n======== " << score << " ========\n";
-	std::cout << "1.)Save New High Score";
+	std::cout << "1.)Save New High Score\n";
 	std::cout << "2.) Exit to Main Menu\n";
 	std::cout << "============================\n";
 }
 
 void UI::UI_console_win::saveNewHighScoreScreen(int score)
 {
-	std::cout << "\n======== Congratulations ========\n";
+	std::cin.get();
+	std::string nickname = " ";
+	std::cout << "\nPlease enter a name for your score.";
+	getline(std::cin, nickname);
+	std::cout << "\nsaving Score...\n";
+	std::cout << "\n======== Congratulations " <<nickname<<" ========\n";
 	std::cout << "\nYour score has been saved.\n";
-	std::cout << "1.) Exit to Main Menu\n";
+	std::cout << "Enter any button to exit to Main Menu\n";
 	std::cout << "============================\n";
 }
 
