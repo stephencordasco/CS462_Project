@@ -1,4 +1,11 @@
-//main for windows app
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		main_win.cpp
+Purpose:	main for Windows OS
+*******************************************************************************/
 #pragma once
 
 #include "../UI/Windows/UI_console_win.h"
@@ -6,8 +13,11 @@
 
 int main(void) 
 {
+	// pointer to an instance of the parent UI class
 	UI::UI_console * game_UI = new UI::UI_console_win();
+	// pointer to an instance of the parent Domain class
 	Domain::Game * game = new Domain::Game_win(game_UI);
+	// pointer to an instance of the parent Services class
 	Services::Game_server * server = new Services::Game_server();
 	
 	game->set_game_Server(server);

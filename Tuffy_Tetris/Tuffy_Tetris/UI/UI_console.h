@@ -1,3 +1,12 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		UI_console.h
+Purpose:	interface class declares virtual member functions and member
+			variables
+*******************************************************************************/
 #pragma once
 
 #include "../Services/Game_server.h"
@@ -15,10 +24,10 @@ namespace UI
 	class UI_console 
 	{
 	public:
+		// constructor
 		UI_console();
 
 		// print board
-
 		virtual void print_Frame(std::string) = 0;
 
 		// printing menus to screen

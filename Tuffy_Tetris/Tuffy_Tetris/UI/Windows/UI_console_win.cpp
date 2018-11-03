@@ -1,3 +1,11 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		UI_console_win.cpp
+Purpose:	defines member functions for UI_console_win class
+*******************************************************************************/
 #pragma once
 
 #include "UI_console_win.h"
@@ -9,6 +17,11 @@ using UI::UI_console_win;
 
 UI::UI_console_win::UI_console_win() : UI_console() {}
 
+/*******************************************************************************
+Name:		print_Frame
+Parameters:	string object
+Purpose:	clears the screen and prints a frame
+*******************************************************************************/
 void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub
@@ -17,7 +30,11 @@ void UI::UI_console_win::print_Frame(std::string frame)
 	std::cout << frame;
 }
 
-// displays the first menu on application startup
+/*******************************************************************************
+Name:		displayLoginScreen
+Parameters:	none
+Purpose:	clears the screen and prints the startup menu or login screen
+*******************************************************************************/
 void UI_console_win::displayLoginScreen()
 {
 	system("cls");
@@ -28,10 +45,17 @@ void UI_console_win::displayLoginScreen()
 	std::cout << "============================\n";
 }
 
-// displays a new menu on "Login" selection
+/*******************************************************************************
+Name:		displayLogin
+Parameters:	none
+Purpose:	prints the fields for the user to enter information in order to
+			log into the application
+*******************************************************************************/
 void UI_console_win::displayLogin()
 {
+	// prevent "new line" capture
 	std::cin.get();
+	// print the login fields
 	std::cout << "Username: ";
 	setUserName();
 	std::cout << "Password: ";
@@ -39,22 +63,33 @@ void UI_console_win::displayLogin()
 	std::cout << "email: ";
 	setEmail();
 	
+	// greet the user if login successful
 	if (get_Server()->login(getUserName(), getPassword(), getEmail()))
 	{	// print welcome message
 		std::cout << "\nWelcome, " << getUserName() << "\n\n";
 	}
+	// login failed
 	else
 	{
+		// print a message that login failed...
 		std::cout << "Login failed. Please try again.\n";
 		system("pause");
+		// ...print the login screen again
 		login();
 	}
 }
 
-// displays a new menu on "Register" selection
+/*******************************************************************************
+Name:		displayRegister
+Parameters:	none
+Purpose:	prints the fields for the user to enter information in order to
+			register a new account for the application
+*******************************************************************************/
 void UI_console_win::displayRegister()
 {
+	// prevent "new line" capture
 	std::cin.get();
+	// print the register fields
 	std::cout << "\nPlease fill in the following fields:\n";
 	std::cout << "\tUsername: ";
 	setUserName();
@@ -63,19 +98,28 @@ void UI_console_win::displayRegister()
 	std::cout << "\tCSUF email: ";
 	setEmail();
 
+	// greet the user if registration successful
 	if (get_Server()->register_acct(getUserName(), getPassword(), getEmail()))
 	{	// print welcome message
 		//std::cout << "\nWelcome, " << getUserName() << "\n\n";
 	}
-	else 
+	else
+	// registration failed
 	{
+		// print a message that registration failed...
 		std::cout << "Registration failed. Please try again.";
 		system("pause");
-		accountMenu();
+		// ...print the login screen again
+		login();
 	}
 }
 
-// returns true if the user selected "Login" or "Register"; returns false otherwise
+/*******************************************************************************
+Name:		login
+Parameters:	none
+Purpose:	prints the startup menu or login screen, gets a menu choice from
+			the user, and determines what to do next
+*******************************************************************************/
 bool UI_console_win::login()
 {
 	// print the first menu
@@ -103,7 +147,11 @@ bool UI_console_win::login()
 	return true;
 }
 
-// displays the main menu after user has logged in successfully or registered an account successfully
+/*******************************************************************************
+Name:		displayMainMenu
+Parameters:	none
+Purpose:	clears the screen, greets the user, and prints the main menu
+*******************************************************************************/
 void UI_console_win::displayMainMenu()
 {
 	system("cls");
@@ -117,7 +165,12 @@ void UI_console_win::displayMainMenu()
 	std::cout << "============================\n";
 }
 
-// returns true if the user selected "Play Game" or "Account Information"; returns false otherwise
+/*******************************************************************************
+Name:		mainMenu
+Parameters:	none
+Purpose:	prints the main menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI_console_win::mainMenu()
 {
 	// print the main menu
@@ -158,7 +211,12 @@ bool UI_console_win::mainMenu()
 	return true;
 }
 
-// displays the account menu
+/*******************************************************************************
+Name:		displayAccountMenu
+Parameters:	none
+Purpose:	clears the scree, prints the current username and email of the
+			user, and prints the account menu
+*******************************************************************************/
 void UI_console_win::displayAccountMenu()
 {
 	system("cls");
@@ -174,9 +232,13 @@ void UI_console_win::displayAccountMenu()
 	std::cout << "============================\n";
 }
 
-// displays the purchase subscription screen
-//  going to use a stub here so that any values entered will always be accepted
-//    and a subscription purchase will be successful
+/*******************************************************************************
+Name:		displayPurchaseSubscriptionScreen
+Parameters:	none
+Purpose:	displays the purchase subscription screen going to use a stub here
+			so that any values entered will always be accepted and a
+			subscription purchase will be successful
+*******************************************************************************/
 void UI_console_win::displayPurchaseSubscriptionScreen()
 {
 	//setHasSubscription(get_Server()->check_sub());
@@ -199,7 +261,9 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	std::string billingAddress = " ";
 	std::string zipCode = " ";
 
+	// prevent "new line" capture
 	std::cin.get();
+	// print the card information fields
 	std::cout << "\nPlease enter your card information:\n";
 	std::cout << "Card Number: ";
 	getline(std::cin, cardNumber);
@@ -236,6 +300,11 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	}
 }
 
+/*******************************************************************************
+Name:		displayPauseMenu
+Parameters:	none
+Purpose:	clears the screen and displays the pause menu
+*******************************************************************************/
 void UI::UI_console_win::displayPauseMenu()
 {
 	system("cls");
@@ -245,6 +314,11 @@ void UI::UI_console_win::displayPauseMenu()
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		displayHighScoreScreen
+Parameters:	integer value
+Purpose:	clears the scree and displays the high score menu
+*******************************************************************************/
 void UI::UI_console_win::displayHighScoreScreen(int score)
 {
 	system("cls");
@@ -255,6 +329,14 @@ void UI::UI_console_win::displayHighScoreScreen(int score)
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		saveNewHighScoreScreen
+Parameters:	integer value
+Purpose:	checks if user has a subscription; if true, user enters in a
+			nickname and the score is saved, message is printed to screen,
+			otherwise the user is informed to purchase a subscription in order
+			to save a score
+*******************************************************************************/
 void UI::UI_console_win::saveNewHighScoreScreen(int score)
 {	
 
@@ -284,8 +366,12 @@ void UI::UI_console_win::saveNewHighScoreScreen(int score)
 	
 }
 
-// returns true if the user selected "Change Username", "Change Password", or "Purchase Subscription";
-//  returns false otherwise
+/*******************************************************************************
+Name:		accountMenu
+Parameters:	none
+Purpose:	displays the account menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI_console_win::accountMenu()
 {
 	// print the account menu
@@ -341,26 +427,40 @@ bool UI_console_win::accountMenu()
 	return true;
 }
 
-
-
+/*******************************************************************************
+Name:		pauseMenu
+Parameters:	none
+Purpose:	displays the pause menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI::UI_console_win::pauseMenu()
 {
+	// display pause menu
 	displayPauseMenu();
+	// store the user menu choice
 	char inputchar = getMenuChoice();
 	switch (inputchar)
 	{
-	case '1':
+	case '1':	// user chose to continue game
 		return true;
-	case '2':
+	case '2':	// user chose to quit game
 		return false;
 	default:
 		return true;
 	}
 }
 
+/*******************************************************************************
+Name:		hsMenu
+Parameters:	none
+Purpose:	displays the high score screen with the user's score, gets a menu
+			choice from the user and determines what to do next
+*******************************************************************************/
 void UI::UI_console_win::hsMenu()
 {
+	// print the high score screen with user score
 	displayHighScoreScreen(get_Game()->get_Score());
+	// get menu choice from the user
 	char inputchar = getMenuChoice();
 	switch (inputchar)
 	{
@@ -376,7 +476,12 @@ void UI::UI_console_win::hsMenu()
 	}
 }
 
-// gets user input for a menu selection
+/*******************************************************************************
+Name:		getMenuChoice
+Parameters:	none
+Purpose:	prompts the user to enter a menu choice, gets the menu choice,
+			and returns it to the calling function
+*******************************************************************************/
 char UI_console_win::getMenuChoice()
 {
 	std::cout << "Enter a menu choice: ";
@@ -385,4 +490,3 @@ char UI_console_win::getMenuChoice()
 	return choice[0];
 
 }
-
