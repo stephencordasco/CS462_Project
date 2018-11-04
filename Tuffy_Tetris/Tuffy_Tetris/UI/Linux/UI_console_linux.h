@@ -2,6 +2,12 @@
 
 #include "../UI_console.h"
 
+//forward declaration for Game_win class
+namespace Domain
+{
+	class Game_linux;
+}
+
 namespace UI 
 {
 	class UI_console_linux : UI_console 

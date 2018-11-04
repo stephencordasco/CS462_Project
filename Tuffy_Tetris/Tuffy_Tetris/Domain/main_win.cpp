@@ -5,8 +5,8 @@
 #include "../UI/Windows/UI_console_win.h"
 #include "Game/Windows/Game_win.h"
 #else
-#include "../UI/Windows/UI_console_linux.h"
-#include "Game/Windows/Game_linux.h"
+#include "../UI/Linux/UI_console_linux.h"
+#include "Game/Linux/Game_linux.h"
 #endif
 
 class MainFactory
