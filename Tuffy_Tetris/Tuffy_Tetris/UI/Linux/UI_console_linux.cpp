@@ -1,12 +1,12 @@
 #pragma once
 
 #include "UI_console_linux.h"
+#include "../../Domain/Game/Game.h"
 
 using UI::UI_console_linux;
 
 UI_console_linux::UI_console_linux() : UI_console() {}
-{
-}
+
 
 void UI::UI_console_linux::print_Frame(std::string)
 {
