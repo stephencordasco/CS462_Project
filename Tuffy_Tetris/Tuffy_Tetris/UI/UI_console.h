@@ -71,7 +71,6 @@ namespace UI
 		virtual ~UI_console();
 	private:
 		//common fields
-		char menuChoice;
 		std::string username;
 		std::string password;
 		std::string email;

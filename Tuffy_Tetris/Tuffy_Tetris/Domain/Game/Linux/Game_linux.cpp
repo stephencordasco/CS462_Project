@@ -45,13 +45,15 @@ void Game_linux::game_Loop()
 	std::string frame = "";
 	clock_t start_time, end_time;
 	float tick = 0.1f;
-	initscr();
-	cbreak();
-	noecho();
-	nodelay(stdscr, TRUE);
-	scrollok(stdscr, TRUE);
+
 	while (!endloop)
 	{
+		initscr();
+		cbreak();
+		noecho();
+		nodelay(stdscr, TRUE);
+		scrollok(stdscr, TRUE);
+
 		for (int i = 0; i < 3; i++)
 		{
 			start_time = clock();
@@ -59,24 +61,26 @@ void Game_linux::game_Loop()
 			double time_elapsed = 0.0f;
 			while (time_elapsed <= tick)
 			{
-				uleep(10000);
+				usleep(10000);
 				if (kbhit())
 				{
 					char inputchar = getch();
 					if (!process_Input(inputchar))
 					{
+						endwin();
 						endloop = true;
 						break;
 					}
+					endwin();
 					board_ptr->generate_Frame(frame);
 					ui_ptr->print_Frame(frame);
 				}
 				end_time = clock();
 				time_elapsed = static_cast<double>(end_time - start_time) / static_cast<double>(CLOCKS_PER_SEC);
-				if (time_elapsed > tick) break;
 			}
 			if (endloop) break;
 		}
+		endwin();
 		board_ptr->system_Move();
 		board_ptr->generate_Frame(frame);
 		ui_ptr->print_Frame(frame);

@@ -52,7 +52,6 @@ void Game_win::game_Loop()
 				}
 				end_time = clock();
 				time_elapsed = static_cast<double>(end_time - start_time) / static_cast<double>(CLOCKS_PER_SEC);
-				if (time_elapsed > tick) break;
 			}
 			if (endloop) break;
 		}

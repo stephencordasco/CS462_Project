@@ -30,7 +30,6 @@ namespace Domain
 	private:
 		int type;
 		bool points[4][4];
-		bool last_rot[4][4];
 		void get_initial(bool(&)[4][4]);
 		int abs_x;
 		int abs_y;
