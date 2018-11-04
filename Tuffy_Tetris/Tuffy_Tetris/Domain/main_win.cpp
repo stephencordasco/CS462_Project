@@ -58,6 +58,7 @@ int main(void)
 	delete game;
 	delete server;
 
-	system("pause");
+	std::cout << "Press enter to continue...";
+	std::cin.get();
 	return 0;
 }
