@@ -8,7 +8,7 @@ using Domain::Game_linux;
 
 //code for this function used from StackOverFlow by user: Matthew Slattery
 //retrieved from URL:  https://stackoverflow.com/questions/4025891/create-a-function-to-check-for-key-press-in-unix-using-ncurses?rq=1
-int kbhit(void)
+Game_linux::int kbhit(void)
 {
 	int ch = getch();
 

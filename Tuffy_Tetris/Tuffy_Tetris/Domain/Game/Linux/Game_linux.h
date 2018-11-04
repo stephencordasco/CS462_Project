@@ -6,7 +6,7 @@
 
 namespace Domain
 {
-	class Game_linux : Game 
+	class Game_linux : public Game 
 	{
 	public:
 		Game_linux(UI::UI_console*);
