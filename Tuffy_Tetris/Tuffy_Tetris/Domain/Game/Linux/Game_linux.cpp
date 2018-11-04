@@ -57,18 +57,21 @@ void Game_linux::game_Loop()
 			end_time = 0;
 			while (((float)(end_time - start_time) / CLOCKS_PER_SEC) < tick)
 			{
-				sleep(10);
+				usleep(10000);
 				if (kbhit())
 				{
 					char inputchar = (char)getch();
 					if (!process_Input(inputchar))
 					{
+						endwin();
 						endloop = true;
 						break;
 					}
+					endwin();
 					board_ptr->generate_Frame(frame);
 					ui_ptr->print_Frame(frame);
 				}
+				endwin();
 				end_time = clock();
 			}
 			if (endloop) break;
@@ -77,7 +80,6 @@ void Game_linux::game_Loop()
 		board_ptr->generate_Frame(frame);
 		ui_ptr->print_Frame(frame);
 	}
-	endwin();
 	end_Game();
 }
 
