@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef _WIN32
+
 #include "UI_console_win.h"
 #include "../../Domain/Game/Game.h"
 #include <iostream>
@@ -385,4 +387,6 @@ char UI_console_win::getMenuChoice()
 	return choice[0];
 
 }
+
+#endif
 
