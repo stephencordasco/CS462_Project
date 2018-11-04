@@ -27,7 +27,6 @@ Purpose:	clears the screen and prints a frame
 void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub
-	//todo
 	clear_screen();
 	std::cout << frame;
 }

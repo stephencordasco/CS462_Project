@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		UI_console_linux.h
+Purpose:	child class of UI_console declares member functions and member
+			variables for Linux OS
+*******************************************************************************/
+
 #pragma once
 
 #include "../UI_console.h"
@@ -13,8 +23,10 @@ namespace UI
 	class UI_console_linux : public UI_console 
 	{
 	public:
+		// constructor
 		UI_console_linux();
 
+		//print board
 		void print_Frame(std::string) override;
 
 		// printing menus to screen

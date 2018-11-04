@@ -1,3 +1,14 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Game.h
+Purpose:	Declares abstract base class for a Game instance. Contains properties
+			and virtual methods for calling UI functions, communicating with the
+			Game_server instance, and controlling the game Board object.
+*******************************************************************************/
+
 #pragma once
 
 #include "../Board/Board.h"

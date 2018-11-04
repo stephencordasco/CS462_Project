@@ -1,10 +1,23 @@
-
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Board.cpp
+Purpose:	Defines method implementations for the Board class.
+*******************************************************************************/
 
 #include "./Board.h"
 #include <string>
 
 using Domain::Board;
 
+/*******************************************************************************
+Name:		Board
+Parameters:	none
+Purpose:	Default constructor for Board class. Sets various properties to
+			default values and calls board initialization function.
+*******************************************************************************/
 Board::Board()
 {
 	type_count = 0;
@@ -20,8 +33,14 @@ Board::~Board()
 	delete current_piece;
 }
 
-//iterate over the board_state and piece_state and see if either are on, 
-//then write both to a long string
+/*******************************************************************************
+Name:		generate_Frame
+Parameters:	string object reference for logical data frame output
+Purpose:	Checks if a new frame needs to be generated due to Board or Piece
+			state change. Then, if true, the method clears the output string,
+			and writes a new string to represent board and piece states. Otherwise
+			the method returns the original string.
+*******************************************************************************/
 bool Board::generate_Frame(std::string & output)
 {	//check if frame needs to be updated, if not, simply return false.
 	if (update_frame == true)
@@ -53,10 +72,19 @@ bool Board::generate_Frame(std::string & output)
 	else return false;
 }
 
-//setting a type < 0 will use type_count value to cycle each piece in order
+/*******************************************************************************
+Name:		spawn_Piece
+Parameters:	Integers representing Piece type, and absolute x and y coordinates
+			for a Piece.
+Purpose:	Creates a new piece of a specific type at a specific x and y
+			coordinate. If the type value is less than 0, method will reference
+			the type_count property and print the next Piece type in order.
+*******************************************************************************/
 void Board::spawn_Piece(int type, int x, int y)
 {
 	int type_holder = type;
+
+	//setting a type < 0 will use type_count value to cycle each piece in order
 	if (type_holder < 0)
 	{
 		//increment piece type_count to cycle through each piece type in order
@@ -64,9 +92,16 @@ void Board::spawn_Piece(int type, int x, int y)
 	}
 	type_count = (type_count + 1) % 5;
 	current_piece = new Piece(type_holder, x, y);
+	//draw new piece_state
 	draw_Piece_State();
 }
 
+/*******************************************************************************
+Name:		draw_Board_State
+Parameters:	none
+Purpose:	Method simply updates the board_state after any change in piece or
+			board state.
+*******************************************************************************/
 void Board::draw_Board_State() 
 {
 	for (int i = 0; i < 22; i++)
@@ -76,10 +111,17 @@ void Board::draw_Board_State()
 			board_state[i][j] = board_state[i][j] || piece_state[i][j];
 		}
 	}
+	//set update flag to generate an updated frame on request
 	update_frame = true;
 }
 
-//draw piece onto board if it cannot move down anymore
+/*******************************************************************************
+Name:		draw_Piece_State
+Parameters:	none
+Purpose:	Updates the piece_state array, and checks that the piece is inside
+			the Board boundaries. If any part of the piece is out of founds, the
+			method returns false to indicate failure. Otherwise return true.
+*******************************************************************************/
 bool Board::draw_Piece_State()
 {
 	init_piece();
@@ -105,7 +147,13 @@ bool Board::draw_Piece_State()
 	return true;
 }
 
-// validate move by comparing with board_state
+/*******************************************************************************
+Name:		validate_Move
+Parameters:	none
+Purpose:	Method confirms that the current piece_state does not collide with
+			a piece already on the Board. If piece_state collides with board_state
+			then return false to indicate failure. Otherwise return true.
+*******************************************************************************/
 bool Board::validate_Move()
 {
 	for (int i = 0; i < 21; i++) 
@@ -121,6 +169,14 @@ bool Board::validate_Move()
 	return true;
 }
 
+/*******************************************************************************
+Name:		move_Down
+Parameters:	none
+Purpose:	Method attempts a Piece movement down by one. Performs move, and checks
+			whether the new state collides with Board boundaries or other pieces
+			already on the board. If so, the movement is reversed and method
+			returns false. Otherwise method keeps move and returns true.
+*******************************************************************************/
 bool Domain::Board::move_Down()
 {
 	current_piece->move_vert(-1);
@@ -134,6 +190,14 @@ bool Domain::Board::move_Down()
 	return true;
 }
 
+/*******************************************************************************
+Name:		move_Left
+Parameters:	none
+Purpose:	Method attempts a Piece movement left by one. Performs move, and checks
+			whether the new state collides with Board boundaries or other pieces
+			already on the board. If so, the movement is reversed and method
+			returns false. Otherwise method keeps move and returns true.
+*******************************************************************************/
 bool Domain::Board::move_Left()
 {
 	current_piece->move_horiz(-1);
@@ -147,6 +211,14 @@ bool Domain::Board::move_Left()
 	return true;
 }
 
+/*******************************************************************************
+Name:		move_Right
+Parameters:	none
+Purpose:	Method attempts a Piece movement right by one. Performs move, and checks
+			whether the new state collides with Board boundaries or other pieces
+			already on the board. If so, the movement is reversed and method
+			returns false. Otherwise method keeps move and returns true.
+*******************************************************************************/
 bool Domain::Board::move_Right()
 {
 	current_piece->move_horiz(1);
@@ -160,6 +232,14 @@ bool Domain::Board::move_Right()
 	return true;
 }
 
+/*******************************************************************************
+Name:		rotate_Piece
+Parameters:	none
+Purpose:	Method attempts a Piece rotation counter-clockwise. Performs move,
+			and checks whether the new state collides with Board boundaries or
+			other pieces already on the board. If so, the movement is reversed
+			and method returns false. Otherwise method keeps move and returns true.
+*******************************************************************************/
 bool Domain::Board::rotate_Piece()
 {
 	current_piece->rotate();
@@ -173,6 +253,14 @@ bool Domain::Board::rotate_Piece()
 	return true;
 }
 
+/*******************************************************************************
+Name:		system_Move
+Parameters:	none
+Purpose:	Method attempts a Piece movement down one. Represents the default
+			movement that occurs in tetris every few game ticks. If this movement
+			fails, then the piece state is "baked" onto the game state, and a new
+			Piece is spawned. See move_Down documentation.
+*******************************************************************************/
 bool Domain::Board::system_Move()
 {
 	current_piece->move_vert(-1);
@@ -189,6 +277,12 @@ bool Domain::Board::system_Move()
 	return false;
 }
 
+/*******************************************************************************
+Name:		init_board
+Parameters:	none
+Purpose:	Method sets the initial state of the board and piece states. Draws a
+			border of turned on blocks along the sides and bottom of the Board.
+*******************************************************************************/
 void Domain::Board::init_board()
 {	
 	update_frame = true;
@@ -221,6 +315,11 @@ void Domain::Board::init_board()
 
 }
 
+/*******************************************************************************
+Name:		init_piece
+Parameters:	none
+Purpose:	Similar to init_board, but only initializes the state of a new piece.
+*******************************************************************************/
 void Domain::Board::init_piece() 
 {
 	//initialize all false

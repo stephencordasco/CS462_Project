@@ -3,8 +3,9 @@ Project:	Tuffy Tetris
 Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
-File:		main_win.cpp
-Purpose:	main for Windows OS
+File:		main.cpp
+Purpose:	Includes main entry point for program and an inline factory class
+			for creating polymorphic UI and Game objects
 *******************************************************************************/
 
 
@@ -46,6 +47,7 @@ int main(void)
 	// pointer to an instance of the Services class
 	Services::Game_server * server = new Services::Game_server();
 	
+	//set pointer references inside objects
 	game->set_game_Server(server);
 	game_UI->set_Game(game);
 	game_UI->set_Server(server);

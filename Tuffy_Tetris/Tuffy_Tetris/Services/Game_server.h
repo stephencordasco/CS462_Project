@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Game_server.h
+Purpose:	Declares class for the game server interface. Currently performs
+			stub functionality for checking user input.
+*******************************************************************************/
+
 #pragma once
 
 #include <string>

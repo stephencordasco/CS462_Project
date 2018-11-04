@@ -25,6 +25,11 @@ UI_console::UI_console()
 	hasSubscription = false;
 }
 
+/*******************************************************************************
+Name:		clear_screen
+Parameters:	none
+Purpose:	Helper function that simply prints 100 newlines to clear console screen
+*******************************************************************************/
 void UI::UI_console::clear_screen()
 {
 	std::cout << std::string(100, '\n');

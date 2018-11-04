@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Piece.h
+Purpose:	Declares class for a game piece. Contains properties and low level
+			methods for manipulating a piece object on a Board.
+*******************************************************************************/
+
 #pragma once
 
 #include <algorithm>

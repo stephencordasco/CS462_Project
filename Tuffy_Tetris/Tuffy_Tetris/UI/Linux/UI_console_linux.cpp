@@ -1,3 +1,12 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		UI_console_linux.cpp
+Purpose:	defines member functions for UI_console_linux class
+*******************************************************************************/
+
 
 #ifndef _WIN32
 
@@ -9,13 +18,22 @@ using UI::UI_console_linux;
 
 UI_console_linux::UI_console_linux() : UI_console() {}
 
-
+/*******************************************************************************
+Name:		print_Frame
+Parameters:	string object
+Purpose:	clears the screen and prints a frame
+*******************************************************************************/
 void UI::UI_console_linux::print_Frame(std::string frame)
 {
 	clear_screen();
 	std::cout << frame;
 }
 
+/*******************************************************************************
+Name:		displayLoginScreen
+Parameters:	none
+Purpose:	clears the screen and prints the startup menu or login screen
+*******************************************************************************/
 void UI::UI_console_linux::displayLoginScreen()
 {
 	clear_screen();
@@ -26,6 +44,11 @@ void UI::UI_console_linux::displayLoginScreen()
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		displayMainMenu
+Parameters:	none
+Purpose:	clears the screen, greets the user, and prints the main menu
+*******************************************************************************/
 void UI::UI_console_linux::displayMainMenu()
 {
 	clear_screen();
@@ -39,6 +62,12 @@ void UI::UI_console_linux::displayMainMenu()
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		displayAccountMenu
+Parameters:	none
+Purpose:	clears the scree, prints the current username and email of the
+			user, and prints the account menu
+*******************************************************************************/
 void UI::UI_console_linux::displayAccountMenu()
 {
 	clear_screen();
@@ -54,6 +83,13 @@ void UI::UI_console_linux::displayAccountMenu()
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		displayPurchaseSubscriptionScreen
+Parameters:	none
+Purpose:	displays the purchase subscription screen going to use a stub here
+			so that any values entered will always be accepted and a
+			subscription purchase will be successful
+*******************************************************************************/
 void UI::UI_console_linux::displayPurchaseSubscriptionScreen()
 {
 	//setHasSubscription(get_Server()->check_sub());
@@ -116,6 +152,11 @@ void UI::UI_console_linux::displayPurchaseSubscriptionScreen()
 	}
 }
 
+/*******************************************************************************
+Name:		displayPauseMenu
+Parameters:	none
+Purpose:	clears the screen and displays the pause menu
+*******************************************************************************/
 void UI::UI_console_linux::displayPauseMenu()
 {
 	clear_screen();
@@ -125,6 +166,11 @@ void UI::UI_console_linux::displayPauseMenu()
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		displayHighScoreScreen
+Parameters:	integer value
+Purpose:	clears the scree and displays the high score menu
+*******************************************************************************/
 void UI::UI_console_linux::displayHighScoreScreen(int score)
 {
 	clear_screen();
@@ -135,6 +181,14 @@ void UI::UI_console_linux::displayHighScoreScreen(int score)
 	std::cout << "============================\n";
 }
 
+/*******************************************************************************
+Name:		saveNewHighScoreScreen
+Parameters:	integer value
+Purpose:	checks if user has a subscription; if true, user enters in a
+			nickname and the score is saved, message is printed to screen,
+			otherwise the user is informed to purchase a subscription in order
+			to save a score
+*******************************************************************************/
 void UI::UI_console_linux::saveNewHighScoreScreen()
 {
 	if (getHasSubscription())
@@ -162,6 +216,12 @@ void UI::UI_console_linux::saveNewHighScoreScreen()
 	}
 }
 
+/*******************************************************************************
+Name:		displayLogin
+Parameters:	none
+Purpose:	prints the fields for the user to enter information in order to
+			log into the application
+*******************************************************************************/
 void UI::UI_console_linux::displayLogin()
 {
 	std::cin.get();
@@ -185,6 +245,12 @@ void UI::UI_console_linux::displayLogin()
 	}
 }
 
+/*******************************************************************************
+Name:		displayRegister
+Parameters:	none
+Purpose:	prints the fields for the user to enter information in order to
+			register a new account for the application
+*******************************************************************************/
 void UI::UI_console_linux::displayRegister()
 {
 	std::cin.get();
@@ -209,6 +275,12 @@ void UI::UI_console_linux::displayRegister()
 	}
 }
 
+/*******************************************************************************
+Name:		login
+Parameters:	none
+Purpose:	prints the startup menu or login screen, gets a menu choice from
+			the user, and determines what to do next
+*******************************************************************************/
 bool UI::UI_console_linux::login()
 {
 	// print the first menu
@@ -236,6 +308,12 @@ bool UI::UI_console_linux::login()
 	return true;
 }
 
+/*******************************************************************************
+Name:		mainMenu
+Parameters:	none
+Purpose:	prints the main menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI::UI_console_linux::mainMenu()
 {
 	// print the main menu
@@ -276,6 +354,12 @@ bool UI::UI_console_linux::mainMenu()
 	return true;
 }
 
+/*******************************************************************************
+Name:		accountMenu
+Parameters:	none
+Purpose:	displays the account menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI::UI_console_linux::accountMenu()
 {
 	// print the account menu
@@ -335,24 +419,40 @@ bool UI::UI_console_linux::accountMenu()
 	return true;
 }
 
+/*******************************************************************************
+Name:		pauseMenu
+Parameters:	none
+Purpose:	displays the pause menu, gets a menu choice from the user, and
+			determines what to do next
+*******************************************************************************/
 bool UI::UI_console_linux::pauseMenu()
 {
+	//display pause menu
 	displayPauseMenu();
+	//store the user menu choice
 	char inputchar = getMenuChoice();
 	switch (inputchar)
 	{
-	case '1':
+	case '1': //user chose to continue game
 		return true;
-	case '2':
+	case '2': //user chose to quit game
 		return false;
 	default:
 		return true;
 	}
 }
 
+/*******************************************************************************
+Name:		hsMenu
+Parameters:	none
+Purpose:	displays the high score screen with the user's score, gets a menu
+			choice from the user and determines what to do next
+*******************************************************************************/
 void UI::UI_console_linux::hsMenu()
 {
+	//print the high score screen with user score
 	displayHighScoreScreen(get_Game()->get_Score());
+	//get menu choice from the user
 	char inputchar = getMenuChoice();
 	switch (inputchar)
 	{
@@ -369,6 +469,12 @@ void UI::UI_console_linux::hsMenu()
 	}
 }
 
+/*******************************************************************************
+Name:		getMenuChoice
+Parameters:	none
+Purpose:	prompts the user to enter a menu choice, gets the menu choice,
+			and returns it to the calling function
+*******************************************************************************/
 char UI::UI_console_linux::getMenuChoice()
 {
 	std::cout << "Enter a menu choice: ";
