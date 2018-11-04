@@ -35,7 +35,7 @@ namespace UI
 		void displayPurchaseSubscriptionScreen() override;
 		void displayPauseMenu() override;
 		void displayHighScoreScreen(int) override;
-		void saveNewHighScoreScreen(int) override;
+		void saveNewHighScoreScreen() override;
 
 		// helper functions
 		void displayLogin() override;

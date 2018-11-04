@@ -6,7 +6,7 @@ Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console_win.cpp
 Purpose:	defines member functions for UI_console_win class
 *******************************************************************************/
-#pragma once
+
 
 #ifdef _WIN32
 
@@ -344,7 +344,7 @@ Purpose:	checks if user has a subscription; if true, user enters in a
 			otherwise the user is informed to purchase a subscription in order
 			to save a score
 *******************************************************************************/
-void UI::UI_console_win::saveNewHighScoreScreen(int score)
+void UI::UI_console_win::saveNewHighScoreScreen()
 {	
 
 	if( getHasSubscription() )
@@ -477,7 +477,7 @@ void UI::UI_console_win::hsMenu()
 	{
 		//save high score screen
 	case '1':
-		saveNewHighScoreScreen(get_Game()->get_Score());
+		saveNewHighScoreScreen();
 		//enter key to go to main menu
 		std::cout << "Press enter to continue...";
 		std::cin.get();

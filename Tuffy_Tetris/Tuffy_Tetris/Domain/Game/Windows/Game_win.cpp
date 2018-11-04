@@ -1,4 +1,4 @@
-#pragma once
+
 
 #ifdef _WIN32
 
@@ -28,19 +28,20 @@ void Game_win::game_Loop()
 	UI::UI_console* ui_ptr = get_UI();
 	std::string frame = "";
 	clock_t start_time, end_time;
-	float tick = 0.33f;
+	float tick = 0.1f;
 	while (!endloop)
 	{
 		for (int i = 0; i < 3; i++) 
 		{
 			start_time = clock();
 			end_time = 0;
-			while(((float)(end_time-start_time)/CLOCKS_PER_SEC) < tick)
+			double time_elapsed = 0.0f;
+			while(time_elapsed <= tick)
 			{
 				Sleep(10);
 				if (_kbhit())
 				{
-					char inputchar = (char)_getch();
+					char inputchar = _getch();
 					if (!process_Input(inputchar))
 				    {
 						endloop = true;
@@ -49,7 +50,9 @@ void Game_win::game_Loop()
 					board_ptr->generate_Frame(frame);
 					ui_ptr->print_Frame(frame);
 				}
-				end_time = clock();	
+				end_time = clock();
+				time_elapsed = static_cast<double>(end_time - start_time) / static_cast<double>(CLOCKS_PER_SEC);
+				if (time_elapsed > tick) break;
 			}
 			if (endloop) break;
 		}

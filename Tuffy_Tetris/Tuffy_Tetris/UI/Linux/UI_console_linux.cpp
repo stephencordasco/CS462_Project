@@ -1,4 +1,3 @@
-#pragma once
 
 #ifndef _WIN32
 
@@ -136,7 +135,7 @@ void UI::UI_console_linux::displayHighScoreScreen(int score)
 	std::cout << "============================\n";
 }
 
-void UI::UI_console_linux::saveNewHighScoreScreen(int score)
+void UI::UI_console_linux::saveNewHighScoreScreen()
 {
 	if (getHasSubscription())
 	{
@@ -359,7 +358,7 @@ void UI::UI_console_linux::hsMenu()
 	{
 		//save high score screen
 	case '1':
-		saveNewHighScoreScreen(get_Game()->get_Score());
+		saveNewHighScoreScreen();
 		//enter key to go to main menu
 		std::cout << "Press enter to continue...";
 		std::cin.get();;

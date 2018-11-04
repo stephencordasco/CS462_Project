@@ -6,7 +6,7 @@ Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console.cpp
 Purpose:	defines default constructor and setters for member variables
 *******************************************************************************/
-#pragma once
+
 
 #include "UI_console.h"
 
@@ -61,4 +61,8 @@ Purpose:	gets string input for email from the keyboard and stores it
 void UI_console::setEmail()
 {
 	std::getline(std::cin, email);
+}
+
+UI::UI_console::~UI_console()
+{
 }

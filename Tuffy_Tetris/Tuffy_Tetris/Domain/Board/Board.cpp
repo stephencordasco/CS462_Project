@@ -1,4 +1,4 @@
-#pragma once
+
 
 #include "./Board.h"
 #include <string>
@@ -34,7 +34,7 @@ bool Board::generate_Frame(std::string & output)
 				if (piece_state[i][j])
 				{
 					//output the character corresponding to the piece type
-					output += (char)(display_symbol[current_piece->get_type()-1]);
+					output += static_cast<char>(display_symbol[current_piece->get_type()-1]);
 				}
 				else if (board_state[i][j])
 				{

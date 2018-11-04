@@ -6,7 +6,7 @@ Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		main_win.cpp
 Purpose:	main for Windows OS
 *******************************************************************************/
-#pragma once
+
 
 #ifdef _WIN32
 #include "../UI/Windows/UI_console_win.h"

@@ -17,6 +17,8 @@ namespace Services
 		virtual bool update_sub(std::string cNum, std::string accName, std::string secNum,
 								std::string dExp, std::string addr, std::string zip);
 		virtual bool check_sub();
+
+		virtual ~Game_server();
 	
 	};
 	

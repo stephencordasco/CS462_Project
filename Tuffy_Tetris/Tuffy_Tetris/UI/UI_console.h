@@ -37,7 +37,7 @@ namespace UI
 		virtual void displayPurchaseSubscriptionScreen() = 0;
 		virtual void displayPauseMenu() = 0;
 		virtual void displayHighScoreScreen(int) = 0;
-		virtual void saveNewHighScoreScreen(int) = 0;
+		virtual void saveNewHighScoreScreen() = 0;
 
 		// menu functionality
 		virtual bool login() = 0;
@@ -67,6 +67,8 @@ namespace UI
 		void set_Game(Domain::Game* g) { game = g; }
 		Services::Game_server* get_Server() { return server; }
 		void set_Server(Services::Game_server* s) { server = s; }
+
+		virtual ~UI_console();
 	private:
 		//common fields
 		char menuChoice;
