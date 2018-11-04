@@ -9,8 +9,8 @@ Purpose:	Defines methods for the abstract Game class.
 
 #include "Game.h"
 
-Domain::Game::Game(UI::UI_console * ui) : game_UI(ui), level(0), score(0), game_paused(false)
-, game_started(false), game_Board(nullptr), game_Server(nullptr) {}
+Domain::Game::Game(UI::UI_console * ui) : game_started(false), game_paused(false), score(0),
+level(0), game_UI(ui), game_Board(nullptr), game_Server(nullptr) {}
 
 Domain::Game::~Game()
 {
