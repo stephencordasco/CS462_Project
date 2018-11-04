@@ -8,11 +8,40 @@ Purpose:	main for Windows OS
 *******************************************************************************/
 #pragma once
 
+#ifdef _WIN32
 #include "../UI/Windows/UI_console_win.h"
 #include "Game/Windows/Game_win.h"
+#else
+#include "../UI/Linux/UI_console_linux.h"
+#include "Game/Linux/Game_linux.h"
+#endif
+
+class MainFactory
+{
+public:
+	static UI::UI_console* create_UI()
+	{
+#ifdef _WIN32
+		return new UI::UI_console_win();
+#else
+		return new UI::UI_console_linux();
+#endif		
+	}
+	static Domain::Game* create_Game(UI::UI_console* game_UI)
+	{
+#ifdef _WIN32
+		return new Domain::Game_win(game_UI);
+#else
+		return new Domain::Game_linux(game_UI);
+#endif		
+	}
+};
 
 int main(void) 
 {
+
+	UI::UI_console * game_UI = MainFactory::create_UI();
+	Domain::Game * game = MainFactory::create_Game(game_UI);
 	// pointer to an instance of the parent UI class
 	UI::UI_console * game_UI = new UI::UI_console_win();
 	// pointer to an instance of the parent Domain class
@@ -41,6 +70,7 @@ int main(void)
 	delete game;
 	delete server;
 
-	system("pause");
+	std::cout << "Press enter to continue...";
+	std::cin.get();
 	return 0;
 }

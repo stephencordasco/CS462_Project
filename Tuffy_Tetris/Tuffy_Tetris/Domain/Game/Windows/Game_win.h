@@ -3,9 +3,7 @@
 #include "../Game.h"
 #include "../../../UI/UI_console.h"
 #include "../../../UI/Windows/UI_console_win.h"
-#include <conio.h>
-#include <ctime>
-#include <Windows.h>
+
 
 
 namespace Domain 

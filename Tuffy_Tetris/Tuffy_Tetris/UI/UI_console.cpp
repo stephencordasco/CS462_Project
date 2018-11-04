@@ -25,6 +25,11 @@ UI_console::UI_console()
 	hasSubscription = false;
 }
 
+void UI::UI_console::clear_screen()
+{
+	std::cout << std::string(100, '\n');
+}
+
 /*******************************************************************************
 Name:		setUserName
 Parameters:	none

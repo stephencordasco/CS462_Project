@@ -8,6 +8,8 @@ Purpose:	defines member functions for UI_console_win class
 *******************************************************************************/
 #pragma once
 
+#ifdef _WIN32
+
 #include "UI_console_win.h"
 #include "../../Domain/Game/Game.h"
 #include <iostream>
@@ -26,7 +28,7 @@ void UI::UI_console_win::print_Frame(std::string frame)
 {
 	// stub
 	//todo
-	system("cls");
+	clear_screen();
 	std::cout << frame;
 }
 
@@ -37,7 +39,7 @@ Purpose:	clears the screen and prints the startup menu or login screen
 *******************************************************************************/
 void UI_console_win::displayLoginScreen()
 {
-	system("cls");
+	clear_screen();
 	std::cout << "======= WELCOME USER =======\n";
 	std::cout << "1.) Login\n";
 	std::cout << "2.) Register\n";
@@ -73,6 +75,8 @@ void UI_console_win::displayLogin()
 	{
 		// print a message that login failed...
 		std::cout << "Login failed. Please try again.\n";
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 		system("pause");
 		// ...print the login screen again
 		login();
@@ -108,6 +112,9 @@ void UI_console_win::displayRegister()
 	{
 		// print a message that registration failed...
 		std::cout << "Registration failed. Please try again.";
+		std::cout << "Press enter to continue...";
+		std::cin.get();
+		accountMenu();
 		system("pause");
 		// ...print the login screen again
 		login();
@@ -154,7 +161,7 @@ Purpose:	clears the screen, greets the user, and prints the main menu
 *******************************************************************************/
 void UI_console_win::displayMainMenu()
 {
-	system("cls");
+	clear_screen();
 	// display username
 	std::cout << "\nWelcome, " << getUserName() << "\n";
 	// print main menu
@@ -219,7 +226,7 @@ Purpose:	clears the scree, prints the current username and email of the
 *******************************************************************************/
 void UI_console_win::displayAccountMenu()
 {
-	system("cls");
+	clear_screen();
 	std::cout << "\n======= ACCOUNT MENU =======\n";
 	std::cout << "Current Username: " << this->getUserName() << "\n";
 	std::cout << "Current e-mail: " << this->getEmail() << "\n";
@@ -247,7 +254,8 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	{
 		// inform user they already have a subscription
 		std::cout << "\nYou already have a subscription!\n";
-		system("pause");
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 		// return to the account menu
 		accountMenu();
 		return;
@@ -289,13 +297,15 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	else 
 	{
 		std::cout << "Transaction denied. Please try again.\n";
-		system("pause");
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 		accountMenu();
 	}
 	// if the payment was successful take the user back to the account menu
 	if (getHasSubscription())
 	{
-		system("pause");
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 		accountMenu();
 	}
 }
@@ -307,7 +317,7 @@ Purpose:	clears the screen and displays the pause menu
 *******************************************************************************/
 void UI::UI_console_win::displayPauseMenu()
 {
-	system("cls");
+	clear_screen();
 	std::cout << "\n======== PAUSE MENU ========\n";
 	std::cout << "1.) Continue Game\n";
 	std::cout << "2.) Exit to Main Menu\n";
@@ -321,7 +331,7 @@ Purpose:	clears the scree and displays the high score menu
 *******************************************************************************/
 void UI::UI_console_win::displayHighScoreScreen(int score)
 {
-	system("cls");
+	clear_screen();
 	std::cout << "\n======== New High Score ========\n";
 	std::cout << "\n======== " << score << " ========\n";
 	std::cout << "1.) Save New High Score\n";
@@ -390,7 +400,8 @@ bool UI_console_win::accountMenu()
 			setUserName();
 			// print new username
 			std::cout << "\nThank you! Your new username is " << this->getUserName() << "\n";
-			system("pause");
+			std::cout << "Press enter to continue...";
+			std::cin.get();
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -404,7 +415,8 @@ bool UI_console_win::accountMenu()
 			setPassword();
 			// print new password
 			std::cout << "\nThank your! Your new password is " << this->getPassword() << "\n\n";
-			system("pause");
+			std::cout << "Press enter to continue...";
+			std::cin.get();
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -416,13 +428,15 @@ bool UI_console_win::accountMenu()
 
 		case '4':	// user chose to return to main menu
 			std::cout << "\nGoing back to main menu...\n";
-			system("pause");
+			std::cout << "Press enter to continue...";
+			std::cin.get();
 			return false;
 			break;
 
 		default:
 			std::cout << "\nINVALID MENU CHOICE\n";
-			system("pause");
+			std::cout << "Press enter to continue...";
+			std::cin.get();
 	}
 	return true;
 }
@@ -468,7 +482,8 @@ void UI::UI_console_win::hsMenu()
 	case '1':
 		saveNewHighScoreScreen(get_Game()->get_Score());
 		//enter key to go to main menu
-		system("pause");
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 		break;
 		//go directly to main menu
 	case '2':
@@ -490,3 +505,6 @@ char UI_console_win::getMenuChoice()
 	return choice[0];
 
 }
+
+#endif
+
