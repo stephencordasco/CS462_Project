@@ -10,7 +10,7 @@ namespace Domain
 
 namespace UI 
 {
-	class UI_console_linux : UI_console 
+	class UI_console_linux : public UI_console 
 	{
 	public:
 		UI_console_linux();
