@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef _WIN32
+
 #include "UI_console_linux.h"
 #include "../../Domain/Game/Game.h"
 #include <iostream>
@@ -375,3 +377,5 @@ char UI::UI_console_linux::getMenuChoice()
 	std::cin >> choice;
 	return choice[0];
 }
+
+#endif // !_WIN32

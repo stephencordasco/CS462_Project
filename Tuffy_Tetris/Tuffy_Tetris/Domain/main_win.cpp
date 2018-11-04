@@ -43,7 +43,7 @@ int main(void)
 	UI::UI_console * game_UI = MainFactory::create_UI();
 	// pointer to an instance of the parent Domain class
 	Domain::Game * game = MainFactory::create_Game(game_UI);
-	// pointer to an instance of the parent Services class
+	// pointer to an instance of the Services class
 	Services::Game_server * server = new Services::Game_server();
 	
 	game->set_game_Server(server);

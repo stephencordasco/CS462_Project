@@ -1,4 +1,8 @@
+
+
 #pragma once
+
+#ifndef _WIN32
 
 #include "./Game_linux.h"
 #include <iostream>
@@ -161,3 +165,5 @@ void Domain::Game_linux::end_Game()
 		std::cin.get();
 	}
 }
+
+#endif // !_WIN32
