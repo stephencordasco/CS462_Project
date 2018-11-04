@@ -74,10 +74,10 @@
     <ClCompile Include="UI\Windows\UI_console_win.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\main_win.cpp">
+    <ClCompile Include="Domain\Game\Game.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\Game\Game.cpp">
+    <ClCompile Include="Domain\main.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>
