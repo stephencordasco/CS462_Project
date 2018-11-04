@@ -49,7 +49,7 @@ void UI_console_win::displayLogin()
 	{
 		std::cout << "Login failed. Please try again.\n";
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		login();
 	}
 }
@@ -74,7 +74,7 @@ void UI_console_win::displayRegister()
 	{
 		std::cout << "Registration failed. Please try again.";
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		accountMenu();
 	}
 }
@@ -190,7 +190,7 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 		// inform user they already have a subscription
 		std::cout << "\nYou already have a subscription!\n";
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		// return to the account menu
 		accountMenu();
 		return;
@@ -231,14 +231,14 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	{
 		std::cout << "Transaction denied. Please try again.\n";
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		accountMenu();
 	}
 	// if the payment was successful take the user back to the account menu
 	if (getHasSubscription())
 	{
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		accountMenu();
 	}
 }
@@ -312,7 +312,7 @@ bool UI_console_win::accountMenu()
 			// print new username
 			std::cout << "\nThank you! Your new username is " << this->getUserName() << "\n";
 			std::cout << "Press enter to continue...";
-			std::cin.get();;
+			std::cin.get();
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -327,7 +327,7 @@ bool UI_console_win::accountMenu()
 			// print new password
 			std::cout << "\nThank your! Your new password is " << this->getPassword() << "\n\n";
 			std::cout << "Press enter to continue...";
-			std::cin.get();;
+			std::cin.get();
 			// in this case, take user back to account menu
 			accountMenu();
 			break;
@@ -340,14 +340,14 @@ bool UI_console_win::accountMenu()
 		case '4':	// user chose to return to main menu
 			std::cout << "\nGoing back to main menu...\n";
 			std::cout << "Press enter to continue...";
-			std::cin.get();;
+			std::cin.get();
 			return false;
 			break;
 
 		default:
 			std::cout << "\nINVALID MENU CHOICE\n";
 			std::cout << "Press enter to continue...";
-			std::cin.get();;
+			std::cin.get();
 	}
 	return true;
 }
@@ -380,7 +380,7 @@ void UI::UI_console_win::hsMenu()
 		saveNewHighScoreScreen(get_Game()->get_Score());
 		//enter key to go to main menu
 		std::cout << "Press enter to continue...";
-		std::cin.get();;
+		std::cin.get();
 		break;
 		//go directly to main menu
 	case '2':

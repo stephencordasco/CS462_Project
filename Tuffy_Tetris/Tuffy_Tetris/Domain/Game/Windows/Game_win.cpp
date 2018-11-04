@@ -134,7 +134,8 @@ void Domain::Game_win::end_Game()
 	else 
 	{
 		std::cout << "No new highscore.\n";
-		system("pause");
+		std::cout << "Press enter to continue...";
+		std::cin.get();
 	}
 }
 
