@@ -12,6 +12,11 @@ UI_console::UI_console()
 	hasSubscription = false;
 }
 
+void UI::UI_console::clear_screen()
+{
+	std::cout << std::string(100, '\n');
+}
+
 void UI_console::setUserName()
 {
 	std::getline(std::cin, username);

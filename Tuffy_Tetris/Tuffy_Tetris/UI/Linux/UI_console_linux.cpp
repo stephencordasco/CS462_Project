@@ -11,7 +11,7 @@ UI_console_linux::UI_console_linux() : UI_console() {}
 
 void UI::UI_console_linux::print_Frame(std::string frame)
 {
-	clear(1);
+	clear_screen();
 	std::cout << frame;
 }
 

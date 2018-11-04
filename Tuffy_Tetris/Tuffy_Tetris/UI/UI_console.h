@@ -40,6 +40,7 @@ namespace UI
 		// helper functions
 		virtual void displayLogin() = 0;
 		virtual void displayRegister() = 0;
+		void clear_screen();
 
 		// get user data
 		virtual char getMenuChoice() = 0;
