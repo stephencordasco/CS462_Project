@@ -42,9 +42,6 @@
     <ClInclude Include="Domain\Game\Game.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Domain\Game\Linux\Game_linux.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Game\Windows\Game_win.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
@@ -57,15 +54,9 @@
     <ClInclude Include="UI\Windows\UI_console_win.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI\Linux\UI_console_linux.h">
-      <Filter>Header Files\UI</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
-    <ClCompile Include="Domain\Game\Linux\Game_linux.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="Services\Game_server.cpp">
@@ -78,9 +69,6 @@
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="UI\UI_console.cpp">
-      <Filter>Source Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="UI\Linux\UI_console_linux.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="UI\Windows\UI_console_win.cpp">

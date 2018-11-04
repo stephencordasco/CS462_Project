@@ -2,6 +2,14 @@
 
 #include "../Board/Board.h"
 #include "../../UI/UI_console.h"
+#include <ctime>
+#ifdef _WIN32
+#include <conio.h>
+#include <Windows.h>
+#else
+#include <ncurses.h>
+#include <unistd.h>
+#endif
 
 namespace Domain {
 
