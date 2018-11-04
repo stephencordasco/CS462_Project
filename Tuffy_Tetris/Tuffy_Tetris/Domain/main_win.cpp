@@ -39,13 +39,10 @@ public:
 
 int main(void) 
 {
-
-	UI::UI_console * game_UI = MainFactory::create_UI();
-	Domain::Game * game = MainFactory::create_Game(game_UI);
 	// pointer to an instance of the parent UI class
-	UI::UI_console * game_UI = new UI::UI_console_win();
+	UI::UI_console * game_UI = MainFactory::create_UI();
 	// pointer to an instance of the parent Domain class
-	Domain::Game * game = new Domain::Game_win(game_UI);
+	Domain::Game * game = MainFactory::create_Game(game_UI);
 	// pointer to an instance of the parent Services class
 	Services::Game_server * server = new Services::Game_server();
 	

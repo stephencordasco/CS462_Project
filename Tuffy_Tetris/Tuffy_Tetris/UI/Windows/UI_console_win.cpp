@@ -77,7 +77,6 @@ void UI_console_win::displayLogin()
 		std::cout << "Login failed. Please try again.\n";
 		std::cout << "Press enter to continue...";
 		std::cin.get();
-		system("pause");
 		// ...print the login screen again
 		login();
 	}
@@ -114,8 +113,6 @@ void UI_console_win::displayRegister()
 		std::cout << "Registration failed. Please try again.";
 		std::cout << "Press enter to continue...";
 		std::cin.get();
-		accountMenu();
-		system("pause");
 		// ...print the login screen again
 		login();
 	}
