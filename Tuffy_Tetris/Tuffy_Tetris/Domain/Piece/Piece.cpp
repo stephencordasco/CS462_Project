@@ -17,13 +17,14 @@ Parameters:	none
 Purpose:	Default constructor for Piece class. Sets initial piece to type 1
 			and initializes neccesary parameters.
 *******************************************************************************/
-Piece::Piece()
+Piece::Piece() : points{}, skirt{}
 {
 	type = 1;
+	//initalize points[][] state
 	get_initial(piece1);
 	gen_skirt();
-	set_x(0);
-	set_y(0);
+	abs_x = 0;
+	abs_y = 0;
 }
 
 /*******************************************************************************
@@ -32,10 +33,10 @@ Parameters:	Integer values for piece type, and absolute x and y coordinates.
 Purpose:	Parameterized constructor for Piece class. Sets initial piece to type
 			given in parameter and initializes neccesary parameters.
 *******************************************************************************/
-Piece::Piece(int t, int x, int y)
+Piece::Piece(int t, int x, int y) : points{}, skirt{}
 {
 	type = t;
-	//get value for initial piece state
+	//initialize points[][] state
 	switch (t)
 	{
 	case 1:
@@ -54,8 +55,8 @@ Piece::Piece(int t, int x, int y)
 		this->get_initial(piece5);
 		break;
 	}
-	set_x(x);
-	set_y(y);
+	abs_x = x;
+	abs_y = y;
 	gen_skirt();
 }
 

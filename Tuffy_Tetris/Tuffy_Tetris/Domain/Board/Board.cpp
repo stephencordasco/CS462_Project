@@ -18,11 +18,12 @@ Parameters:	none
 Purpose:	Default constructor for Board class. Sets various properties to
 			default values and calls board initialization function.
 *******************************************************************************/
-Board::Board()
+Board::Board() : board_state{}, piece_state{}
 {
 	type_count = 0;
 	update_frame = false;
 	current_piece = nullptr;
+	//initialize board state
 	init_board();
 }
 
@@ -128,9 +129,9 @@ bool Board::draw_Piece_State()
 	int abs_x = current_piece->get_x();
 	int abs_y = current_piece->get_y();
 
-	for (int i = 0; i < 4; i++) 
+	for (unsigned char i = 0; i < 4; i++) 
 	{
-		bool * row = (current_piece->get_points()) + (4 * i);
+		bool * row = &((current_piece->get_points())[4 * i]);
 		for (int j = 0; j < 4; j++) 
 		{
 			// if the value in piece array is true, and out of bounds in x or y 

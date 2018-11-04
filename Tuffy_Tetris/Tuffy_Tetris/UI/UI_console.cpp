@@ -23,6 +23,8 @@ UI_console::UI_console()
 	password = " ";
 	email = " ";
 	hasSubscription = false;
+	game = nullptr;
+	server = nullptr;
 }
 
 /*******************************************************************************

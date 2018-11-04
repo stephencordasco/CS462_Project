@@ -57,7 +57,7 @@ void Game_win::game_Loop()
 		{
 			start_time = clock();
 			end_time = 0;
-			double time_elapsed = 0.0f;
+			float time_elapsed = 0.0f;
 			//loop while one tick has not elapsed
 			while(time_elapsed <= tick)
 			{
@@ -66,7 +66,7 @@ void Game_win::game_Loop()
 				if (_kbhit())
 				{
 					//get a character from the input buffer
-					char inputchar = _getch();
+					char inputchar = static_cast<char>(_getch());
 					//process the input character and call appropriate
 					//ui or board functions. break if user selected quit
 					if (!process_Input(inputchar))
@@ -80,8 +80,8 @@ void Game_win::game_Loop()
 				}
 				end_time = clock();
 				//find out how much time has elapsed in fractional seconds
-				time_elapsed = static_cast<double>(end_time - start_time) /
-					static_cast<double>(CLOCKS_PER_SEC);
+				time_elapsed = static_cast<float>(end_time - start_time) /
+					static_cast<float>(CLOCKS_PER_SEC);
 			}
 			if (endloop) break;
 		}
