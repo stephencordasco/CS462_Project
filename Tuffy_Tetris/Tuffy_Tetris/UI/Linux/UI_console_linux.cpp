@@ -2,14 +2,17 @@
 
 #include "UI_console_linux.h"
 #include "../../Domain/Game/Game.h"
+#include <iostream>
 
 using UI::UI_console_linux;
 
 UI_console_linux::UI_console_linux() : UI_console() {}
 
 
-void UI::UI_console_linux::print_Frame(std::string)
+void UI::UI_console_linux::print_Frame(std::string frame)
 {
+	clear(1);
+	std::cout << frame;
 }
 
 void UI::UI_console_linux::displayLoginScreen()
