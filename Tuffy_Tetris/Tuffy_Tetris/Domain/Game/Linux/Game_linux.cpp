@@ -61,7 +61,6 @@ void Game_linux::game_Loop()
 			double time_elapsed = 0.0f;
 			while (time_elapsed <= tick)
 			{
-				usleep(10000);
 				if (kbhit())
 				{
 					char inputchar = getch();
