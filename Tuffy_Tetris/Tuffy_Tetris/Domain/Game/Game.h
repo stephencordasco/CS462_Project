@@ -7,7 +7,7 @@
 #include <conio.h>
 #include <Windows.h>
 #else
-#include <ncurses.h>
+#include "../../../include/ncurses.h"
 #include <unistd.h>
 #endif
 
