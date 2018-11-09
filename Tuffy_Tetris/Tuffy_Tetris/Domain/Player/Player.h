@@ -22,7 +22,7 @@ namespace Domain
 			// constructor
 			Player();
 			// overloaded constructor
-			Player(const char *, const char *, const char *, int);
+			Player(const char *, const char *, const char *, int, bool);
 			// destructor
 			~Player();
 			

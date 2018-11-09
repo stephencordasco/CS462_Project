@@ -27,6 +27,7 @@ Player::Player()
 	setPassword("");
 	setEmail("");
 	setHighScore(0);
+	setSubscription(false);
 }
 
 /*******************************************************************************
@@ -35,12 +36,13 @@ Parameters:	const char *, const char *, const char *, int
 Purpose:	Overloaded constructor for Player class. Sets various properties to
 			parameter values.
 *******************************************************************************/
-Player::Player(const char *uname, const char *pword, const char *mail, int score)
+Player::Player(const char *uname, const char *pword, const char *mail, int score, bool value)
 {
 	setUsername(uname);
 	setPassword(pword);
 	setEmail(mail);
 	setHighScore(score);
+	setSubscription(value);
 }
 
 /*******************************************************************************
@@ -50,7 +52,7 @@ Purpose:	Destructor for Player class.
 *******************************************************************************/
 Player::~Player()
 {
-
+	// TODO
 }
 
 /*******************************************************************************
@@ -61,12 +63,15 @@ Purpose:	sets the username for the player object by initializing it to the
 *******************************************************************************/
 Player& Player::setUsername(const char *uname)
 {
+	// is the username less than 20 characters?
 	if (strlen(uname) < 20)
 	{
+		// yes, copy characters from uname to username
 		strncpy_s(username, uname, sizeof(username));
 	}
 	else
 	{
+		// no, copy the first 19 characters; set the final char to null
 		strncpy_s(username, uname, 19);
 		username[20] = '\0';
 	}
@@ -82,12 +87,15 @@ Purpose:	sets the password for the player object by initializing it to the
 *******************************************************************************/
 Player& Player::setPassword(const char *pword)
 {
+	// is the password less than 16 characters?
 	if (strlen(pword) < 16)
 	{
+		// yes, copy characters from pword to password
 		strncpy_s(password, pword, sizeof(password));
 	}
 	else
 	{
+		// no, copy the first 15 characters, set the final char to null
 		strncpy_s(password, pword, 15);
 		password[16] = '\0';
 	}
@@ -103,12 +111,15 @@ Purpose:	sets the email for the player object by initializing it to the
 *******************************************************************************/
 Player& Player::setEmail(const char *mail)
 {
+	// is the email less than 50 characters?
 	if (strlen(mail) < 50)
 	{
+		// yes, copy characters from mail to email
 		strncpy_s(email, mail, sizeof(email));
 	}
 	else
 	{
+		// no, copy the first 49 characters, set the final char to null
 		strncpy_s(email, mail, 49);
 		email[50] = '\0';
 	}
