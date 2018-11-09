@@ -11,6 +11,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 *******************************************************************************/
 #pragma once
 
+#include <cstring>
+
 namespace Domain
 {
 
@@ -29,18 +31,22 @@ namespace Domain
 			Player &setPassword(const char *);
 			Player &setEmail(const char *);
 			Player &setHighScore(int);
+			Player &setSubscription(bool);
 
 			// getters
 			const char *getUsername();
 			const char *getPassword();
 			const char *getEmail();
 			int getHighScore();
+			bool getSubscription();
 
 		private:
+			// class attributes
 			char username[20];
 			char password[16];
 			char email[50];
 			int highScore;
+			bool hasSubscription;
 	};
 
 }
