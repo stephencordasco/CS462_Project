@@ -276,6 +276,29 @@ void UI::UI_console_linux::displayRegister()
 }
 
 /*******************************************************************************
+Name:		isAdmin
+Parameters:	none
+Purpose:	checks if the user is an admin or a player
+*******************************************************************************/
+bool UI_console_win::isAdmin()
+{
+	// store the string contained in admin username
+	std::string admin = "admin_";
+	// store the location of the string
+	std::size_t found = this->getUserName().find(admin);
+
+	// if the username contains admin string, recognize them as admin
+	if (found != std::string::npos)
+	{
+		return true;	// user is an admin
+	}
+	else
+	{
+		return false;	// user is a player
+	}
+}
+
+/*******************************************************************************
 Name:		login
 Parameters:	none
 Purpose:	prints the startup menu or login screen, gets a menu choice from

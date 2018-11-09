@@ -50,6 +50,7 @@ namespace UI
 		virtual void displayLogin() = 0;
 		virtual void displayRegister() = 0;
 		void clear_screen();
+		virtual bool isAdmin() = 0;
 
 		// get user data
 		virtual char getMenuChoice() = 0;

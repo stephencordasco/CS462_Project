@@ -40,6 +40,7 @@ namespace UI
 		// helper functions
 		void displayLogin() override;
 		void displayRegister() override;
+		bool isAdmin() override;
 
 		// menu functionality
 		bool login() override;
