@@ -22,6 +22,7 @@ UI_console::UI_console()
 	username = " ";
 	password = " ";
 	email = " ";
+	highScore = 0;
 	hasSubscription = false;
 	game = nullptr;
 	server = nullptr;
@@ -30,7 +31,8 @@ UI_console::UI_console()
 /*******************************************************************************
 Name:		clear_screen
 Parameters:	none
-Purpose:	Helper function that simply prints 100 newlines to clear console screen
+Purpose:	Helper function that simply prints 100 newlines to clear console
+			screen
 *******************************************************************************/
 void UI::UI_console::clear_screen()
 {

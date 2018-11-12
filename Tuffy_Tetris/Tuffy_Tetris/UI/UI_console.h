@@ -10,13 +10,16 @@ Purpose:	interface class declares virtual member functions and member
 #pragma once
 
 #include "../Services/Game_server.h"
+#include "../Domain/Player/Player.h"
 #include <string>
+#include <cstring>
 #include <iostream>
 
 //forward declaration for Game class
 namespace Domain 
 {
 	class Game;
+	class Player;
 }
 
 namespace UI 
@@ -75,9 +78,9 @@ namespace UI
 		std::string username;
 		std::string password;
 		std::string email;
+		int highScore;
 		bool hasSubscription;
 		Domain::Game* game;
 		Services::Game_server* server;
-
 	};
 }

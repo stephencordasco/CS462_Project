@@ -15,6 +15,7 @@ Purpose:	child class of UI_console declares member functions and member
 namespace Domain 
 {
 	class Game_win;
+	class Player;
 }
 
 namespace UI
@@ -53,6 +54,6 @@ namespace UI
 		char getMenuChoice() override;
 
 	private:
-		
+		Domain::Player* player;
 	};
 }
