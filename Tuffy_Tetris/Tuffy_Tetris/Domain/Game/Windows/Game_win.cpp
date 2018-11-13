@@ -91,6 +91,9 @@ void Game_win::game_Loop()
 		//generate and print an output screen frame
 		board_ptr->generate_Frame(frame);
 		ui_ptr->print_Frame(frame);
+
+		// TODO -- under construction --
+		// check for a full row
 	}
 	end_Game();
 }

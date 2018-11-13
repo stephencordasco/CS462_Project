@@ -14,6 +14,7 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 
 #include "../Piece/Piece.h"
 #include <string>
+#include <vector>
 
 namespace Domain
 {
@@ -29,6 +30,9 @@ namespace Domain
 		bool move_Right();
 		bool rotate_Piece();
 		bool system_Move();
+		// TODO -- under construction --
+		void checkFullRow(bool state[22][12]);
+
 	private:
 
 		void init_board();
