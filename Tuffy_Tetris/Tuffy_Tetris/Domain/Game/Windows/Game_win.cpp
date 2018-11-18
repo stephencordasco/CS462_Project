@@ -94,6 +94,7 @@ void Game_win::game_Loop()
 
 		// TODO -- under construction --
 		// check for a full row
+		board_ptr->checkFullRow();
 	}
 	end_Game();
 }

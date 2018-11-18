@@ -10,7 +10,7 @@ Purpose:	Defines method implementations for the Board class.
 #include "./Board.h"
 #include <iostream>
 #include <string>
-#include <vector>
+#include <list>
 
 using Domain::Board;
 
@@ -348,38 +348,41 @@ void Domain::Board::init_piece()
 }
 
 // TODO -- under construction --
-void Board::checkFullRow(bool state[22][12])
+void Board::checkFullRow()
 {
 	// count the number of true spaces in a row
 	int count = 0;
 	// vector to store indices of the row to clear
-	std::vector<int> indices;
+	std::list<int> indices;
 
-	for (int i = 0; i < 22; i++)
+	for (int i = 1; i < 21; i++)
 	{
 		count = 0;
 		for (int j = 1; j < 11; j++)
 		{
-			if (state[i][j])
+			if (board_state[i][j])
 			{
 				count++;
 			}
 		}
 		// check if the row is true (full)
-		if (count == 12)
+		if (count == 10)
 		{
-			// get index of row
-			indices.insert(indices.end(), i, 1);
+			indices.push_back(i);
 		}
 	}
 	// get index of all rows to clear
 	// clear rows of given index
-	for (unsigned int i = 0; i < indices.size(); i++)
+	for (auto v : indices)
 	{
 		if (!indices.empty())
 		{
-			std::cout << "Row: " << indices.at(i) << "\n";
-			system("pause");
+			std::cout << "Row: " << v << "\n";
 		}
-	}
+	} 
+}
+
+void Board::clearRow()
+{
+
 }
