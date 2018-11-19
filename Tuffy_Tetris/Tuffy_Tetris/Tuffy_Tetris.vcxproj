@@ -23,6 +23,7 @@
     <ClInclude Include="Domain\Game\Game.h" />
     <ClInclude Include="Domain\Game\Windows\Game_win.h" />
     <ClInclude Include="Domain\Piece\Piece.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Services\Game_server.h" />
     <ClInclude Include="UI\UI_console.h" />
     <ClInclude Include="UI\Windows\UI_console_win.h" />
@@ -33,6 +34,7 @@
     <ClCompile Include="Domain\Game\Windows\Game_win.cpp" />
     <ClCompile Include="Domain\main.cpp" />
     <ClCompile Include="Domain\Piece\Piece.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Services\Game_server.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />
