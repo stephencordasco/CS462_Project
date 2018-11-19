@@ -379,10 +379,12 @@ void Board::checkFullRow()
 		{
 			std::cout << "Row: " << v << "\n";
 		}
-	} 
+	}
+
+	clearRow(indices);
 }
 
-void Board::clearRow()
+void Board::clearRow(std::list<int> li)
 {
-
+	
 }
