@@ -22,7 +22,8 @@ Purpose:	Default constructor for Board class. Sets various properties to
 *******************************************************************************/
 Board::Board() : board_state{}, piece_state{}
 {
-	type_count = 0;
+	rand_piece = std::default_random_engine();
+	dist_piece = std::uniform_int_distribution<int>(0, 4);
 	update_frame = false;
 	current_piece = nullptr;
 	//initialize board state
@@ -56,7 +57,7 @@ bool Board::generate_Frame(std::string & output)
 				if (piece_state[i][j])
 				{
 					//output the character corresponding to the piece type
-					output += static_cast<char>(display_symbol[current_piece->get_type()-1]);
+					output += current_piece->get_displaychar();
 				}
 				else if (board_state[i][j])
 				{
@@ -80,8 +81,8 @@ Name:		spawn_Piece
 Parameters:	Integers representing Piece type, and absolute x and y coordinates
 			for a Piece.
 Purpose:	Creates a new piece of a specific type at a specific x and y
-			coordinate. If the type value is less than 0, method will reference
-			the type_count property and print the next Piece type in order.
+			coordinate. If the type value is less than 0, method will use the
+			piece factory to generate a random piece.
 *******************************************************************************/
 void Board::spawn_Piece(int type, int x, int y)
 {
@@ -90,11 +91,10 @@ void Board::spawn_Piece(int type, int x, int y)
 	//setting a type < 0 will use type_count value to cycle each piece in order
 	if (type_holder < 0)
 	{
-		//increment piece type_count to cycle through each piece type in order
-		type_holder = type_count+1;
+		type_holder = dist_piece(rand_piece);
 	}
-	type_count = (type_count + 1) % 5;
-	current_piece = new Piece(type_holder, x, y);
+
+	current_piece = PieceFactory::createPiece(type_holder, x, y);
 	//draw new piece_state
 	draw_Piece_State();
 }
@@ -383,3 +383,4 @@ void Board::checkFullRow(bool state[22][12])
 		}
 	}
 }
+

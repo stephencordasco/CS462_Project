@@ -23,6 +23,12 @@
     <ClInclude Include="Domain\Game\Game.h" />
     <ClInclude Include="Domain\Game\Windows\Game_win.h" />
     <ClInclude Include="Domain\Piece\Piece.h" />
+    <ClInclude Include="Domain\Piece\Piece1.h" />
+    <ClInclude Include="Domain\Piece\Piece2.h" />
+    <ClInclude Include="Domain\Piece\Piece3.h" />
+    <ClInclude Include="Domain\Piece\Piece4.h" />
+    <ClInclude Include="Domain\Piece\Piece5.h" />
+    <ClInclude Include="Domain\Piece\PieceFactory.h" />
     <ClInclude Include="Services\Game_server.h" />
     <ClInclude Include="UI\UI_console.h" />
     <ClInclude Include="UI\Windows\UI_console_win.h" />
@@ -33,6 +39,12 @@
     <ClCompile Include="Domain\Game\Windows\Game_win.cpp" />
     <ClCompile Include="Domain\main.cpp" />
     <ClCompile Include="Domain\Piece\Piece.cpp" />
+    <ClCompile Include="Domain\Piece\Piece1.cpp" />
+    <ClCompile Include="Domain\Piece\Piece2.cpp" />
+    <ClCompile Include="Domain\Piece\Piece3.cpp" />
+    <ClCompile Include="Domain\Piece\Piece4.cpp" />
+    <ClCompile Include="Domain\Piece\Piece5.cpp" />
+    <ClCompile Include="Domain\Piece\PieceFactory.cpp" />
     <ClCompile Include="Services\Game_server.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />

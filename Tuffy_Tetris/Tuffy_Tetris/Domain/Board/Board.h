@@ -13,8 +13,10 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 #pragma once
 
 #include "../Piece/Piece.h"
+#include "../Piece/PieceFactory.h"
 #include <string>
 #include <vector>
+#include <random>
 
 namespace Domain
 {
@@ -41,13 +43,11 @@ namespace Domain
 		bool draw_Piece_State();
 		void draw_Board_State();
 		bool validate_Move();
-		// ASCII values for displaying letters in output
-		// T U Y F F respectively
-		int display_symbol[5] = { 84,85,89,70,70 };
 		bool board_state[22][12];
 		bool piece_state[22][12];
 		bool update_frame;
-		int type_count;
+		std::default_random_engine rand_piece;
+		std::uniform_int_distribution<int> dist_piece;
 		Piece * current_piece;
 	};
 
