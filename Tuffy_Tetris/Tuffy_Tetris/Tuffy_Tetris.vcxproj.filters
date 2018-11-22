@@ -31,6 +31,12 @@
     <Filter Include="Source Files\UI">
       <UniqueIdentifier>{cde80118-f2f6-4899-b384-3df56ed1229a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Domain\Piece">
+      <UniqueIdentifier>{fafb4e6e-bb65-445e-8d15-1c6f533a59f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Domain\Piece">
+      <UniqueIdentifier>{5cd3bc8d-ac01-4097-b71e-c17da829accb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Services\Game_server.h">
@@ -45,14 +51,32 @@
     <ClInclude Include="Domain\Game\Windows\Game_win.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Domain\Piece\Piece.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="UI\UI_console.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
     <ClInclude Include="UI\Windows\UI_console_win.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece1.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece2.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece3.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece4.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\Piece5.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Piece\PieceFactory.h">
+      <Filter>Header Files\Domain\Piece</Filter>
     </ClInclude>
     <ClInclude Include="Logger.h">
       <Filter>Header Files\Services</Filter>
@@ -68,9 +92,6 @@
     <ClCompile Include="Domain\Game\Windows\Game_win.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\Piece\Piece.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
     <ClCompile Include="UI\UI_console.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
@@ -82,6 +103,27 @@
     </ClCompile>
     <ClCompile Include="Domain\main.cpp">
       <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece1.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece2.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece3.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece4.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Piece5.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\PieceFactory.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Services</Filter>
