@@ -14,47 +14,24 @@ using Domain::Piece;
 /*******************************************************************************
 Name:		Piece
 Parameters:	none
-Purpose:	Default constructor for Piece class. Sets initial piece to type 1
-			and initializes neccesary parameters.
+Purpose:	Default constructor for Piece class. 
 *******************************************************************************/
 Piece::Piece() : points{}, skirt{}
 {
-	type = 1;
 	//initalize points[][] state
-	get_initial(piece1);
-	gen_skirt();
 	abs_x = 0;
 	abs_y = 0;
+	gen_skirt();
+	
 }
 
 /*******************************************************************************
 Name:		Piece
-Parameters:	Integer values for piece type, and absolute x and y coordinates.
-Purpose:	Parameterized constructor for Piece class. Sets initial piece to type
-			given in parameter and initializes neccesary parameters.
+Parameters:	Integer values for absolute x and y coordinates.
+Purpose:	Parameterized constructor for Piece class.
 *******************************************************************************/
-Piece::Piece(int t, int x, int y) : points{}, skirt{}
+Piece::Piece(int x, int y) : points{}, skirt{}
 {
-	type = t;
-	//initialize points[][] state
-	switch (t)
-	{
-	case 1:
-		this->get_initial(piece1);
-		break;
-	case 2:
-		this->get_initial(piece2);
-		break;
-	case 3:
-		this->get_initial(piece3);
-		break;
-	case 4:
-		this->get_initial(piece4);
-		break;
-	case 5:
-		this->get_initial(piece5);
-		break;
-	}
 	abs_x = x;
 	abs_y = y;
 	gen_skirt();
@@ -164,24 +141,6 @@ void Piece::gen_skirt()
 			}
 		}
 
-	}
-}
-
-/*******************************************************************************
-Name:		gen_initial
-Parameters:	Reference to a 4x4 boolean array. Represents the initial state of
-			one of 5 tetris piece shapes.
-Purpose:	Initializes the piece points[4][4] array to one of 5 preset tetris
-			shapes.
-*******************************************************************************/
-void Piece::get_initial(bool(&piece)[4][4])
-{
-	for (int i = 0; i < 4; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			points[i][j] = piece[i][j];
-		}
 	}
 }
 
