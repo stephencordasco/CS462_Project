@@ -32,7 +32,6 @@ namespace Domain
 		bool system_Move();
 		// TODO -- under construction --
 		void checkFullRow();
-		void clearRow(std::list<int> li);
 
 	private:
 
