@@ -381,3 +381,26 @@ void Board::checkFullRow()
 		}
 	}
 }
+
+void Board::shiftRow(std::list<int> indices)
+{
+	// reverse the list so that clearing begins at the bottom of the board
+	indices.reverse();
+	std::string output = " ";
+
+	for (auto v : indices)
+	{
+		for (int i = 20; i > 0; i--)
+		{
+			if (v == i)
+			{
+				for (int j = 1; j < 11; j++)
+				{
+					// clear the row
+					board_state[i][j] = false;
+				}
+				generate_Frame(output);
+			}
+		}
+	}
+}
