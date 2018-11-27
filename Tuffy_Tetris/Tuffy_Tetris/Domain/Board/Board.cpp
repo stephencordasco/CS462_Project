@@ -371,15 +371,17 @@ void Board::checkFullRow()
 			indices.push_back(i);
 		}
 	}
+	shiftRow(indices);
+
 	// get index of all rows to clear
 	// clear rows of given index
-	for (auto v : indices)
+	/*for (auto v : indices)
 	{
 		if (!indices.empty())
 		{
 			std::cout << "Row: " << v << "\n";
 		}
-	}
+	}*/
 }
 
 void Board::shiftRow(std::list<int> indices)
