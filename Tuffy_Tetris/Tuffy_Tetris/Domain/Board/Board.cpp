@@ -371,38 +371,27 @@ void Board::checkFullRow()
 			indices.push_back(i);
 		}
 	}
-	shiftRow(indices);
 
-	// get index of all rows to clear
-	// clear rows of given index
-	/*for (auto v : indices)
-	{
-		if (!indices.empty())
-		{
-			std::cout << "Row: " << v << "\n";
-		}
-	}*/
+	// find full rows and clear them
+	clearRow(indices);
 }
 
-void Board::shiftRow(std::list<int> indices)
+void Board::clearRow(std::list<int> indices)
 {
-	// reverse the list so that clearing begins at the bottom of the board
+	// reverse list so that clearing begins at bottom of board
 	indices.reverse();
 	std::string output = " ";
 
-	for (auto v : indices)
+	// traverse the list of vertices and clear the rows
+	for (std::list<int>::iterator it = indices.begin(); it != indices.end(); it++)
 	{
-		for (int i = 20; i > 0; i--)
+		for (int j = 1; j < 11; j++)
 		{
-			if (v == i)
-			{
-				for (int j = 1; j < 11; j++)
-				{
-					// clear the row
-					board_state[i][j] = false;
-				}
-				generate_Frame(output);
-			}
+			// clear full row
+			board_state[*it][j] = false;
 		}
 	}
+
+	// update frame
+	generate_Frame(output);
 }
