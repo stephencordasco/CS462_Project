@@ -8,7 +8,8 @@ Purpose:	Child class of Game class that declares member functions
 			for use with Linux OS
 *******************************************************************************/
 
-#pragma once
+#ifndef GAME_LINUX_H
+#define GAME_LINUX_H
 
 #include "../Game.h"
 #include "../../../UI/UI_console.h"
@@ -29,3 +30,5 @@ namespace Domain
 	};
 
 }
+
+#endif

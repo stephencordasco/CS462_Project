@@ -10,7 +10,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 			logical data frames for output.
 *******************************************************************************/
 
-#pragma once
+#ifndef BOARD_H
+#define BOARD_H
 
 #include "../Piece/Piece.h"
 #include "../Piece/PieceFactory.h"
@@ -54,3 +55,5 @@ namespace Domain
 	};
 
 }
+
+#endif

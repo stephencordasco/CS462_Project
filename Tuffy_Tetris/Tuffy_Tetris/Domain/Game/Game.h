@@ -9,7 +9,8 @@ Purpose:	Declares abstract base class for a Game instance. Contains properties
 			Game_server instance, and controlling the game Board object.
 *******************************************************************************/
 
-#pragma once
+#ifndef GAME_H
+#define GAME_H
 
 #include "../Board/Board.h"
 #include "../../UI/UI_console.h"
@@ -60,3 +61,5 @@ namespace Domain {
 	};
 
 }
+
+#endif

@@ -9,7 +9,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 			and validates moves based on predefined game rules. Also generates
 			logical data frames for output.
 *******************************************************************************/
-#pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 
 #include <cstring>
 
@@ -50,3 +51,5 @@ namespace Domain
 	};
 
 }
+
+#endif

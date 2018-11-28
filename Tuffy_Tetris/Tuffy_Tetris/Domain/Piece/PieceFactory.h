@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PIECEFACTORY_H
+#define PIECEFACTORY_H
+
 #include "Piece.h"
 #include "Piece1.h"
 #include "Piece2.h"
@@ -16,3 +18,5 @@ namespace Domain
 		static Piece* createPiece(int type, int x, int y);
 	};
 }
+
+#endif

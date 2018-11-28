@@ -8,7 +8,8 @@ Purpose:	Child class of Game class that declares member functions
 			for use with Windows OS
 *******************************************************************************/
 
-#pragma once
+#ifndef GAME_WIN_H
+#define GAME_WIN_H
 
 #include "../Game.h"
 #include "../../../UI/UI_console.h"
@@ -30,3 +31,5 @@ namespace Domain
 
 	};
 }
+
+#endif

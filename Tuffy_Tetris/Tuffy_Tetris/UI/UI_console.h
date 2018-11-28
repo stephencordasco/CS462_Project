@@ -7,7 +7,10 @@ File:		UI_console.h
 Purpose:	interface class declares virtual member functions and member
 			variables
 *******************************************************************************/
-#pragma once
+
+#ifndef UI_CONSOLE_H
+
+#define UI_CONSOLE_H
 
 #include "../Services/Game_server.h"
 #include "../Domain/Player/Player.h"
@@ -84,3 +87,5 @@ namespace UI
 		Services::Game_server* server;
 	};
 }
+
+#endif

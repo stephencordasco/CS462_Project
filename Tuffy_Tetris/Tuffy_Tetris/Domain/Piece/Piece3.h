@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PIECE3_H
+#define PIECE3_H
 
 #include "Piece.h"
 
@@ -12,3 +13,5 @@ namespace Domain
 		void Piece::init();
 	};
 }
+
+#endif

@@ -8,7 +8,8 @@ Purpose:	child class of UI_console declares member functions and member
 			variables for Linux OS
 *******************************************************************************/
 
-#pragma once
+#ifndef UI_CONSOLE_LINUX_H
+#define UI_CONSOLE_LINUX_H
 
 #include "../UI_console.h"
 
@@ -56,3 +57,5 @@ namespace UI
 	
 	};
 }
+
+#endif
