@@ -321,7 +321,7 @@ void Domain::Board::init_board()
 /*******************************************************************************
 Name:		init_piece
 Parameters:	none
-Purpose:	Similar to init_board, but only initializes the state of a new piece.
+Purpose:	Similar to init_board, but only initializes the state of a new piece
 *******************************************************************************/
 void Domain::Board::init_piece() 
 {
@@ -347,7 +347,12 @@ void Domain::Board::init_piece()
 
 }
 
-// TODO -- under construction --
+/*******************************************************************************
+Name:		checkFullRow
+Parameters:	none
+Purpose:	checks board_state during each "tick" to find full rows; pushes row
+			index onto indices list and calls clearRow helper function
+*******************************************************************************/
 void Board::checkFullRow()
 {
 	// count the number of true spaces in a row
@@ -376,6 +381,11 @@ void Board::checkFullRow()
 	clearRow(indices);
 }
 
+/*******************************************************************************
+Name:		clearRow
+Parameters:	integer list
+Purpose:	clears the rows (sets values to false) that are full
+*******************************************************************************/
 void Board::clearRow(std::list<int> indices)
 {
 	// reverse list so that clearing begins at bottom of board
@@ -391,7 +401,7 @@ void Board::clearRow(std::list<int> indices)
 			board_state[*it][j] = false;
 		}
 	}
-
+	
 	// update frame
 	generate_Frame(output);
 }

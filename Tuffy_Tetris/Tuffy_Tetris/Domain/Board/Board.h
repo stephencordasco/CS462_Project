@@ -36,7 +36,6 @@ namespace Domain
 		// TODO -- under construction --
 		void checkFullRow();
 		void clearRow(std::list<int>);
-		//void shiftBoard();
 
 	private:
 
