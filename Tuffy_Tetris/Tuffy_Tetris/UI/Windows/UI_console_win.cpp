@@ -59,11 +59,6 @@ void UI_console_win::displayLogin()
 	std::cin.get();
 	// print the login fields
 	std::cout << "Username: ";
-	// ====================== LNK1120: 1 unresolved external ======================
-	/*char name[20];
-	std::cin.getline(name, 20, '\n');
-	player->setUsername(name);*/
-	// ============================================================================
 	setUserName();
 	std::cout << "Password: ";
 	setPassword();
