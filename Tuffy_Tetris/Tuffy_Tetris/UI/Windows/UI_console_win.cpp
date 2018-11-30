@@ -119,11 +119,11 @@ void UI_console_win::displayLogin()
 	std::cin.getline(name, 20, '\n');
 	player->setUsername(name);*/
 	// ============================================================================
-	setUserName();
+	std::getline(std::cin, username);
 	std::cout << "Password: ";
-	setPassword();
+	std::getline(std::cin, password);
 	std::cout << "email: ";
-	setEmail();
+	std::getline(std::cin, email);
 	
 	// greet the user if login successful
 	if (game->login(username, password))
@@ -157,11 +157,11 @@ void UI_console_win::displayRegister()
 	// print the register fields
 	std::cout << "\nPlease fill in the following fields:\n";
 	std::cout << "\tUsername: ";
-	setUserName();
+	std::getline(std::cin, username);
 	std::cout << "\tPassword: ";
-	setPassword();
+	std::getline(std::cin, password);
 	std::cout << "\tCSUF email: ";
-	setEmail();
+	std::getline(std::cin, email);
 
 	// greet the user if registration successful
 	if (game->register_acct(username, password, email))
@@ -226,7 +226,7 @@ void UI_console_win::displayMainMenu()
 {
 	clear_screen();
 	// display username
-	if (isAdmin())
+	if (game->is_Admin(username))
 	{
 		std::cout << "Welcome, Admin\n";
 	}
@@ -467,27 +467,49 @@ bool UI_console_win::accountMenu()
 			// print current username
 			std::cout << "\nYour current username: " << username << "\n";
 			std::cout << "Enter a new username: ";
-			setUserName();
-			// print new username
-			std::cout << "\nThank you! Your new username is " << username << "\n";
-			std::cout << "Press enter to continue...";
-			std::cin.get();
-			// in this case, take user back to account menu
-			accountMenu();
+			std::getline(std::cin, username);
+			if(game->set_User(username))
+			{
+				// print new username
+				std::cout << "\nThank you! Your new username is " << username << "\n";
+				std::cout << "Press enter to continue...";
+				std::cin.get();
+				// in this case, take user back to account menu
+				accountMenu();
+			}
+			else 
+			{
+				username = game->get_User();
+				std::cout << "Setting username failed, please try again later.\n";
+				std::cout << "Press enter to continue...";
+				std::cin.get();
+				accountMenu();
+			}
 			break;
 
 		case '2':	// user chose to change password
 			// print the change password screen
 			std::cin.get();
 			std::cout << "Enter a new password: ";
-			setPassword();
-			// print new password
-			std::cout << "\nThank your! Your new password is " << password << "\n\n";
-			password = "";
-			std::cout << "Press enter to continue...";
-			std::cin.get();
-			// in this case, take user back to account menu
-			accountMenu();
+			std::getline(std::cin, username);
+			if (game->set_Email(username)) 
+			{
+				// print new password
+				std::cout << "\nThank your! Your new password is " << password << "\n\n";
+				password = "";
+				std::cout << "Press enter to continue...";
+				std::cin.get();
+				// in this case, take user back to account menu
+				accountMenu();
+			}
+			else 
+			{
+				std::cout << "Resetting password failed, please try again later.\n";
+				std::cout << "Press enter to continue...";
+				std::cin.get();
+				accountMenu();
+			}
+			
 			break;
 
 		case '3':	// user chose to purchase subscription
@@ -561,6 +583,17 @@ void UI::UI_console_win::hsMenu()
 }
 
 /*******************************************************************************
+Name:		clear_screen
+Parameters:	none
+Purpose:	Helper function that simply prints 100 newlines to clear console
+			screen
+*******************************************************************************/
+void UI::UI_console_win::clear_screen()
+{
+	std::cout << std::string(50, '\n');
+}
+
+/*******************************************************************************
 Name:		getMenuChoice
 Parameters:	none
 Purpose:	prompts the user to enter a menu choice, gets the menu choice,
@@ -573,6 +606,16 @@ char UI_console_win::getMenuChoice()
 	std::cin >> choice;
 	return choice[0];
 
+}
+
+void UI::UI_console_win::set_Game(Domain::Game * g)
+{
+	game = g;
+}
+
+void UI::UI_console_win::set_Player(Domain::Player * p)
+{
+	player = p;
 }
 
 #endif

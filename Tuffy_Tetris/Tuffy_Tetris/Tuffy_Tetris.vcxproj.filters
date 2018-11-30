@@ -45,9 +45,6 @@
     <ClInclude Include="Domain\Board\Board.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Domain\Game\Windows\Game_win.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="UI\UI_console.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
@@ -84,6 +81,9 @@
     <ClInclude Include="Domain\Game\Game.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
+    <ClInclude Include="Domain\Player\Player.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
@@ -91,9 +91,6 @@
     </ClCompile>
     <ClCompile Include="Services\Game_server.cpp">
       <Filter>Source Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Domain\Game\Windows\Game_win.cpp">
-      <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="UI\UI_console.cpp">
       <Filter>Source Files\UI</Filter>
@@ -133,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="Domain\Game\Game.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Player\Player.cpp">
+      <Filter>Source Files\Domain</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

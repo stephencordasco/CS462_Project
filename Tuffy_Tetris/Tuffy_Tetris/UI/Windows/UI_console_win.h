@@ -44,6 +44,7 @@ namespace UI
 		// helper functions
 		void displayLogin() override;
 		void displayRegister() override;
+		void clear_screen() override;
 
 		// menu functionality
 		bool login() override;
@@ -55,12 +56,15 @@ namespace UI
 		// get user data
 		char getMenuChoice() override;
 
+		//setters
+		void set_Game(Domain::Game *) override;
+		void set_Player(Domain::Player *) override;
+
 	private:
 		std::string username;
 		std::string password;
 		std::string email;
 		Domain::Game* game;
-		Services::Game_server* server;
 		Domain::Player* player;
 	};
 }

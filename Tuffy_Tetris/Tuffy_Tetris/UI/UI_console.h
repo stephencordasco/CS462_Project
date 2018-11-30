@@ -63,14 +63,14 @@ namespace UI
 		// helper functions
 		virtual void displayLogin() = 0;
 		virtual void displayRegister() = 0;
-		void clear_screen();
-		virtual bool isAdmin() = 0;
+		virtual void clear_screen() = 0;
 
 		// get user data
 		virtual char getMenuChoice() = 0;
-		void setUserName();
-		void setPassword();
-		void setEmail();
+
+		//setters
+		virtual void set_Game(Domain::Game *) = 0;
+		virtual void set_Player(Domain::Player *) = 0;
 
 
 		virtual ~UI_console();
