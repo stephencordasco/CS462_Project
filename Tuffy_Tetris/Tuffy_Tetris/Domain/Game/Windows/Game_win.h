@@ -23,7 +23,6 @@ namespace Domain
 	public:
 		Game_win(UI::UI_console*);
 		void start_Game() override;
-		void game_Loop() override;
 		bool process_Input(char) override;
 		void end_Game() override;
 	private:

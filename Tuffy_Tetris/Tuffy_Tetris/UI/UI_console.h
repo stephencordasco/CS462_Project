@@ -14,6 +14,14 @@ Purpose:	interface class declares virtual member functions and member
 #include <string>
 #include <cstring>
 #include <iostream>
+#include <ctime>
+#ifdef _WIN32
+#include <conio.h>
+#include <Windows.h>
+#else
+#include "../../../include/ncurses.h"
+#include <unistd.h>
+#endif
 
 //forward declaration for Game class
 namespace Domain 
@@ -29,6 +37,9 @@ namespace UI
 	public:
 		// constructor
 		UI_console();
+
+		//main loop
+		virtual void game_Loop() = 0;
 
 		// print board
 		virtual void print_Frame(std::string) = 0;
@@ -61,26 +72,8 @@ namespace UI
 		void setPassword();
 		void setEmail();
 
-		//trivial properties
-		std::string getUserName() { return username; }
-		std::string getPassword() { return password; }
-		std::string getEmail() { return email; }
-		bool getHasSubscription() { return hasSubscription; }
-		void setHasSubscription(bool s) { hasSubscription = s; }
-		Domain::Game* get_Game() { return game; }
-		void set_Game(Domain::Game* g) { game = g; }
-		Services::Game_server* get_Server() { return server; }
-		void set_Server(Services::Game_server* s) { server = s; }
 
 		virtual ~UI_console();
-	private:
-		//common fields
-		std::string username;
-		std::string password;
-		std::string email;
-		int highScore;
-		bool hasSubscription;
-		Domain::Game* game;
-		Services::Game_server* server;
+
 	};
 }

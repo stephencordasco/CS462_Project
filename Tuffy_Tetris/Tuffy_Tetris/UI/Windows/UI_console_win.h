@@ -29,6 +29,9 @@ namespace UI
 		// print board
 		void print_Frame(std::string) override;
 
+		// game loop
+		void game_Loop() override;
+
 		// printing menus to screen
 		void displayLoginScreen() override;
 		void displayMainMenu() override;
@@ -41,7 +44,6 @@ namespace UI
 		// helper functions
 		void displayLogin() override;
 		void displayRegister() override;
-		bool isAdmin() override;
 
 		// menu functionality
 		bool login() override;
@@ -54,6 +56,11 @@ namespace UI
 		char getMenuChoice() override;
 
 	private:
+		std::string username;
+		std::string password;
+		std::string email;
+		Domain::Game* game;
+		Services::Game_server* server;
 		Domain::Player* player;
 	};
 }
