@@ -8,7 +8,9 @@ Purpose:	Declares class for a game piece. Contains properties and low level
 			methods for manipulating a piece object on a Board.
 *******************************************************************************/
 
-#pragma once
+#ifndef PIECE_H
+
+#define PIECE_H
 
 #include <algorithm>
 
@@ -49,3 +51,5 @@ namespace Domain
 	};
 
 }
+
+#endif

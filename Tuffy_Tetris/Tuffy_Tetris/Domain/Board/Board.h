@@ -10,7 +10,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 			logical data frames for output.
 *******************************************************************************/
 
-#pragma once
+#ifndef BOARD_H
+#define BOARD_H
 
 #include "../Piece/Piece.h"
 #include "../Piece/PieceFactory.h"
@@ -35,7 +36,7 @@ namespace Domain
 		bool system_Move();
 		// TODO -- under construction --
 		void checkFullRow();
-		void clearRow(std::list<int> li);
+		void clearRow(std::list<int>);
 
 	private:
 
@@ -54,3 +55,5 @@ namespace Domain
 	};
 
 }
+
+#endif

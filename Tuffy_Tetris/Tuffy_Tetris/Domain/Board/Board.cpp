@@ -321,7 +321,7 @@ void Domain::Board::init_board()
 /*******************************************************************************
 Name:		init_piece
 Parameters:	none
-Purpose:	Similar to init_board, but only initializes the state of a new piece.
+Purpose:	Similar to init_board, but only initializes the state of a new piece
 *******************************************************************************/
 void Domain::Board::init_piece() 
 {
@@ -347,7 +347,12 @@ void Domain::Board::init_piece()
 
 }
 
-// TODO -- under construction --
+/*******************************************************************************
+Name:		checkFullRow
+Parameters:	none
+Purpose:	checks board_state during each "tick" to find full rows; pushes row
+			index onto indices list and calls clearRow helper function
+*******************************************************************************/
 void Board::checkFullRow()
 {
 	// count the number of true spaces in a row
@@ -371,20 +376,32 @@ void Board::checkFullRow()
 			indices.push_back(i);
 		}
 	}
-	// get index of all rows to clear
-	// clear rows of given index
-	for (auto v : indices)
-	{
-		if (!indices.empty())
-		{
-			std::cout << "Row: " << v << "\n";
-		}
-	}
 
+	// find full rows and clear them
 	clearRow(indices);
 }
 
-void Board::clearRow(std::list<int> li)
+/*******************************************************************************
+Name:		clearRow
+Parameters:	integer list
+Purpose:	clears the rows (sets values to false) that are full
+*******************************************************************************/
+void Board::clearRow(std::list<int> indices)
 {
+	// reverse list so that clearing begins at bottom of board
+	indices.reverse();
+	std::string output = " ";
+
+	// traverse the list of vertices and clear the rows
+	for (std::list<int>::iterator it = indices.begin(); it != indices.end(); it++)
+	{
+		for (int j = 1; j < 11; j++)
+		{
+			// clear full row
+			board_state[*it][j] = false;
+		}
+	}
 	
+	// update frame
+	generate_Frame(output);
 }

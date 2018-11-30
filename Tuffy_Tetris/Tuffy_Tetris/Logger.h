@@ -1,4 +1,6 @@
-#pragma once
+#ifndef LOGGER_H
+#define LOGGER_H
+
 
 #include<iostream>
 #include<string>
@@ -18,3 +20,5 @@ namespace Services
 		std::ostream & _loggingStream;
 	};
 }
+
+#endif

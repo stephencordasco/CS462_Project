@@ -7,7 +7,8 @@ File:		UI_console_win.h
 Purpose:	child class of UI_console declares member functions and member
 			variables for Windows OS
 *******************************************************************************/
-#pragma once
+#ifndef UI_CONSOLE_WIN_H
+#define UI_CONSOLE_WIN_H
 
 #include "../UI_console.h"
 
@@ -68,3 +69,5 @@ namespace UI
 		Domain::Player* player;
 	};
 }
+
+#endif

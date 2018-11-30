@@ -8,7 +8,8 @@ Purpose:	Declares class for the game server interface. Currently performs
 			stub functionality for checking user input.
 *******************************************************************************/
 
-#pragma once
+#ifndef GAME_SERVER_H
+#define GAME_SERVER_H
 
 #include <string>
 
@@ -33,3 +34,5 @@ namespace Services
 	};
 	
 }
+
+#endif
