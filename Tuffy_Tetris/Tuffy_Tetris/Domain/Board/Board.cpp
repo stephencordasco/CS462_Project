@@ -378,7 +378,8 @@ void Board::checkFullRow()
 	}
 
 	// find full rows and clear them
-	clearRow(indices);
+	if (!indices.empty())
+		clearRow(indices);
 }
 
 /*******************************************************************************
@@ -392,6 +393,10 @@ void Board::clearRow(std::list<int> indices)
 	indices.reverse();
 	std::string output = " ";
 
+	// keep count of the list
+	int count = 1;
+	size_t lSize = indices.size();
+
 	// traverse the list of vertices and clear the rows
 	for (std::list<int>::iterator it = indices.begin(); it != indices.end(); it++)
 	{
@@ -400,6 +405,21 @@ void Board::clearRow(std::list<int> indices)
 			// clear full row
 			board_state[*it][j] = false;
 		}
+
+		// block shift after the last row has been cleared
+		if (count == lSize)
+		{
+			for (size_t i = 20; i > lSize; i--)
+			{
+				for (int j = 1; j < 11; j++)
+				{
+					board_state[i][j] = board_state[i - lSize][j];
+				}
+			}
+		}
+
+		// increment the counter
+		count++;
 	}
 	
 	// update frame
