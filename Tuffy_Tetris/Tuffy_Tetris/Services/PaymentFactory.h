@@ -3,15 +3,15 @@
 #define PAYMENTFACTORY_H
 
 #include "IPayment.h"
+#include "IPersistence.h"
+#include <string>
 
 namespace Services 
 {
-	class MCFactory;
-	class VISAFactory;
-
 	class PaymentFactory 
 	{
-		static PaymentFactory* createPaymentFactory();
+	public:
+		static PaymentFactory* createPaymentFactory(IPersistence*);
 
 		virtual IPayment* createPayment() = 0;
 	};

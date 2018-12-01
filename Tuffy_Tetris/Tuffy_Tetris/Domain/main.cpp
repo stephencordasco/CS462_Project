@@ -17,6 +17,9 @@ Purpose:	Includes main entry point for program and an inline factory class
 #endif
 
 #include "Game/GameTetris.h"
+#include "../Services/PaymentFactory.h"
+#include "../Services/SimpleDB.h"
+#include "../Services/IPayment.h"
 
 class MainFactory
 {
@@ -39,7 +42,13 @@ int main(void)
 	Domain::Game * game = new Domain::GameTetris();
 	// pointer to an instance of the Services class
 	Services::Game_server * server = new Services::Game_server();
-	
+
+	Services::IPersistence * persist = new Services::SimpleDB();
+
+	Services::PaymentFactory * pfactory = Services::PaymentFactory::createPaymentFactory(persist);
+
+	Services::IPayment * payment = pfactory->createPayment();
+
 	//set pointer references inside objects
 	game->set_Server(server);
 	game_UI->set_Game(game);

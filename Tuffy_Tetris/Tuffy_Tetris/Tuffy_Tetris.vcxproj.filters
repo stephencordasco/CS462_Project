@@ -108,6 +108,9 @@
     <ClInclude Include="Services\MCFactory.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
+    <ClInclude Include="Services\SimpleDB.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
@@ -174,6 +177,9 @@
       <Filter>Source Files\Services</Filter>
     </ClCompile>
     <ClCompile Include="Services\VISAFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\SimpleDB.cpp">
       <Filter>Source Files\Services</Filter>
     </ClCompile>
   </ItemGroup>

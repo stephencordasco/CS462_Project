@@ -1,7 +1,7 @@
 
 
-#ifndef MCFACTORY_H
-#define MCFACTORY_H
+#ifndef VISAFACTORY_H
+#define VISAFACTORY_H
 
 #include "PaymentFactory.h"
 #include "Payment_VISA.h"

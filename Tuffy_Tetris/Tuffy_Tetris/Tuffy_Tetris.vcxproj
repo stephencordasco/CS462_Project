@@ -39,6 +39,7 @@
     <ClInclude Include="Services\PaymentFactory.h" />
     <ClInclude Include="Services\Payment_MC.h" />
     <ClInclude Include="Services\Payment_VISA.h" />
+    <ClInclude Include="Services\SimpleDB.h" />
     <ClInclude Include="Services\VISAFactory.h" />
     <ClInclude Include="UI\UI_console.h" />
     <ClInclude Include="UI\Windows\UI_console_win.h" />
@@ -63,6 +64,7 @@
     <ClCompile Include="Services\Logger.cpp" />
     <ClCompile Include="Services\MCFactory.cpp" />
     <ClCompile Include="Services\PaymentFactory.cpp" />
+    <ClCompile Include="Services\SimpleDB.cpp" />
     <ClCompile Include="Services\VISAFactory.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />

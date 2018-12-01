@@ -4,5 +4,5 @@ using Services::Payment_VISA;
 
 Payment_VISA * Services::VISAFactory::createPayment()
 {
-	return nullptr;
+	return new Payment_VISA();
 }
