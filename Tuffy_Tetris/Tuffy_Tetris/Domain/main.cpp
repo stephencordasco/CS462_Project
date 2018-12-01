@@ -11,11 +11,12 @@ Purpose:	Includes main entry point for program and an inline factory class
 
 #ifdef _WIN32
 #include "../UI/Windows/UI_console_win.h"
-#include "Game/Windows/Game_win.h"
 #else
 #include "../UI/Linux/UI_console_linux.h"
 #include "Game/Linux/Game_linux.h"
 #endif
+
+#include "Game/GameTetris.h"
 
 class MainFactory
 {
@@ -26,15 +27,7 @@ public:
 		return new UI::UI_console_win();
 #else
 		return new UI::UI_console_linux();
-#endif		
-	}
-	static Domain::Game* create_Game(UI::UI_console* game_UI)
-	{
-#ifdef _WIN32
-		return new Domain::Game_win(game_UI);
-#else
-		return new Domain::Game_linux(game_UI);
-#endif		
+#endif			
 	}
 };
 
@@ -43,14 +36,13 @@ int main(void)
 	// pointer to an instance of the parent UI class
 	UI::UI_console * game_UI = MainFactory::create_UI();
 	// pointer to an instance of the parent Domain class
-	Domain::Game * game = MainFactory::create_Game(game_UI);
+	Domain::Game * game = new Domain::GameTetris();
 	// pointer to an instance of the Services class
 	Services::Game_server * server = new Services::Game_server();
 	
 	//set pointer references inside objects
-	game->set_game_Server(server);
+	game->set_Server(server);
 	game_UI->set_Game(game);
-	game_UI->set_Server(server);
 
 	bool cont = true;
 	while (cont) 

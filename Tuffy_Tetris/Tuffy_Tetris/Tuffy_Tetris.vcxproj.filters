@@ -45,12 +45,6 @@
     <ClInclude Include="Domain\Board\Board.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Domain\Game\Game.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="Domain\Game\Windows\Game_win.h">
-      <Filter>Header Files\Domain</Filter>
-    </ClInclude>
     <ClInclude Include="UI\UI_console.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
@@ -81,8 +75,20 @@
     <ClInclude Include="Logger.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
+    <ClInclude Include="Domain\Game\GameTetris.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain\Game\Game.h">
+      <Filter>Header Files\Domain</Filter>
+    </ClInclude>
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="IPersistence.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="ILogger.h">
+      <Filter>Header Files\Services</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -92,17 +98,11 @@
     <ClCompile Include="Services\Game_server.cpp">
       <Filter>Source Files\Services</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\Game\Windows\Game_win.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
     <ClCompile Include="UI\UI_console.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="UI\Windows\UI_console_win.cpp">
       <Filter>Source Files\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="Domain\Game\Game.cpp">
-      <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="Domain\main.cpp">
       <Filter>Source Files\Domain</Filter>
@@ -130,6 +130,12 @@
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Game\GameTetris.cpp">
+      <Filter>Source Files\Domain</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Game\Game.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Domain\Player\Player.cpp">
       <Filter>Source Files\Domain</Filter>
