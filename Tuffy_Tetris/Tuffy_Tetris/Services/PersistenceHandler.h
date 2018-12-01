@@ -10,16 +10,7 @@
 
 namespace Services
 {
-	// Function argument type definitions
-	struct UserCredentials
-	{
-		std::string username;
-		std::string password;
-		std::string email;
-		std::vector<std::string> roles;
-	};
-
-
+	
 	// Persistence Package within the Technical Services Layer Abstract class
 	struct PersistenceHandler
 	{
@@ -36,7 +27,7 @@ namespace Services
 
 		// Operations
 		virtual std::vector<std::string> findRoles() = 0;  // Returns list of all legal roles
-		virtual UserCredentials          findCredentialsByName(const std::string & name) = 0;  // Returns credentials for specified user, throws NoSuchUser if user not found
+		
 		
 
 		// Destructor

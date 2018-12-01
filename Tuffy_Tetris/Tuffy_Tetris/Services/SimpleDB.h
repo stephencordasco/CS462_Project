@@ -21,11 +21,8 @@ namespace Services
 
 		// Operations
 		std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
-		UserCredentials findCredentialsByName(const std::string & name) override;  // Returns credentials for specified user, throws NoSuchUser if user not found
+		bool login(std::string username, std::string password, std::string email);
 		void AddUser(Domain::Player user);
-
-
-		bool login(std::string, std::string, std::string);
 		std::string read_config_payment();
 		~SimpleDB() noexcept override;
 
