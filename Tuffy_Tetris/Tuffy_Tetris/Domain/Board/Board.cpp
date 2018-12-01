@@ -275,6 +275,7 @@ bool Domain::Board::system_Move()
 		draw_Board_State();
 		init_piece();
 		spawn_Piece(-1, 5, 0);
+		checkFullRow();
 		return false;
 	}
 	return false;

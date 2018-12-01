@@ -59,7 +59,8 @@ void UI::UI_console_win::game_Loop()
 					//ui or board functions. break if user selected quit
 					if (!(game->process_Input(inputchar)))
 					{
-						endloop = true;
+						//endloop = true;
+						endloop = pauseMenu();
 						break;
 					}
 					//generate and print an output screen frame
@@ -84,7 +85,18 @@ void UI::UI_console_win::game_Loop()
 		// check for a full row
 		//board_ptr->checkFullRow();
 	}
-	game->end_Game();
+	if (game->end_Game()) 
+	{
+		hsMenu();
+	}
+	else 
+	{
+		std::cout << "\nGame Over!\nNo new highscore...\nScore: " << game->get_Score();
+		std::cout << "Press any key to continue...\n";
+		std::cin.get();
+	}
+		
+
 }
 
 /*******************************************************************************
@@ -544,12 +556,13 @@ bool UI::UI_console_win::pauseMenu()
 	displayPauseMenu();
 	// store the user menu choice
 	char inputchar = getMenuChoice();
+		game->set_Paused(false);
 	switch (inputchar)
 	{
 	case '1':	// user chose to continue game
-		return true;
-	case '2':	// user chose to quit game
 		return false;
+	case '2':	// user chose to quit game
+		return true;
 	default:
 		return true;
 	}

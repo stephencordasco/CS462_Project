@@ -84,6 +84,12 @@
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
+    <ClInclude Include="IPersistence.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="ILogger.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">

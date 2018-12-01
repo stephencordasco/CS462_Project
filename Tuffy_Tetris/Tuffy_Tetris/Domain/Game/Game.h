@@ -12,9 +12,6 @@ Purpose:	Declares abstract base class for a Game instance. Contains properties
 #ifndef GAME_H
 #define GAME_H
 
-#ifndef GAME_H
-#define GAME_H
-
 #include <string>
 #include "../Board/Board.h"
 #include "../../Services/Game_server.h"

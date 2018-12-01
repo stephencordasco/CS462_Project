@@ -109,15 +109,6 @@ bool Domain::GameTetris::process_Input(char input)
 	case 'P':
 		if (is_Started() && !is_Paused()) {
 			game_paused = true;
-			/*if (get_UI()->pauseMenu())
-			{
-				set_paused(false);
-			}
-			else
-			{
-				set_paused(false);
-				return false;
-			}*/
 			return false;
 		}
 		break;
@@ -158,7 +149,7 @@ int Domain::GameTetris::get_Userscore()
 {
 	//call to persistance interface
 	//todo stub
-	return 0;
+	return 10000;
 }
 
 std::string Domain::GameTetris::get_Email()
