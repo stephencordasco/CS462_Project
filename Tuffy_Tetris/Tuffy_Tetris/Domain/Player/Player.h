@@ -12,7 +12,7 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <cstring>
+#include <string>
 
 #include "../../Services/PersistenceHandler.h"
 #include "../../Services/LoggerHandler.h"
@@ -26,29 +26,29 @@ namespace Domain
 			// constructor
 			Player();
 			// overloaded constructor
-			Player(const char *, const char *, const char *, int, bool);
+			Player(std::string, std::string, std::string, int, bool);
 			// destructor
 			~Player();
 			
 			// setters
-			Player &setUsername(const char *);
-			Player &setPassword(const char *);
-			Player &setEmail(const char *);
+			Player &setUsername(std::string);
+			Player &setPassword(std::string);
+			Player &setEmail(std::string);
 			Player &setHighScore(int);
 			Player &setSubscription(bool);
 
 			// getters
-			const char *getUsername();
-			const char *getPassword();
-			const char *getEmail();
+			const std::string getUsername();
+			const std::string getPassword();
+			const std::string getEmail();
 			int getHighScore();
 			bool getSubscription();
 
 		private:
 			// class attributes
-			char username[20];
-			char password[16];
-			char email[50];
+			std::string username;
+			std::string password;
+			std::string email;
 			int highScore;
 			bool hasSubscription;
 

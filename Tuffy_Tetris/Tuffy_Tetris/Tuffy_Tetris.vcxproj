@@ -35,6 +35,16 @@
     <ClInclude Include="Services\LoggerHandler.h" />
     <ClInclude Include="Services\PersistenceHandler.h" />
     <ClInclude Include="Services\SimpleDB.h" />
+    <ClInclude Include="Services\ILogger.h" />
+    <ClInclude Include="Services\IPayment.h" />
+    <ClInclude Include="Services\IPersistence.h" />
+    <ClInclude Include="Services\Logger.h" />
+    <ClInclude Include="Services\MCFactory.h" />
+    <ClInclude Include="Services\PaymentFactory.h" />
+    <ClInclude Include="Services\Payment_MC.h" />
+    <ClInclude Include="Services\Payment_VISA.h" />
+    <ClInclude Include="Services\SimpleDB.h" />
+    <ClInclude Include="Services\VISAFactory.h" />
     <ClInclude Include="UI\UI_console.h" />
     <ClInclude Include="UI\Windows\UI_console_win.h" />
   </ItemGroup>
@@ -52,6 +62,14 @@
     <ClCompile Include="Domain\Piece\PieceFactory.cpp" />
     <ClCompile Include="Domain\Player\Player.cpp" />
     <ClCompile Include="Services\Game_server.cpp" />
+    <ClCompile Include="Services\ILogger.cpp" />
+    <ClCompile Include="Services\IPayment.cpp" />
+    <ClCompile Include="Services\IPersistence.cpp" />
+    <ClCompile Include="Services\Logger.cpp" />
+    <ClCompile Include="Services\MCFactory.cpp" />
+    <ClCompile Include="Services\PaymentFactory.cpp" />
+    <ClCompile Include="Services\SimpleDB.cpp" />
+    <ClCompile Include="Services\VISAFactory.cpp" />
     <ClCompile Include="Services\SimpleDB.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />

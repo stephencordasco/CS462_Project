@@ -121,7 +121,7 @@ bool Domain::GameTetris::process_Input(char input)
 
 bool Domain::GameTetris::register_acct(std::string, std::string, std::string)
 {
-	return false;
+	return true;
 }
 
 bool Domain::GameTetris::login(std::string, std::string)

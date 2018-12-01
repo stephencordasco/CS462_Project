@@ -42,6 +42,7 @@ namespace UI
 		void displayPauseMenu() override;
 		void displayHighScoreScreen(int) override;
 		void saveNewHighScoreScreen() override;
+		void viewHighScore() override;
 
 		// helper functions
 		void displayLogin() override;
@@ -66,6 +67,7 @@ namespace UI
 		std::string username;
 		std::string password;
 		std::string email;
+		int highScore;
 		Domain::Game* game;
 		Domain::Player* player;
 	};

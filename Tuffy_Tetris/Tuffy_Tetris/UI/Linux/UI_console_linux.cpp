@@ -171,6 +171,15 @@ void UI_console_win::displayRegister()
 	std::cout << "\tCSUF email: ";
 	setEmail();
 
+	// =========== initialize player object ===========
+	player = new Domain::Player();
+	player->setUsername(username);
+	player->setPassword(password);
+	player->setEmail(email);
+	player->setHighScore(0);
+	player->setSubscription(false);
+	// ================================================
+
 	// greet the user if registration successful
 	if (game->register_acct(username, password, email))
 	{	// print welcome message
@@ -180,8 +189,8 @@ void UI_console_win::displayRegister()
 		// registration failed
 	{
 		// print a message that registration failed...
-		std::cout << "Registration failed. Please try again.";
-		std::cout << "Press enter to continue...";
+		std::cout << "\nRegistration failed. Please try again.\n";
+		std::cout << "Press enter to continue...\n";
 		std::cin.get();
 		// ...print the login screen again
 		login();
@@ -313,8 +322,8 @@ void UI_console_win::displayAccountMenu()
 	std::cout << "1.) Change Username\n";
 	std::cout << "2.) Change Password\n";
 	std::cout << "3.) Purchase Subscription\n";
-	//std::cout << "4.) High Score\n";
-	std::cout << "4.) Main Menu\n";
+	std::cout << "4.) High Score\n";
+	std::cout << "5.) Main Menu\n";
 	std::cout << "============================\n";
 }
 
@@ -455,6 +464,22 @@ void UI::UI_console_win::saveNewHighScoreScreen()
 }
 
 /*******************************************************************************
+Name:		viewHighScore
+Parameters:	none
+Purpose:	displays user high score
+*******************************************************************************/
+void UI_console_linux::viewHighScore()
+{
+	clear_screen();
+	std::cout << "\n======== High Score ========\n";
+	std::cout << "High Score: " << highScore << std::endl;
+	std::cout << "============================\n";
+	std::cout << "\nPress enter to continue...\n";
+	std::cin.get();
+	std::cin.get();
+}
+
+/*******************************************************************************
 Name:		accountMenu
 Parameters:	none
 Purpose:	displays the account menu, gets a menu choice from the user, and
@@ -503,7 +528,11 @@ bool UI_console_win::accountMenu()
 		displayPurchaseSubscriptionScreen();
 		break;
 
-	case '4':	// user chose to return to main menu
+	case '4':	// user chose to view high score
+		viewHighScore();
+		break;
+
+	case '5':	// user chose to return to main menu
 		std::cout << "\nGoing back to main menu...\n";
 		std::cout << "Press enter to continue...";
 		std::cin.get();

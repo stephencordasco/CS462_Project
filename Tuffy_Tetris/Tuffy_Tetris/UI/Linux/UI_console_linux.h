@@ -41,6 +41,7 @@ namespace UI
 		void displayPauseMenu() override;
 		void displayHighScoreScreen(int) override;
 		void saveNewHighScoreScreen() override;
+		void viewHighScore() override;
 
 		// helper functions
 		void displayLogin() override;

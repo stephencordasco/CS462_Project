@@ -55,6 +55,7 @@ namespace UI
 		virtual void displayPauseMenu() = 0;
 		virtual void displayHighScoreScreen(int) = 0;
 		virtual void saveNewHighScoreScreen() = 0;
+		virtual void viewHighScore() = 0;
 
 		// menu functionality
 		virtual bool login() = 0;
