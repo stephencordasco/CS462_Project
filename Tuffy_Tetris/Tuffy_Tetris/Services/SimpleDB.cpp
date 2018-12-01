@@ -1,7 +1,5 @@
 #include "SimpleDB.h"
 #include "Logger.h"
-
-
 #include <string>
 #include <vector>
 #include <fstream>
@@ -72,7 +70,6 @@ namespace Services
 		std::cout << numPlayers << std::endl;
 	}
 }
-#include "SimpleDB.h"
 
 bool Services::SimpleDB::login(std::string, std::string, std::string)
 {

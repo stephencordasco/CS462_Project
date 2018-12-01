@@ -43,11 +43,6 @@ int main(void)
 	// pointer to an instance of the Services class
 	Services::Game_server * server = new Services::Game_server();
 
-	Services::IPersistence * persist = new Services::SimpleDB();
-
-	Services::PaymentFactory * pfactory = Services::PaymentFactory::createPaymentFactory(persist);
-
-	Services::IPayment * payment = pfactory->createPayment();
 
 	//set pointer references inside objects
 	game->set_Server(server);
