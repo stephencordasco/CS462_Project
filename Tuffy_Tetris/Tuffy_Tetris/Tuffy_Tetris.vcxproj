@@ -62,14 +62,6 @@
     <ClCompile Include="Domain\Piece\PieceFactory.cpp" />
     <ClCompile Include="Domain\Player\Player.cpp" />
     <ClCompile Include="Services\Game_server.cpp" />
-    <ClCompile Include="Services\ILogger.cpp" />
-    <ClCompile Include="Services\IPayment.cpp" />
-    <ClCompile Include="Services\IPersistence.cpp" />
-    <ClCompile Include="Services\Logger.cpp" />
-    <ClCompile Include="Services\MCFactory.cpp" />
-    <ClCompile Include="Services\PaymentFactory.cpp" />
-    <ClCompile Include="Services\SimpleDB.cpp" />
-    <ClCompile Include="Services\VISAFactory.cpp" />
     <ClCompile Include="Services\SimpleDB.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />
