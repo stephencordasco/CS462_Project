@@ -72,9 +72,6 @@
     <ClInclude Include="Domain\Piece\PieceFactory.h">
       <Filter>Header Files\Domain\Piece</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Game\GameTetris.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
@@ -83,12 +80,6 @@
     </ClInclude>
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
-    </ClInclude>
-    <ClInclude Include="IPersistence.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="ILogger.h">
-      <Filter>Header Files\Services</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +118,6 @@
     </ClCompile>
     <ClCompile Include="Domain\Piece\PieceFactory.cpp">
       <Filter>Source Files\Domain\Piece</Filter>
-    </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source Files\Services</Filter>
     </ClCompile>
     <ClCompile Include="Domain\Game\GameTetris.cpp">
       <Filter>Source Files\Domain</Filter>
