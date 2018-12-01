@@ -69,6 +69,7 @@ void UI_console_win::displayLogin()
 	if (get_Server()->login(getUserName(), getPassword(), getEmail()))
 	{	// print welcome message
 		std::cout << "\nWelcome, " << getUserName() << "\n\n";
+
 	}
 	// login failed
 	else

@@ -78,11 +78,20 @@
     <ClInclude Include="Domain\Piece\PieceFactory.h">
       <Filter>Header Files\Domain\Piece</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Logger.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\LoggerHandler.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\PersistenceHandler.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\SimpleDB.h">
+      <Filter>Header Files\Services</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -128,11 +137,19 @@
     <ClCompile Include="Domain\Piece\PieceFactory.cpp">
       <Filter>Source Files\Domain\Piece</Filter>
     </ClCompile>
-    <ClCompile Include="Logger.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
     <ClCompile Include="Domain\Player\Player.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
+    <ClCompile Include="Services\SimpleDB.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Services\Log.txt">
+      <Filter>Source Files\Services</Filter>
+    </Text>
+    <Text Include="Services\Persistence.txt">
+      <Filter>Source Files\Services</Filter>
+    </Text>
   </ItemGroup>
 </Project>

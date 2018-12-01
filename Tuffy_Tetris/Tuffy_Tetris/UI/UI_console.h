@@ -85,6 +85,8 @@ namespace UI
 		bool hasSubscription;
 		Domain::Game* game;
 		Services::Game_server* server;
+
+		
 	};
 }
 

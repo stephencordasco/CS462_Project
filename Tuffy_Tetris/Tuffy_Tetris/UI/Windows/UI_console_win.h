@@ -12,6 +12,7 @@ Purpose:	child class of UI_console declares member functions and member
 
 #include "../UI_console.h"
 
+
 //forward declaration for Game_win class
 namespace Domain 
 {

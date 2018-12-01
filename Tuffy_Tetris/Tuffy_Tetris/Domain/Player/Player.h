@@ -14,6 +14,9 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 
 #include <cstring>
 
+#include "../../Services/PersistenceHandler.h"
+#include "../../Services/LoggerHandler.h"
+
 namespace Domain
 {
 
@@ -48,6 +51,12 @@ namespace Domain
 			char email[50];
 			int highScore;
 			bool hasSubscription;
+
+
+			std::unique_ptr<Services::PersistenceHandler>    _persistentData;
+			std::unique_ptr<Services::LoggerHandler>             _loggerPtr;
+
+			Services::LoggerHandler                            & _logger = *_loggerPtr;
 	};
 
 }

@@ -11,6 +11,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 *******************************************************************************/
 
 #include "./Player.h"
+#include "../../Services/Logger.h"
+#include "../../Services/SimpleDB.h"
 #include <cstring>
 
 using Domain::Player;
@@ -21,13 +23,18 @@ Parameters:	none
 Purpose:	Default constructor for Player class. Sets various properties to
 			default values.
 *******************************************************************************/
-Player::Player()
+Player::Player() :
+_persistentData(new Services::SimpleDB),   // will replace hard coded implementation class next increment
+_loggerPtr(new Services::Logger)     // will replace hard coded implementation class next increment
 {
 	setUsername("");
 	setPassword("");
 	setEmail("");
 	setHighScore(0);
 	setSubscription(false);
+
+	_logger << "UserAccounts being used and has been successfully initialized";
+	
 }
 
 /*******************************************************************************
