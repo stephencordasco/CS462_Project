@@ -31,7 +31,6 @@ void Game_win::start_Game()
 {
 	set_Board(new Board());
 	set_started(true);
-	game_Loop();
 }
 
 /*******************************************************************************
@@ -143,6 +142,13 @@ bool Game_win::process_Input(char input)
 		case 'D':
 			if (is_Started() && !is_Paused()) {
 				get_Board()->move_Right();
+			}
+			break;
+
+			// system move
+		case '$':
+			if (is_Started() && !is_Paused()) {
+				get_Board()->system_Move();
 			}
 			break;
 		// pause
