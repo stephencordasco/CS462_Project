@@ -39,9 +39,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Services\Game_server.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Board\Board.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
@@ -78,12 +75,6 @@
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Services\ILogger.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\IPersistence.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Services\IPayment.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
@@ -105,9 +96,6 @@
     <ClInclude Include="Services\LoggerHandler.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
-    <ClInclude Include="Services\PersistenceHandler.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Services\Logger.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
@@ -117,13 +105,13 @@
     <ClInclude Include="Domain\Game\GameTetris.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
+    <ClInclude Include="Services\PersistenceHandler.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
       <Filter>Source Files\Domain</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\Game_server.cpp">
-      <Filter>Source Files\Services</Filter>
     </ClCompile>
     <ClCompile Include="UI\UI_console.cpp">
       <Filter>Source Files\UI</Filter>
@@ -167,11 +155,17 @@
     <ClCompile Include="Domain\Game\GameTetris.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Services\Payment_MC.cpp">
-      <Filter>Header Files\Services</Filter>
+    <ClCompile Include="Services\IPayment.cpp">
+      <Filter>Source Files\Services</Filter>
     </ClCompile>
-    <ClCompile Include="Services\Payment_VISA.cpp">
-      <Filter>Header Files\Services</Filter>
+    <ClCompile Include="Services\MCFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\PaymentFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\VISAFactory.cpp">
+      <Filter>Source Files\Services</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
