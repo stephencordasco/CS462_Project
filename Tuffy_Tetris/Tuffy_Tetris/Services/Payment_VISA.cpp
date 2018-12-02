@@ -7,9 +7,10 @@ Payment_VISA::Payment_VISA()
 
 }
 
-void Payment_VISA::acceptCardInfo()
+bool Payment_VISA::acceptCardInfo()
 {
 
+	return true;
 }
 
 void Payment_VISA::printToLogger()

@@ -13,7 +13,7 @@ namespace Services
 	public:
 		Payment_MC();
 
-		void acceptCardInfo();
+		bool acceptCardInfo();
 		void printToLogger();
 	};
 }

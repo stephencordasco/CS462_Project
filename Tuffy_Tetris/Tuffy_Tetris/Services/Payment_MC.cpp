@@ -7,9 +7,9 @@ Payment_MC::Payment_MC()
 
 }
 
-void Payment_MC::acceptCardInfo()
+bool Payment_MC::acceptCardInfo()
 {
-
+	return true;
 }
 
 void Payment_MC::printToLogger()

@@ -13,7 +13,7 @@ namespace Services
 	public:
 		Payment_VISA();
 
-		void acceptCardInfo();
+		bool acceptCardInfo();
 		void printToLogger();
 	};
 }
