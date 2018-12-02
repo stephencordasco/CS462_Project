@@ -174,8 +174,4 @@
       <Filter>Header Files\Services</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Services\Log.txt" />
-    <Text Include="Services\Persistence.txt" />
-  </ItemGroup>
 </Project>

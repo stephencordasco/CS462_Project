@@ -44,6 +44,9 @@ namespace Domain
 			int getHighScore();
 			bool getSubscription();
 
+			bool login(std::string username, std::string password, std::string email);
+			bool register_account(std::string username, std::string password, std::string email);
+
 		private:
 			// class attributes
 			std::string username;
@@ -51,12 +54,7 @@ namespace Domain
 			std::string email;
 			int highScore;
 			bool hasSubscription;
-
-
-			std::unique_ptr<Services::PersistenceHandler>    _persistentData;
-			std::unique_ptr<Services::LoggerHandler>             _loggerPtr;
-
-			Services::LoggerHandler                            & _logger = *_loggerPtr;
+			
 	};
 
 }

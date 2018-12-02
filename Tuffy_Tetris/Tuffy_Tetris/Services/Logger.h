@@ -16,7 +16,7 @@ namespace Services
 	public:
 		//Constructors
 		using LoggerHandler::LoggerHandler;                       // inherent constructors
-		Logger(std::string const & LogFile = "Log.txt");
+		Logger(std::string const & LogFile = "Services/Log.txt");
 		
 		
 		// Operations
