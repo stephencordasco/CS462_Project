@@ -59,6 +59,8 @@
     <ClCompile Include="Services\IPayment.cpp" />
     <ClCompile Include="Services\MCFactory.cpp" />
     <ClCompile Include="Services\PaymentFactory.cpp" />
+    <ClCompile Include="Services\Payment_MC.cpp" />
+    <ClCompile Include="Services\Payment_VISA.cpp" />
     <ClCompile Include="Services\SimpleDB.cpp" />
     <ClCompile Include="Services\VISAFactory.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
