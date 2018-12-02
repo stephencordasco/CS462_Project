@@ -14,7 +14,7 @@ Purpose:	Declares abstract base class for a Game instance. Contains properties
 
 #include <string>
 #include "../Board/Board.h"
-#include "../../Services/Game_server.h"
+#include "../../Services/PersistenceHandler.h"
 #include "../Player/Player.h"
 
 namespace Domain {
@@ -46,7 +46,7 @@ namespace Domain {
 		virtual int get_Level() = 0;
 		virtual int get_Score() = 0;
 		virtual bool save_Score() = 0;
-		virtual void set_Server(Services::Game_server *) = 0;
+		virtual void set_Server(Services::PersistenceHandler* ) = 0;
 		virtual void set_Board(Domain::Board *) = 0;
 		virtual void set_Player(Domain::Player *) = 0;
 		virtual ~Game();

@@ -53,7 +53,7 @@ namespace Domain {
 
 		// trivial properties
 		void set_Board(Domain::Board * b) override { game_Board = b; }
-		void set_Server(Services::Game_server * s) override { game_Server = s; }
+		void set_Server(Services::PersistenceHandler * s) override { game_Server = s; }
 		void set_Player(Domain::Player * p) override { game_Player = p; }
 		
 	private:
@@ -63,7 +63,7 @@ namespace Domain {
 		int level;
 		Domain::Player * game_Player;
 		Domain::Board *game_Board;
-		Services::Game_server * game_Server;
+		Services::PersistenceHandler * game_Server;
 	};
 
 }
