@@ -10,7 +10,11 @@ namespace Services
 {
 	class Payment_MC : public IPayment 
 	{
-	
+	public:
+		Payment_MC();
+
+		void acceptCardInfo();
+		void printToLogger();
 	};
 }
 

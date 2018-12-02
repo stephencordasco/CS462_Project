@@ -60,6 +60,8 @@
     <ClCompile Include="Domain\Piece\PieceFactory.cpp" />
     <ClCompile Include="Domain\Player\Player.cpp" />
     <ClCompile Include="Services\Game_server.cpp" />
+    <ClCompile Include="Services\Payment_MC.cpp" />
+    <ClCompile Include="Services\Payment_VISA.cpp" />
     <ClCompile Include="Services\SimpleDB.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />

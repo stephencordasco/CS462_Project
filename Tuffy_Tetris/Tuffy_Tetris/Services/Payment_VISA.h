@@ -10,7 +10,11 @@ namespace Services
 {
 	class Payment_VISA : public IPayment
 	{
+	public:
+		Payment_VISA();
 
+		void acceptCardInfo();
+		void printToLogger();
 	};
 }
 

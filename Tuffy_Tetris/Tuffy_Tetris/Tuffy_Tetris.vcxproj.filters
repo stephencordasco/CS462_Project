@@ -167,6 +167,12 @@
     <ClCompile Include="Domain\Game\GameTetris.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
+    <ClCompile Include="Services\Payment_MC.cpp">
+      <Filter>Header Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment_VISA.cpp">
+      <Filter>Header Files\Services</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Services\Log.txt" />
