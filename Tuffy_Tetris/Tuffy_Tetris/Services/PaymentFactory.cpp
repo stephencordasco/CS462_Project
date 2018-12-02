@@ -4,7 +4,7 @@
 
 using Services::PaymentFactory;
 
-PaymentFactory * Services::PaymentFactory::createPaymentFactory(IPersistence* p)
+PaymentFactory * Services::PaymentFactory::createPaymentFactory(PersistenceHandler* p)
 {
 	std::string payment_type = p->read_config_payment();
 

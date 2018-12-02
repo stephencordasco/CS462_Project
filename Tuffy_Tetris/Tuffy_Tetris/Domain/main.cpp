@@ -41,7 +41,7 @@ int main(void)
 	// pointer to an instance of the parent Domain class
 	Domain::Game * game = new Domain::GameTetris();
 	// pointer to an instance of the Services class
-	Services::Game_server * server = new Services::Game_server();
+	Services::PersistenceHandler * server = new Services::SimpleDB();
 
 
 	//set pointer references inside objects

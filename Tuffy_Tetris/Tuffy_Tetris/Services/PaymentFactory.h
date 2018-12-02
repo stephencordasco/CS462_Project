@@ -3,7 +3,7 @@
 #define PAYMENTFACTORY_H
 
 #include "IPayment.h"
-#include "IPersistence.h"
+#include "PersistenceHandler.h"
 #include <string>
 
 namespace Services 
@@ -11,7 +11,7 @@ namespace Services
 	class PaymentFactory 
 	{
 	public:
-		static PaymentFactory* createPaymentFactory(IPersistence*);
+		static PaymentFactory* createPaymentFactory(PersistenceHandler*);
 
 		virtual IPayment* createPayment() = 0;
 	};
