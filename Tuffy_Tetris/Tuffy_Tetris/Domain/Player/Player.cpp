@@ -13,6 +13,7 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 #include "./Player.h"
 #include "../../Services/Logger.h"
 #include "../../Services/SimpleDB.h"
+#include "../../Services/PersistenceHandler.h"
 #include <cstring>
 #include <string>
 
@@ -24,17 +25,13 @@ Parameters:	none
 Purpose:	Default constructor for Player class. Sets various properties to
 			default values.
 *******************************************************************************/
-Player::Player() :
-_persistentData(new Services::SimpleDB),   // will replace hard coded implementation class next increment
-_loggerPtr(new Services::Logger)     // will replace hard coded implementation class next increment
+Player::Player()
 {
 	setUsername("");
 	setPassword("");
 	setEmail("");
 	setHighScore(0);
 	setSubscription(false);
-
-	_logger << "UserAccounts being used and has been successfully initialized";
 	
 }
 
@@ -174,4 +171,21 @@ Purpose:	returns if the user has a subscription
 bool Player::getSubscription()
 {
 	return hasSubscription;
+}
+
+bool Player::login(std::string username, std::string password, std::string email) 
+{
+	Services::PersistenceHandler* persist;
+	Services::SimpleDB db;
+	persist = &db;
+	return persist->checkDB(username, password, email);
+	
+}
+
+bool Player::register_account(std::string username, std::string password, std::string email) 
+{
+	Services::PersistenceHandler* persist;
+	Services::SimpleDB db;
+	persist = &db;
+	return persist->AddUser(username, password, email);
 }

@@ -66,10 +66,6 @@
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Services\Log.txt" />
-    <Text Include="Services\Persistence.txt" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D795789F-CDDE-4D99-B85F-B8BD1A696165}</ProjectGuid>

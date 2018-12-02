@@ -119,16 +119,15 @@ bool Domain::GameTetris::process_Input(char input)
 	return true;
 }
 
-bool Domain::GameTetris::register_acct(std::string, std::string, std::string)
+bool Domain::GameTetris::register_acct(std::string username, std::string password, std::string email)
 {
-	return true;
+	return game_Player->register_account(username, password, email);
 }
 
-bool Domain::GameTetris::login(std::string, std::string)
+bool Domain::GameTetris::login(std::string username, std::string password, std::string email)
 {
-	//call to persistence interface
-	//todo
-	return true;
+	return game_Player->login(username, password, email);
+	
 }
 
 bool Domain::GameTetris::logout(std::string)

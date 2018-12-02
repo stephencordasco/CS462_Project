@@ -18,10 +18,9 @@ namespace Services
 		SimpleDB();
 
 
-		// Operations
-		std::vector<std::string> findRoles()                                       override;  // Returns list of all legal roles
-		bool login(std::string username, std::string password, std::string email);
-		void AddUser(Domain::Player user);
+		// Operations                           
+		bool checkDB(std::string username, std::string password, std::string email);
+		bool AddUser(std::string username, std::string password, std::string email);
 		std::string read_config_payment() override;
 		~SimpleDB() noexcept override;
 

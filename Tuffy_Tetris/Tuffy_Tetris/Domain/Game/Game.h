@@ -32,7 +32,7 @@ namespace Domain {
 		virtual void set_Paused(bool) = 0;
 		virtual bool process_Input(char) = 0;
 		virtual bool register_acct(std::string, std::string, std::string) = 0;
-		virtual bool login(std::string, std::string) = 0;
+		virtual bool login(std::string, std::string, std::string) = 0;
 		virtual bool logout(std::string) = 0;
 		virtual bool purchase_Sub(std::string, std::string, std::string, std::string,
 			std::string, std::string) = 0;

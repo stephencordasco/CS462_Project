@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <stdexcept> 
-
+#include <iostream>
 
 
 
@@ -40,8 +40,8 @@ namespace Services
 		virtual PersistenceHandler & operator=(PersistenceHandler && rhs) = default;  // move assignment
 
 		// Operations
-		virtual std::vector<std::string> findRoles() = 0;  // Returns list of all legal roles
-		
+		virtual bool AddUser(std::string username, std::string password, std::string email) = 0;
+		virtual bool checkDB(std::string username, std::string password, std::string email) = 0;
 		
 
 		// Destructor

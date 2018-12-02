@@ -34,7 +34,7 @@ namespace Domain {
 		void set_Paused(bool) override;
 		bool process_Input(char) override;
 		bool register_acct(std::string, std::string, std::string);
-		bool login(std::string, std::string) override;
+		bool login(std::string, std::string, std::string) override;
 		bool logout(std::string) override;
 		bool purchase_Sub(std::string, std::string, std::string, std::string,
 			std::string, std::string) override;
