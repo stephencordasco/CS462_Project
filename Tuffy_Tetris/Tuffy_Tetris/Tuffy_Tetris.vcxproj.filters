@@ -108,6 +108,9 @@
     <ClInclude Include="Services\PersistenceHandler.h">
       <Filter>Header Files\Services</Filter>
     </ClInclude>
+    <ClInclude Include="Domain\Piece\Chunk.h">
+      <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
@@ -172,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="Services\Payment_VISA.cpp">
       <Filter>Header Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Domain\Piece\Chunk.cpp">
+      <Filter>Source Files\Domain\Piece</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

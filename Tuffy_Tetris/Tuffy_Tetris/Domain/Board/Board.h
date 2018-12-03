@@ -30,13 +30,15 @@ namespace Domain
 		~Board();
 		bool generate_Frame(std::string & output);
 		bool move_Down();
+		bool move_Chunk_Down();
 		bool move_Left();
 		bool move_Right();
 		bool rotate_Piece();
 		bool system_Move();
 		// TODO -- under construction --
 		void checkFullRow();
-		void clearRow(std::list<int>);
+		//void clearRow(std::list<int>);
+		void clearRow(int row);
 
 	private:
 
@@ -44,10 +46,12 @@ namespace Domain
 		void init_piece();
 		void spawn_Piece(int type, int x_pos, int y_pos);
 		bool draw_Piece_State();
+		bool draw_Chunk_State();
 		void draw_Board_State();
 		bool validate_Move();
 		bool board_state[22][12];
 		bool piece_state[22][12];
+		bool chunk_state[21][10];
 		bool update_frame;
 		std::default_random_engine rand_piece;
 		std::uniform_int_distribution<int> dist_piece;

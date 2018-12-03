@@ -95,8 +95,16 @@ void Board::spawn_Piece(int type, int x, int y)
 	}
 
 	current_piece = PieceFactory::createPiece(type_holder, x, y);
-	//draw new piece_state
-	draw_Piece_State();
+	if (type != 5) 
+	{
+		draw_Piece_State();
+	}
+	else 
+	{
+		static_cast<Chunk*>(current_piece)->set_points(chunk_state[0]);
+		draw_Chunk_State();
+	}
+	
 }
 
 /*******************************************************************************
@@ -150,6 +158,31 @@ bool Board::draw_Piece_State()
 	return true;
 }
 
+bool Board::draw_Chunk_State() 
+{
+	init_piece();
+	int abs_x = current_piece->get_x();
+	int abs_y = current_piece->get_y();
+
+	for (unsigned char i = 0; i < 20; i++)
+	{
+		bool * row = &((current_piece->get_points())[10 * i]);
+		for (int j = 0; j < 10; j++)
+		{
+			// if the value in piece array is true, and out of bounds in x or y 
+			if (row[j] && ((j + abs_x > 10 || j + abs_x < 1) || (i + abs_y > 20)))
+				return false;
+			//otherwise draw the point
+			else
+			{
+				piece_state[abs_y + i][abs_x + j] = row[j];
+			}
+		}
+	}
+	update_frame = true;
+	return true;
+}
+
 /*******************************************************************************
 Name:		validate_Move
 Parameters:	none
@@ -188,6 +221,20 @@ bool Domain::Board::move_Down()
 	{
 		current_piece->move_vert(1);
 		draw_Piece_State();
+		return false;
+	}
+	return true;
+}
+
+bool Domain::Board::move_Chunk_Down() 
+{
+	current_piece->move_vert(-1);
+
+
+	if ((!draw_Chunk_State() || !validate_Move()))
+	{
+		current_piece->move_vert(1);
+		draw_Chunk_State();
 		return false;
 	}
 	return true;
@@ -273,9 +320,10 @@ bool Domain::Board::system_Move()
 		current_piece->move_vert(1);
 		draw_Piece_State();
 		draw_Board_State();
+		checkFullRow();
 		init_piece();
 		spawn_Piece(-1, 5, 0);
-		checkFullRow();
+		
 		return false;
 	}
 	return false;
@@ -354,33 +402,63 @@ Parameters:	none
 Purpose:	checks board_state during each "tick" to find full rows; pushes row
 			index onto indices list and calls clearRow helper function
 *******************************************************************************/
-void Board::checkFullRow()
-{
-	// count the number of true spaces in a row
-	int count = 0;
-	// vector to store indices of the row to clear
-	std::list<int> indices;
+//void Board::checkFullRow()
+//{
+//	// count the number of true spaces in a row
+//	int count = 0;
+//	// vector to store indices of the row to clear
+//	std::list<int> indices;
+//
+//	for (int i = 1; i < 21; i++)
+//	{
+//		count = 0;
+//		for (int j = 1; j < 11; j++)
+//		{
+//			if (board_state[i][j])
+//			{
+//				count++;
+//			}
+//		}
+//		// check if the row is true (full)
+//		if (count == 10)
+//		{
+//			indices.push_back(i);
+//		}
+//	}
+//
+//	// find full rows and clear them
+//	if (!indices.empty())
+//		clearRow(indices);
+//}
 
-	for (int i = 1; i < 21; i++)
+
+void Board::checkFullRow() 
+{
+	bool foundfullrow = false;
+	do 
 	{
-		count = 0;
-		for (int j = 1; j < 11; j++)
+		foundfullrow = false;
+		for (int i = 20; i > 1; i--) 
 		{
-			if (board_state[i][j])
+			int count = 0;
+			for (int j = 1; j < 11; j++) 
 			{
-				count++;
+				if (board_state[i][j]) 
+				{
+					count++;
+				}
+
+				if (count == 10) 
+				{
+					foundfullrow = true;
+					clearRow(i);
+				}
 			}
 		}
-		// check if the row is true (full)
-		if (count == 10)
-		{
-			indices.push_back(i);
-		}
-	}
 
-	// find full rows and clear them
-	if (!indices.empty())
-		clearRow(indices);
+
+
+	} while (foundfullrow);
 }
 
 /*******************************************************************************
@@ -388,41 +466,74 @@ Name:		clearRow
 Parameters:	integer list
 Purpose:	clears the rows (sets values to false) that are full
 *******************************************************************************/
-void Board::clearRow(std::list<int> indices)
+//void Board::clearRow(std::list<int> indices)
+//{
+//	// reverse list so that clearing begins at bottom of board
+//	indices.reverse();
+//	std::string output = " ";
+//
+//	// keep count of the list
+//	int count = 1;
+//	size_t lSize = indices.size();
+//
+//	// traverse the list of vertices and clear the rows
+//	for (std::list<int>::iterator it = indices.begin(); it != indices.end(); it++)
+//	{
+//		for (int j = 1; j < 11; j++)
+//		{
+//			// clear full row
+//			board_state[*it][j] = false;
+//		}
+//
+//		// block shift after the last row has been cleared
+//		if (count == lSize)
+//		{
+//			for (size_t i = 20; i > lSize; i--)
+//			{
+//				for (int j = 1; j < 11; j++)
+//				{
+//					board_state[i][j] = board_state[i - lSize][j];
+//				}
+//			}
+//		}
+//
+//		// increment the counter
+//		count++;
+//	}
+//	
+//	// update frame
+//	generate_Frame(output);
+//}
+
+void Board::clearRow(int row) 
 {
-	// reverse list so that clearing begins at bottom of board
-	indices.reverse();
-	std::string output = " ";
-
-	// keep count of the list
-	int count = 1;
-	size_t lSize = indices.size();
-
-	// traverse the list of vertices and clear the rows
-	for (std::list<int>::iterator it = indices.begin(); it != indices.end(); it++)
+	//clear full row from board state
+	for (int i = 1; i < 11; i++) 
 	{
-		for (int j = 1; j < 11; j++)
-		{
-			// clear full row
-			board_state[*it][j] = false;
-		}
-
-		// block shift after the last row has been cleared
-		if (count == lSize)
-		{
-			for (size_t i = 20; i > lSize; i--)
-			{
-				for (int j = 1; j < 11; j++)
-				{
-					board_state[i][j] = board_state[i - lSize][j];
-				}
-			}
-		}
-
-		// increment the counter
-		count++;
+		board_state[row][i] = false;
 	}
-	
-	// update frame
-	generate_Frame(output);
+	//copy above rows to new piece and clear board state;
+	for (int i = 0; i < row; i++) 
+	{
+		for (int j = 0; j < 12; j++) 
+		{
+			if (j == 0 || j == 11) continue;
+			else 
+			{
+				chunk_state[i][j-1] = board_state[i][j];
+				board_state[i][j] = false;
+			}
+		
+		}
+	}
+
+
+	spawn_Piece(5, 1, 0);
+
+	while (move_Chunk_Down()) 
+	{
+		draw_Board_State();
+	}
+
 }
+

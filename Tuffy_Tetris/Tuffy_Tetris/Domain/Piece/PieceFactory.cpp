@@ -19,6 +19,9 @@ Piece* Domain::PieceFactory::createPiece(int type, int x, int y)
 	case(4):
 		return new Piece5(x, y);
 		break;
+	case(5):
+		return new Chunk(x, y);
+		break;
 	default: 
 		return new Piece1(x, y);
 		break;

@@ -7,6 +7,7 @@
 #include "Piece3.h"
 #include "Piece4.h"
 #include "Piece5.h"
+#include "Chunk.h"
 
 using Domain::Piece;
 

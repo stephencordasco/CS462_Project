@@ -144,3 +144,7 @@ void Piece::gen_skirt()
 	}
 }
 
+Domain::Piece::~Piece()
+{
+}
+

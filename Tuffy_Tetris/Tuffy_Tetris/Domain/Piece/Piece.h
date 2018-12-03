@@ -22,25 +22,24 @@ namespace Domain
 	public:
 		Piece();
 		Piece(int x, int y);
-		void rotate();
-		void undo_rot();
-		void move_vert(int y);
-		void move_horiz(int x);
+		virtual void rotate();
+		virtual void undo_rot();
+		virtual void move_vert(int y);
+		virtual void move_horiz(int x);
 		//generate skirt array
-		void gen_skirt();
+		virtual void gen_skirt();
 		virtual void init() = 0;
-
 		//trivial properties
 		int get_x() { return abs_x; }
 		int get_y() { return abs_y; }
-		bool * get_points() { return points[0]; }
+		virtual bool * get_points() { return points[0]; }
 		int * get_skirt() { return skirt; }
 		void set_x(int x) { abs_x = x; }
 		void set_y(int y) { abs_y = y; }
 		void set_displaychar(char c) { displaychar = c; }
 		char get_displaychar() { return displaychar; }
 		//
-
+		virtual ~Piece();
 	private:
 		bool points[4][4];
 
