@@ -126,9 +126,21 @@ namespace Services
 
 		return true;
 	}
+
+	bool SimpleDB::authorizePayment(std::string cardNum, std::string acctHolder, std::string secNum, std::string exprDate, std::string addr, std::string zip)
+	{
+		if (cardNum != " ")
+			return true;
+		else return false;
+	}
+
+	bool SimpleDB::checkSub(bool hasSub)
+	{
+		if (hasSub)
+			return true;
+		else return false;
+	}
 }
-
-
 
 std::string Services::SimpleDB::read_config_payment()
 {

@@ -44,7 +44,7 @@ namespace Domain {
 		bool set_Email(std::string) override;
 		bool set_User(std::string) override;
 		bool is_Admin(std::string) override;
-		bool get_Sub() override;
+		bool get_Sub(bool) override;
 		int get_Level() override;
 		int get_Score() override;
 		bool save_Score() override;

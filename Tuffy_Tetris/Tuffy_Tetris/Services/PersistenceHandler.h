@@ -42,6 +42,8 @@ namespace Services
 		// Operations
 		virtual bool AddUser(std::string username, std::string password, std::string email) = 0;
 		virtual bool checkDB(std::string username, std::string password, std::string email) = 0;
+		virtual bool authorizePayment(std::string, std::string, std::string, std::string, std::string, std::string) = 0;
+		virtual bool checkSub(bool) = 0;
 		
 
 		// Destructor
