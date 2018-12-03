@@ -379,14 +379,14 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	{
 		std::cout << "\nPurchase successful!\n";
 		std::cout << "You now have access to online scores!\n";
-		std::cout << "Press enter to continue...\n";
+		std::cout << "Press enter to continue...";
 		std::cin.get();
 		accountMenu();
 	}
 	else 
 	{
 		std::cout << "Transaction denied. Please try again.\n";
-		std::cout << "Press enter to continue...\n";
+		std::cout << "Press enter to continue...";
 		std::cin.get();
 		accountMenu();
 	}
@@ -394,7 +394,7 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	if (game->get_Sub())
 	{
 		std::cout << "\nYou already have a subscription!\n";
-		std::cout << "Press enter to continue...\n";
+		std::cout << "Press enter to continue...";
 		std::cin.get();
 		accountMenu();
 	}
@@ -478,9 +478,8 @@ void UI_console_win::viewHighScore()
 	std::cout << "\n======== High Score ========\n";
 	std::cout << "High Score: " << highScore << std::endl;
 	std::cout << "============================\n";
-	std::cout << "\nPress enter to continue...\n";
-	std::cin.get();
-	std::cin.get();
+	std::cout << "\nPress enter to continue...";
+	std::cin.get(); std::cin.get();
 }
 
 /*******************************************************************************
@@ -532,8 +531,7 @@ bool UI_console_win::accountMenu()
 			if (game->set_Email(username)) 
 			{
 				// print new password
-				std::cout << "\nThank your! Your new password is " << password << "\n\n";
-				password = "";
+				std::cout << "\nThank you! Your password has been updated!\n";
 				std::cout << "Press enter to continue...";
 				std::cin.get();
 				// in this case, take user back to account menu
@@ -556,6 +554,7 @@ bool UI_console_win::accountMenu()
 
 		case '4':	// user chose to view high score
 			viewHighScore();
+			accountMenu();
 			break;
 
 		case '5':	// user chose to return to main menu
