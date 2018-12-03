@@ -137,11 +137,10 @@ bool Domain::GameTetris::logout(std::string)
 	return true;
 }
 
-bool Domain::GameTetris::purchase_Sub(std::string, std::string, std::string, std::string, std::string, std::string)
+bool Domain::GameTetris::purchase_Sub(std::string cardNum, std::string acctHolder, std::string secNum, std::string exprDate, std::string addr, std::string zip)
 {
 	//call to persistance interface
-	//todo
-	return false;
+	return true;
 }
 
 int Domain::GameTetris::get_Userscore()
@@ -209,7 +208,6 @@ bool Domain::GameTetris::is_Admin(std::string user)
 bool Domain::GameTetris::get_Sub()
 {
 	//call to persistance interface
-	//todo stub
 	return false;
 }
 

@@ -379,18 +379,22 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	{
 		std::cout << "\nPurchase successful!\n";
 		std::cout << "You now have access to online scores!\n";
+		std::cout << "Press enter to continue...\n";
+		std::cin.get();
+		accountMenu();
 	}
 	else 
 	{
 		std::cout << "Transaction denied. Please try again.\n";
-		std::cout << "Press enter to continue...";
+		std::cout << "Press enter to continue...\n";
 		std::cin.get();
 		accountMenu();
 	}
 	// if the payment was successful take the user back to the account menu
 	if (game->get_Sub())
 	{
-		std::cout << "Press enter to continue...";
+		std::cout << "\nYou already have a subscription!\n";
+		std::cout << "Press enter to continue...\n";
 		std::cin.get();
 		accountMenu();
 	}
