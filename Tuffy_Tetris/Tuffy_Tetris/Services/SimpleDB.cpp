@@ -58,10 +58,16 @@ namespace Services
 
 			//if first three tokens match return true
 			if (username == tokens[0] && password == tokens[1] && email == tokens[2]) {
+
+				//log when successful login
+				_logger << "User has successfully logged in";
 				return true;
 			}
 		}
-		
+
+		//log that login failed
+		_logger << "Login failed";
+
 		//if none match return false
 		return false;
 	}
@@ -93,7 +99,7 @@ namespace Services
 			}
 			
 			//adds the new user to the array
-			lines[numUsers] = username + "," + password + "," + email + "," + "0," + "No";
+			lines[numUsers] = username + "," + password + "," + email + "," + "0," + "No,";
 
 			//closes the file
 			ReadPersistFile.close();
@@ -111,9 +117,12 @@ namespace Services
 
 			//closes persistence file
 			WritePersistFile.close();
+
+			//log successful account creation
+			_logger << "New account successfully created";
 		}
 		//if file doesn't exist
-		else {
+		else{
 			//creates a new file
 			std::ofstream WritePersistFile("Services/Persistence.txt", std::ios::out);
 
@@ -121,7 +130,10 @@ namespace Services
 			WritePersistFile << "1\n";
 
 			//adds new user
-			WritePersistFile << username << "," << password << "," << email << "," << "0," << "No\n";
+			WritePersistFile << username << "," << password << "," << email << "," << "0," << "No,";
+
+			//log successful account creation
+			_logger << "New account successfully created";
 		}
 
 		return true;
