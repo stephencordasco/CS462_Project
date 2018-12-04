@@ -93,7 +93,7 @@ namespace Services
 			}
 			
 			//adds the new user to the array
-			lines[numUsers] = username + "," + password + "," + email + "," + "0," + "No";
+			lines[numUsers] = username + "," + password + "," + email + "," + "0," + "No,";
 
 			//closes the file
 			ReadPersistFile.close();
@@ -113,7 +113,7 @@ namespace Services
 			WritePersistFile.close();
 		}
 		//if file doesn't exist
-		else {
+		else{
 			//creates a new file
 			std::ofstream WritePersistFile("Services/Persistence.txt", std::ios::out);
 
@@ -121,7 +121,7 @@ namespace Services
 			WritePersistFile << "1\n";
 
 			//adds new user
-			WritePersistFile << username << "," << password << "," << email << "," << "0," << "No\n";
+			WritePersistFile << username << "," << password << "," << email << "," << "0," << "No,";
 		}
 
 		return true;

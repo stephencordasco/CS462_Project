@@ -1,4 +1,4 @@
-2018-12-02 14:25:19 | Logger being used and has been successfully initialized
-2018-12-02 14:25:19 | Simple DB being used and has been successfully initialized
-2018-12-02 14:25:19 | Simple DB shutdown successfully
-2018-12-02 14:25:19 | Simple Logger shutdown successfully
+2018-12-03 17:41:41 | Logger being used and has been successfully initialized
+2018-12-03 17:41:41 | Simple DB being used and has been successfully initialized
+2018-12-03 17:41:41 | Simple DB shutdown successfully
+2018-12-03 17:41:41 | Simple Logger shutdown successfully
