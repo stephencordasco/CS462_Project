@@ -133,7 +133,7 @@ void UI_console_win::displayLogin()
 	std::getline(std::cin, email);
 	
 	// greet the user if login successful
-	if (game->login(username, password,email))
+	if (game->login(username, password, email))
 	{	// print welcome message
 		//std::cout << "\nWelcome, " << player->getUsername() << "\n\n";
 	}

@@ -7,7 +7,8 @@ namespace Services
 {
 	class IPayment 
 	{
-		
+		virtual bool acceptCardInfo() = 0;
+		virtual void printToLogger() = 0;
 	};
 }
 
