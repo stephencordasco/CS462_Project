@@ -66,6 +66,6 @@ int main(void)
 	delete server;
 
 	std::cout << "Press enter to continue...";
-	std::cin.get();
+	std::cin.get(); std::cin.get();
 	return 0;
 }
