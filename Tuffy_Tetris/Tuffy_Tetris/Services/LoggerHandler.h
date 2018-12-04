@@ -48,7 +48,7 @@ namespace Services
 	
 	
 	inline LoggerHandler::LoggerHandler(std::string const & LogFile) 
-		:_loggingStream(LogFile.c_str(), std::ios::out)
+		:_loggingStream(LogFile.c_str(), std::ios::out | std::ios::app)
 	{}
 } 
 
