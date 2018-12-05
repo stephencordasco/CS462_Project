@@ -42,7 +42,7 @@ namespace Domain {
 		virtual bool set_Email(std::string) = 0;
 		virtual bool set_User(std::string) = 0;
 		virtual bool is_Admin(std::string) = 0;
-		virtual bool get_Sub(bool) = 0;
+		virtual bool get_Sub() = 0;
 		virtual int get_Level() = 0;
 		virtual int get_Score() = 0;
 		virtual bool save_Score() = 0;

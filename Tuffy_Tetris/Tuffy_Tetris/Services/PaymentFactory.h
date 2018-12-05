@@ -4,6 +4,7 @@
 
 #include "IPayment.h"
 #include "PersistenceHandler.h"
+#include "Logger.h"
 #include <string>
 
 namespace Services 

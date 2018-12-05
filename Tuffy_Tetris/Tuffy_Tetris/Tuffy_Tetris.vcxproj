@@ -23,6 +23,7 @@
     <ClInclude Include="Domain\Game\Game.h" />
     <ClInclude Include="Domain\Game\GameTetris.h" />
     <ClInclude Include="Domain\Piece\Chunk.h" />
+    <ClInclude Include="Domain\Piece\newPiece.h" />
     <ClInclude Include="Domain\Piece\Piece.h" />
     <ClInclude Include="Domain\Player\Player.h" />
     <ClInclude Include="Domain\Piece\Piece1.h" />
@@ -50,6 +51,7 @@
     <ClCompile Include="Domain\Game\GameTetris.cpp" />
     <ClCompile Include="Domain\main.cpp" />
     <ClCompile Include="Domain\Piece\Chunk.cpp" />
+    <ClCompile Include="Domain\Piece\newPiece.cpp" />
     <ClCompile Include="Domain\Piece\Piece.cpp" />
     <ClCompile Include="Domain\Piece\Piece1.cpp" />
     <ClCompile Include="Domain\Piece\Piece2.cpp" />

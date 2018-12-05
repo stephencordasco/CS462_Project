@@ -10,7 +10,7 @@ Purpose:	Defines methods for the abstract Game class.
 #include "GameTetris.h"
 
 Domain::GameTetris::GameTetris() : game_started(false), game_paused(false), score(0),
-level(0), game_Player(nullptr), game_Board(nullptr), game_Server(nullptr) {}
+level(0), game_Player(new Player()), game_Board(nullptr), game_Server(nullptr) {}
 
 void Domain::GameTetris::start_Game()
 {
@@ -121,13 +121,14 @@ bool Domain::GameTetris::process_Input(char input)
 
 bool Domain::GameTetris::register_acct(std::string username, std::string password, std::string email)
 {
+	if(!game_Player->getPersist()) game_Player->setPersistence(game_Server);
 	return game_Player->register_account(username, password, email);
 }
 
 bool Domain::GameTetris::login(std::string username, std::string password, std::string email)
 {
+	if (!game_Player->getPersist()) game_Player->setPersistence(game_Server);
 	return game_Player->login(username, password, email);
-	
 }
 
 bool Domain::GameTetris::logout(std::string)
@@ -207,10 +208,10 @@ bool Domain::GameTetris::is_Admin(std::string user)
 	return true;
 }
 
-bool Domain::GameTetris::get_Sub(bool hasSub)
+bool Domain::GameTetris::get_Sub()
 {
 	//call to persistance interface
-	if (game_Server->checkSub(hasSub))
+	if (game_Server->checkSub(game_Player->getUsername()))
 		return true;
 	else return false;
 }
@@ -235,4 +236,5 @@ bool Domain::GameTetris::save_Score()
 Domain::GameTetris::~GameTetris()
 {
 	if(game_Board) delete game_Board;
+	if (game_Player) delete game_Player;
 }

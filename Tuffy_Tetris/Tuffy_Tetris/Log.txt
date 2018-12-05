@@ -1,0 +1,48 @@
+2018-12-05 11:20:55 | Logger being used and has been successfully initialized
+2018-12-05 11:20:55 | Using Mastercard Payment Processor
+2018-12-05 11:20:55 | Simple Logger shutdown successfully
+2018-12-05 11:21:41 | Logger being used and has been successfully initialized
+2018-12-05 11:21:41 | Using VISA Payment Processor
+2018-12-05 11:21:41 | Simple Logger shutdown successfully
+2018-12-05 11:46:51 | Logger being used and has been successfully initialized
+2018-12-05 11:46:51 | Using VISA Payment Processor
+2018-12-05 11:46:51 | Simple Logger shutdown successfully
+2018-12-05 11:47:04 | Logger being used and has been successfully initialized
+2018-12-05 11:47:04 | Using VISA Payment Processor
+2018-12-05 11:47:04 | Simple Logger shutdown successfully
+2018-12-05 11:47:45 | Logger being used and has been successfully initialized
+2018-12-05 11:47:45 | Using VISA Payment Processor
+2018-12-05 11:47:45 | Simple Logger shutdown successfully
+2018-12-05 11:49:15 | Logger being used and has been successfully initialized
+2018-12-05 11:49:15 | Using VISA Payment Processor
+2018-12-05 11:49:15 | Simple Logger shutdown successfully
+2018-12-05 11:50:21 | Logger being used and has been successfully initialized
+2018-12-05 11:50:21 | Using VISA Payment Processor
+2018-12-05 11:50:21 | Simple Logger shutdown successfully
+2018-12-05 11:58:12 | Logger being used and has been successfully initialized
+2018-12-05 11:58:12 | Using VISA Payment Processor
+2018-12-05 11:58:12 | Simple Logger shutdown successfully
+2018-12-05 12:00:23 | Logger being used and has been successfully initialized
+2018-12-05 12:00:23 | Using VISA Payment Processor
+2018-12-05 12:00:23 | Simple Logger shutdown successfully
+2018-12-05 12:00:41 | Logger being used and has been successfully initialized
+2018-12-05 12:00:41 | Using VISA Payment Processor
+2018-12-05 12:00:41 | Simple Logger shutdown successfully
+2018-12-05 12:02:04 | Logger being used and has been successfully initialized
+2018-12-05 12:02:04 | Using VISA Payment Processor
+2018-12-05 12:02:04 | Simple Logger shutdown successfully
+2018-12-05 12:17:30 | Logger being used and has been successfully initialized
+2018-12-05 12:17:30 | Using VISA Payment Processor
+2018-12-05 12:17:30 | Simple Logger shutdown successfully
+2018-12-05 12:18:10 | Logger being used and has been successfully initialized
+2018-12-05 12:18:10 | Using VISA Payment Processor
+2018-12-05 12:18:10 | Simple Logger shutdown successfully
+2018-12-05 12:19:18 | Logger being used and has been successfully initialized
+2018-12-05 12:19:18 | Using VISA Payment Processor
+2018-12-05 12:19:18 | Simple Logger shutdown successfully
+2018-12-05 12:21:25 | Logger being used and has been successfully initialized
+2018-12-05 12:21:25 | Using VISA Payment Processor
+2018-12-05 12:21:25 | Simple Logger shutdown successfully
+2018-12-05 12:23:08 | Logger being used and has been successfully initialized
+2018-12-05 12:23:08 | Using VISA Payment Processor
+2018-12-05 12:23:08 | Simple Logger shutdown successfully

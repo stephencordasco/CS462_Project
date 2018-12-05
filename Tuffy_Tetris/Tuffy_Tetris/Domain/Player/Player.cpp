@@ -123,6 +123,11 @@ Player& Player::setSubscription(bool value)
 	return *this;
 }
 
+void Domain::Player::setPersistence(Services::PersistenceHandler * p)
+{
+	persist = p;
+}
+
 /*******************************************************************************
 Name:		getUsername
 Parameters:	none
@@ -173,19 +178,27 @@ bool Player::getSubscription()
 	return hasSubscription;
 }
 
+Services::PersistenceHandler * Domain::Player::getPersist()
+{
+	return persist;
+}
+
 bool Player::login(std::string username, std::string password, std::string email) 
 {
-	Services::PersistenceHandler* persist;
-	Services::SimpleDB db;
-	persist = &db;
-	return persist->checkDB(username, password, email);
-	
+
+	//todo, we need to make this actually retrieve the information correctly. temporary fix.
+	if (persist->checkDB(username, password, email)) 
+	{
+		this->username = username;
+		this->email = email;
+		highScore = 0;
+		hasSubscription = false;
+		return true;
+	}
+	return false;
 }
 
 bool Player::register_account(std::string username, std::string password, std::string email) 
 {
-	Services::PersistenceHandler* persist;
-	Services::SimpleDB db;
-	persist = &db;
 	return persist->AddUser(username, password, email);
 }

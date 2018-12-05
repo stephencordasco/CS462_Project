@@ -1,5 +1,24 @@
-2018-12-03 18:16:11 | Logger being used and has been successfully initialized
-2018-12-03 18:16:11 | Simple DB being used and has been successfully initialized
-2018-12-03 18:16:11 | Login failed
-2018-12-03 18:16:11 | Simple DB shutdown successfully
-2018-12-03 18:16:11 | Simple Logger shutdown successfully
+2018-12-05 11:58:12 | Logger being used and has been successfully initialized
+2018-12-05 11:58:12 | Simple DB being used and has been successfully initialized
+2018-12-05 11:58:25 | Login failed
+2018-12-05 11:58:37 | New account successfully created
+2018-12-05 11:59:10 | Simple DB shutdown successfully
+2018-12-05 11:59:10 | Simple Logger shutdown successfully
+2018-12-05 12:00:41 | Logger being used and has been successfully initialized
+2018-12-05 12:00:41 | Simple DB being used and has been successfully initialized
+2018-12-05 12:00:58 | User has successfully logged in
+2018-12-05 12:01:04 | Simple DB shutdown successfully
+2018-12-05 12:01:04 | Simple Logger shutdown successfully
+2018-12-05 12:02:04 | Logger being used and has been successfully initialized
+2018-12-05 12:02:04 | Simple DB being used and has been successfully initialized
+2018-12-05 12:02:45 | User has successfully logged in
+2018-12-05 12:03:10 | Simple DB shutdown successfully
+2018-12-05 12:03:10 | Simple Logger shutdown successfully
+2018-12-05 12:17:30 | Logger being used and has been successfully initialized
+2018-12-05 12:17:30 | Simple DB being used and has been successfully initialized
+2018-12-05 12:17:40 | User has successfully logged in
+2018-12-05 12:18:05 | Simple DB shutdown successfully
+2018-12-05 12:18:05 | Simple Logger shutdown successfully
+2018-12-05 12:23:08 | Logger being used and has been successfully initialized
+2018-12-05 12:23:08 | Simple DB being used and has been successfully initialized
+2018-12-05 12:23:20 | User has successfully logged in

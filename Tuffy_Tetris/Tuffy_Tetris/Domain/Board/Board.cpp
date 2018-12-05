@@ -23,7 +23,7 @@ Purpose:	Default constructor for Board class. Sets various properties to
 Board::Board() : board_state{}, piece_state{}
 {
 	rand_piece = std::default_random_engine();
-	dist_piece = std::uniform_int_distribution<int>(0, 4);
+	dist_piece = std::uniform_int_distribution<int>(0, 5);
 	update_frame = false;
 	current_piece = nullptr;
 	//initialize board state
@@ -95,7 +95,7 @@ void Board::spawn_Piece(int type, int x, int y)
 	}
 
 	current_piece = PieceFactory::createPiece(type_holder, x, y);
-	if (type != 5) 
+	if (type != 6) 
 	{
 		draw_Piece_State();
 	}
@@ -528,7 +528,7 @@ void Board::clearRow(int row)
 	}
 
 
-	spawn_Piece(5, 1, 0);
+	spawn_Piece(6, 1, 0);
 
 	while (move_Chunk_Down()) 
 	{
