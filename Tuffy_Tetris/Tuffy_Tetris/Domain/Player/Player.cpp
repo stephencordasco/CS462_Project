@@ -173,6 +173,11 @@ bool Player::getSubscription()
 	return hasSubscription;
 }
 
+/*******************************************************************************
+Name:		login
+Parameters:	string 3x
+Purpose:	sends data to persistence
+*******************************************************************************/
 bool Player::login(std::string username, std::string password, std::string email) 
 {
 	Services::PersistenceHandler* persist;
@@ -182,6 +187,11 @@ bool Player::login(std::string username, std::string password, std::string email
 	
 }
 
+/*******************************************************************************
+Name:		register_account
+Parameters:	string 3x
+Purpose:	sends data to persistence
+*******************************************************************************/
 bool Player::register_account(std::string username, std::string password, std::string email) 
 {
 	Services::PersistenceHandler* persist;

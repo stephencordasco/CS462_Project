@@ -431,7 +431,11 @@ Purpose:	checks board_state during each "tick" to find full rows; pushes row
 //		clearRow(indices);
 //}
 
-
+/*******************************************************************************
+Name:		checkFullRow
+Parameters:	none
+Purpose:	checks for full rows and call helper function to clear if found
+*******************************************************************************/
 void Board::checkFullRow() 
 {
 	bool foundfullrow = false;
@@ -505,6 +509,11 @@ Purpose:	clears the rows (sets values to false) that are full
 //	generate_Frame(output);
 //}
 
+/*******************************************************************************
+Name:		clearRow
+Parameters:	integer
+Purpose:	clears the rows (sets values to false) that are full
+*******************************************************************************/
 void Board::clearRow(int row) 
 {
 	//clear full row from board state
