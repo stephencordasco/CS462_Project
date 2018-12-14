@@ -4,9 +4,9 @@
 #include <memory>
 
 #include "PersistenceHandler.h"
-#include "LoggerHandler.h"
-#include "../Domain/Player/Player.h"
-
+#include "../Logger/LoggerHandler.h"
+#include "../Payment/IPayment.h"
+#include "../Payment/PaymentFactory.h"
 
 
 namespace Services
@@ -22,7 +22,7 @@ namespace Services
 		bool checkDB(std::string username, std::string password, std::string email);
 		bool AddUser(std::string username, std::string password, std::string email);
 		bool authorizePayment(std::string, std::string, std::string, std::string, std::string, std::string);
-		bool checkSub(bool);
+		bool checkSub(std::string) override;
 		std::string read_config_payment() override;
 		~SimpleDB() noexcept override;
 
@@ -43,6 +43,8 @@ namespace Services
 		// convenience reference object enabling standard insertion syntax
 		// This line must be physically after the definition of _loggerPtr
 		Services::LoggerHandler                            & _logger = *_loggerPtr;
+
+		Services::IPayment* payment_processor;
 
 	}; 
 }  

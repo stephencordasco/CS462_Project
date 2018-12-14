@@ -8,12 +8,15 @@ PaymentFactory * Services::PaymentFactory::createPaymentFactory(PersistenceHandl
 {
 	std::string payment_type = p->read_config_payment();
 
-	if (payment_type == "mastercard") 
+	Logger log("Log.txt");
+	if (payment_type == "mastercard")
 	{
+		log << "Using Mastercard Payment Processor";
 		return new MCFactory();
 	}
 	else //default VISAFactory if empty or otherwise
 	{
+		log << "Using VISA Payment Processor";
 		return new VISAFactory();
 	}
 }

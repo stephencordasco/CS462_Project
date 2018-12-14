@@ -12,7 +12,7 @@ Purpose:	interface class declares virtual member functions and member
 
 #define UI_CONSOLE_H
 
-#include "../Services/PersistenceHandler.h"
+#include "../Services/Persistence/PersistenceHandler.h"
 #include "../Domain/Player/Player.h"
 #include <string>
 #include <cstring>

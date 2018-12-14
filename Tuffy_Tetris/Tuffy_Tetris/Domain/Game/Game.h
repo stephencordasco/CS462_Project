@@ -14,7 +14,7 @@ Purpose:	Declares abstract base class for a Game instance. Contains properties
 
 #include <string>
 #include "../Board/Board.h"
-#include "../../Services/PersistenceHandler.h"
+#include "../../Services/Persistence/PersistenceHandler.h"
 #include "../Player/Player.h"
 
 namespace Domain {
@@ -42,7 +42,7 @@ namespace Domain {
 		virtual bool set_Email(std::string) = 0;
 		virtual bool set_User(std::string) = 0;
 		virtual bool is_Admin(std::string) = 0;
-		virtual bool get_Sub(bool) = 0;
+		virtual bool get_Sub() = 0;
 		virtual int get_Level() = 0;
 		virtual int get_Score() = 0;
 		virtual bool save_Score() = 0;

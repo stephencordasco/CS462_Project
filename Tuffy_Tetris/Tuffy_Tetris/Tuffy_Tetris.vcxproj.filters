@@ -75,41 +75,41 @@
     <ClInclude Include="Domain\Player\Player.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Services\IPayment.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\Payment_VISA.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\Payment_MC.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\PaymentFactory.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\VISAFactory.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\MCFactory.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\LoggerHandler.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\Logger.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
-    <ClInclude Include="Services\SimpleDB.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Game\GameTetris.h">
       <Filter>Header Files\Domain</Filter>
     </ClInclude>
-    <ClInclude Include="Services\PersistenceHandler.h">
-      <Filter>Header Files\Services</Filter>
-    </ClInclude>
     <ClInclude Include="Domain\Piece\Chunk.h">
       <Filter>Header Files\Domain\Piece</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\IPayment.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\MCFactory.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\Payment_MC.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\Payment_VISA.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\PaymentFactory.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Payment\VISAFactory.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Persistence\SimpleDB.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Logger\Logger.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Logger\LoggerHandler.h">
+      <Filter>Header Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Services\Persistence\PersistenceHandler.h">
+      <Filter>Source Files\Services</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -152,32 +152,32 @@
     <ClCompile Include="Domain\Game\Game.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Services\SimpleDB.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
     <ClCompile Include="Domain\Game\GameTetris.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Services\IPayment.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\MCFactory.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\PaymentFactory.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\VISAFactory.cpp">
-      <Filter>Source Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\Payment_MC.cpp">
-      <Filter>Header Files\Services</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\Payment_VISA.cpp">
-      <Filter>Header Files\Services</Filter>
-    </ClCompile>
     <ClCompile Include="Domain\Piece\Chunk.cpp">
       <Filter>Source Files\Domain\Piece</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\IPayment.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\MCFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\Payment_MC.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\Payment_VISA.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\PaymentFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Payment\VISAFactory.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Services\Persistence\SimpleDB.cpp">
+      <Filter>Source Files\Services</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

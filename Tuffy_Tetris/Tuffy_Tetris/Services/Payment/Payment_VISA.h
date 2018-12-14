@@ -7,20 +7,20 @@ File:		UI_console_linux.h
 Purpose:	child class of UI_console declares member functions and member
 			variables for Linux OS
 *******************************************************************************/
-#ifndef PAYMENT_MC_H
-#define PAYMENT_MC_H
+#ifndef PAYMENT_VISA_H
+#define PAYMENT_VISA_H
 
 #include "IPayment.h"
-#include "LoggerHandler.h"
+#include "../Logger/LoggerHandler.h"
 
 using Services::IPayment;
 
-namespace Services 
+namespace Services
 {
-	class Payment_MC : public IPayment 
+	class Payment_VISA : public IPayment
 	{
 	public:
-		Payment_MC();
+		Payment_VISA();
 
 		bool acceptCardInfo(std::string, std::string, std::string, std::string, std::string, std::string);
 		void printToLogger(std::string);
@@ -32,5 +32,4 @@ namespace Services
 }
 
 
-#endif // !PAYMENT_MC_H
-
+#endif // !PAYMENT_VISA_H

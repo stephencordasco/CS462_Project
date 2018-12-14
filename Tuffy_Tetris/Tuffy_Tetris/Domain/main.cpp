@@ -17,9 +17,9 @@ Purpose:	Includes main entry point for program and an inline factory class
 #endif
 
 #include "Game/GameTetris.h"
-#include "../Services/PaymentFactory.h"
-#include "../Services/SimpleDB.h"
-#include "../Services/IPayment.h"
+#include "../Services/Payment/PaymentFactory.h"
+#include "../Services/Persistence/SimpleDB.h"
+#include "../Services/Payment/IPayment.h"
 
 class MainFactory
 {

@@ -3,7 +3,8 @@
 #define PAYMENTFACTORY_H
 
 #include "IPayment.h"
-#include "PersistenceHandler.h"
+#include "../Persistence/PersistenceHandler.h"
+#include "../Logger/Logger.h"
 #include <string>
 
 namespace Services 

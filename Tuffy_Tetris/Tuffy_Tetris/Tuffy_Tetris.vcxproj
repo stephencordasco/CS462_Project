@@ -31,16 +31,16 @@
     <ClInclude Include="Domain\Piece\Piece4.h" />
     <ClInclude Include="Domain\Piece\Piece5.h" />
     <ClInclude Include="Domain\Piece\PieceFactory.h" />
-    <ClInclude Include="Services\Logger.h" />
-    <ClInclude Include="Services\LoggerHandler.h" />
-    <ClInclude Include="Services\IPayment.h" />
-    <ClInclude Include="Services\MCFactory.h" />
-    <ClInclude Include="Services\PaymentFactory.h" />
-    <ClInclude Include="Services\Payment_MC.h" />
-    <ClInclude Include="Services\Payment_VISA.h" />
-    <ClInclude Include="Services\PersistenceHandler.h" />
-    <ClInclude Include="Services\SimpleDB.h" />
-    <ClInclude Include="Services\VISAFactory.h" />
+    <ClInclude Include="Services\Logger\Logger.h" />
+    <ClInclude Include="Services\Logger\LoggerHandler.h" />
+    <ClInclude Include="Services\Payment\IPayment.h" />
+    <ClInclude Include="Services\Payment\MCFactory.h" />
+    <ClInclude Include="Services\Payment\PaymentFactory.h" />
+    <ClInclude Include="Services\Payment\Payment_MC.h" />
+    <ClInclude Include="Services\Payment\Payment_VISA.h" />
+    <ClInclude Include="Services\Payment\VISAFactory.h" />
+    <ClInclude Include="Services\Persistence\PersistenceHandler.h" />
+    <ClInclude Include="Services\Persistence\SimpleDB.h" />
     <ClInclude Include="UI\UI_console.h" />
     <ClInclude Include="UI\Windows\UI_console_win.h" />
   </ItemGroup>
@@ -58,13 +58,13 @@
     <ClCompile Include="Domain\Piece\Piece5.cpp" />
     <ClCompile Include="Domain\Piece\PieceFactory.cpp" />
     <ClCompile Include="Domain\Player\Player.cpp" />
-    <ClCompile Include="Services\IPayment.cpp" />
-    <ClCompile Include="Services\MCFactory.cpp" />
-    <ClCompile Include="Services\PaymentFactory.cpp" />
-    <ClCompile Include="Services\Payment_MC.cpp" />
-    <ClCompile Include="Services\Payment_VISA.cpp" />
-    <ClCompile Include="Services\SimpleDB.cpp" />
-    <ClCompile Include="Services\VISAFactory.cpp" />
+    <ClCompile Include="Services\Payment\IPayment.cpp" />
+    <ClCompile Include="Services\Payment\MCFactory.cpp" />
+    <ClCompile Include="Services\Payment\PaymentFactory.cpp" />
+    <ClCompile Include="Services\Payment\Payment_MC.cpp" />
+    <ClCompile Include="Services\Payment\Payment_VISA.cpp" />
+    <ClCompile Include="Services\Payment\VISAFactory.cpp" />
+    <ClCompile Include="Services\Persistence\SimpleDB.cpp" />
     <ClCompile Include="UI\UI_console.cpp" />
     <ClCompile Include="UI\Windows\UI_console_win.cpp" />
   </ItemGroup>

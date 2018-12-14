@@ -1,9 +1,9 @@
 #include "SimpleDB.h"
-#include "Logger.h"
+#include "../Logger/Logger.h"
 #include <string>
 #include <vector>
 #include <fstream>
-#include "../Domain/Player/Player.h"
+#include "../../Domain/Player/Player.h"
 
 namespace Services
 {
@@ -11,6 +11,8 @@ namespace Services
 		: _loggerPtr(new Services::Logger("Services/Log.txt"))
 	{
 		_logger << "Simple DB being used and has been successfully initialized";
+		PaymentFactory* pFactory = PaymentFactory::createPaymentFactory(this);
+		payment_processor = pFactory->createPayment();
 	}
 
 
@@ -146,11 +148,10 @@ namespace Services
 		else return false;
 	}
 
-	bool SimpleDB::checkSub(bool hasSub)
+	bool SimpleDB::checkSub(std::string)
 	{
-		if (hasSub)
-			return true;
-		else return false;
+		//stub, call actual function to search database
+		return false;
 	}
 }
 

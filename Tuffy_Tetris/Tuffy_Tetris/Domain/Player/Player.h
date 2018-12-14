@@ -14,8 +14,8 @@ Purpose:	Declares properties and methods for the Board class. The Board class
 
 #include <string>
 
-#include "../../Services/PersistenceHandler.h"
-#include "../../Services/LoggerHandler.h"
+#include "../../Services/Persistence/PersistenceHandler.h"
+#include "../../Services/Logger/LoggerHandler.h"
 
 namespace Domain
 {
@@ -36,6 +36,7 @@ namespace Domain
 			Player &setEmail(std::string);
 			Player &setHighScore(int);
 			Player &setSubscription(bool);
+			void setPersistence(Services::PersistenceHandler*);
 
 			// getters
 			const std::string getUsername();
@@ -43,6 +44,7 @@ namespace Domain
 			const std::string getEmail();
 			int getHighScore();
 			bool getSubscription();
+			Services::PersistenceHandler* getPersist();
 
 			bool login(std::string username, std::string password, std::string email);
 			bool register_account(std::string username, std::string password, std::string email);
@@ -54,6 +56,7 @@ namespace Domain
 			std::string email;
 			int highScore;
 			bool hasSubscription;
+			Services::PersistenceHandler * persist;
 			
 	};
 

@@ -337,7 +337,7 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 {
 	//setHasSubscription(get_Server()->check_sub());
 	// check if the user already has a subscription
-	if (game->get_Sub(player->getSubscription()))
+	if (game->get_Sub())
 	{
 		// inform user they already have a subscription
 		std::cout << "\nYou already have a subscription!\n";
@@ -377,7 +377,6 @@ void UI_console_win::displayPurchaseSubscriptionScreen()
 	if(game->purchase_Sub(cardNumber, accountHolder, securityNumber,
 								expirationDate, billingAddress, zipCode))
 	{
-		player->setSubscription(true);
 		std::cout << "\nPurchase successful!\n";
 		std::cout << "You now have access to online scores!\n";
 		std::cout << "Press enter to continue...";
@@ -441,7 +440,7 @@ Purpose:	checks if user has a subscription; if true, user enters in a
 void UI::UI_console_win::saveNewHighScoreScreen()
 {	
 
-	if( game->get_Sub(player->getSubscription()) )
+	if( game->get_Sub() )
 	{
 		std::cin.get();
 		std::string nickname = " ";

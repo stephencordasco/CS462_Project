@@ -1,0 +1,6 @@
+2018-12-14 14:30:20 | Logger being used and has been successfully initialized
+2018-12-14 14:30:20 | Using Mastercard Payment Processor
+2018-12-14 14:30:20 | Simple Logger shutdown successfully
+2018-12-14 14:30:50 | Logger being used and has been successfully initialized
+2018-12-14 14:30:50 | Using Mastercard Payment Processor
+2018-12-14 14:30:50 | Simple Logger shutdown successfully

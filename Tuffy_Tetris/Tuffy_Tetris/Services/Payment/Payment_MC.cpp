@@ -7,7 +7,7 @@ File:		UI_console_linux.h
 Purpose:	child class of UI_console declares member functions and member
 			variables for Linux OS
 *******************************************************************************/
-#include "../Services/Payment_MC.h"
+#include "Payment_MC.h"
 
 using Services::Payment_MC;
 
