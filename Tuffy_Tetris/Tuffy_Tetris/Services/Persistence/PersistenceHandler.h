@@ -35,9 +35,6 @@ namespace Services
 		PersistenceHandler(const PersistenceHandler &  original) = default;   // copy ctor
 		PersistenceHandler(PersistenceHandler && original) = default;   // move ctor
 
-		virtual PersistenceHandler & operator=(const PersistenceHandler &  rhs) = default;  // copy assignment
-		virtual PersistenceHandler & operator=(PersistenceHandler && rhs) = default;  // move assignment
-
 		// Operations
 		virtual bool AddUser(std::string username, std::string password, std::string email) = 0;
 		virtual bool checkDB(std::string username, std::string password, std::string email) = 0;

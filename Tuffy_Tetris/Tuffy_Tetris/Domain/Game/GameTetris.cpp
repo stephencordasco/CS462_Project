@@ -190,7 +190,9 @@ Purpose:	checks if the user is an admin or a player
 *******************************************************************************/
 bool Domain::GameTetris::is_Admin(std::string user)
 {
-
+	if (!user.empty())
+	{
+	}
 	//todo
 	//// store the string contained in admin username
 	//std::string admin = "admin_";

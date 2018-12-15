@@ -11,13 +11,13 @@ Purpose:	Defines method implementations for the Chunk concrete class.
 
 using Domain::Chunk;
 
-Chunk::Chunk(int x, int y) : Piece(x, y) { }
+Chunk::Chunk(int x, int y) : Piece(x, y), chunk_points{} { }
 
-void Domain::Chunk::set_points(bool * points)
+void Domain::Chunk::set_points(bool * c_points)
 {
 	for (unsigned char i = 0; i < 21; i++) 
 	{
-		bool * row = &points[10 * i];
+		bool * row = &c_points[10 * i];
 		for (int j = 0; j < 10; j++) 
 		{
 			chunk_points[i][j] = row[j];

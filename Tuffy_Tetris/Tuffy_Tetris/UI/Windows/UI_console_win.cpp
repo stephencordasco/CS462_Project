@@ -17,7 +17,16 @@ Purpose:	Defines member functions for UI_console_win class
 
 using UI::UI_console_win;
 
-UI::UI_console_win::UI_console_win() : UI_console() {}
+UI::UI_console_win::UI_console_win() : UI_console() 
+{
+	username = ""; 
+	password = ""; 
+	email = ""; 
+	highScore = 0;
+	player = nullptr;
+	game = nullptr;
+}
+
 
 /*******************************************************************************
 Name:		print_Frame

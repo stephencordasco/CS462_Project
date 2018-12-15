@@ -29,6 +29,28 @@ void UI::UI_console_linux::print_Frame(std::string frame)
 	std::cout << frame;
 }
 
+/*******************************************************************************
+Name:		kbhit
+Parameters:	none
+Purpose:	Provides the same functionality as <conio.h> _kbhit(). Returns true
+			if at least one character is in the input buffer and returns false
+			otherwise.
+//code for this function used from StackOverFlow by user: Matthew Slattery
+//retrieved from URL:
+https://stackoverflow.com/questions/4025891/create-a-function-to-check-for-key-press-in-unix-using-ncurses?rq=1
+*******************************************************************************/
+int UI::UI_console_linux::kbhit(void)
+{
+	int ch = getch();
+	if (ch != ERR) {
+		ungetch(ch);
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
 
 void UI::UI_console_linux::game_Loop() 
 {

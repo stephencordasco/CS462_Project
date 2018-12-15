@@ -29,8 +29,6 @@ namespace Services
 		LoggerHandler(const LoggerHandler &  original) = default;  // copy ctor
 		LoggerHandler(LoggerHandler && original) = default;  // move ctor
 
-		virtual LoggerHandler & operator=(const LoggerHandler &  rhs) = default;  // copy assignment
-		virtual LoggerHandler & operator=(LoggerHandler && rhs) = default;  // move assignment
 
 
 		// Operations

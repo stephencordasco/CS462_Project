@@ -22,6 +22,7 @@ Piece::Piece() : points{}, skirt{}
 	abs_x = 0;
 	abs_y = 0;
 	gen_skirt();
+	displaychar = 'D';
 	
 }
 
@@ -35,6 +36,7 @@ Piece::Piece(int x, int y) : points{}, skirt{}
 	abs_x = x;
 	abs_y = y;
 	gen_skirt();
+	displaychar = 'D';
 }
 
 /*******************************************************************************

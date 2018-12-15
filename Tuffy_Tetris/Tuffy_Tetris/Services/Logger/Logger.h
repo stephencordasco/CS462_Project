@@ -59,10 +59,12 @@ namespace Services
 	inline Logger & Logger::operator<< (const std::string & message)
 	{
 		auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-
-#pragma warning(suppress : 4996)  // acknowledge and accept that std::localtime is not thread safe (Turn off MSVC++ warning)
+#ifdef _MSC_VER
+		#pragma warning(suppress : 4996)  // acknowledge and accept that std::localtime is not thread safe (Turn off MSVC++ warning)
 		_loggingStream << std::put_time(std::localtime(&now), "%Y-%m-%d %X") << " | ";
-
+#else
+		_loggingStream << std::put_time(std::localtime(&now), "%Y-%m-%d %X") << " | ";
+#endif
 		_loggingStream << message << '\n';
 
 		return *this;

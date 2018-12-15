@@ -17,7 +17,13 @@ Payment_VISA::Payment_VISA()
 
 bool Payment_VISA::acceptCardInfo(std::string cardNumber, std::string accountHolder, std::string securityNumber, std::string expirationDate, std::string billingAddress, std::string zipCode)
 {
-	return true;
+	//"use" parameters to avoid error in stub
+	if (!(cardNumber.empty() || accountHolder.empty() || securityNumber.empty() ||
+		expirationDate.empty() || billingAddress.empty() || zipCode.empty()))
+	{
+		return true;
+	}
+	else return false;
 }
 
 void Payment_VISA::printToLogger(std::string message)

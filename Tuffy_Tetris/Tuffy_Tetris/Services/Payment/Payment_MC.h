@@ -11,6 +11,7 @@ Purpose:	Declares concrete class for IPayment interface class. This class
 #ifndef PAYMENT_MC_H
 #define PAYMENT_MC_H
 
+#include <memory>
 #include "IPayment.h"
 #include "../Logger/LoggerHandler.h"
 

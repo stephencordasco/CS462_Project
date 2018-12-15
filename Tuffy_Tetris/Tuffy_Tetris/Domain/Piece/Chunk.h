@@ -20,7 +20,7 @@ namespace Domain
 	{
 	public:
 		Chunk(int x, int y);
-		void Piece::init();
+		void init() override;
 		void set_points(bool* points);
 		bool* get_points() override;
 	private:

@@ -20,7 +20,7 @@ Parameters:	none
 Purpose:	Default constructor for Board class. Sets various properties to
 			default values and calls board initialization function.
 *******************************************************************************/
-Board::Board() : board_state{}, piece_state{}
+Board::Board() : board_state{}, piece_state{}, chunk_state{}
 {
 	rand_piece = std::default_random_engine();
 	dist_piece = std::uniform_int_distribution<int>(0, 4);

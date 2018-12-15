@@ -16,7 +16,6 @@ Purpose:	Concrete class for UI_console interface declares member functions and
 //forward declaration for Game_win class
 namespace Domain 
 {
-	class Game_win;
 	class Player;
 }
 

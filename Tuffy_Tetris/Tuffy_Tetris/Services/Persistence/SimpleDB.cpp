@@ -56,11 +56,11 @@ namespace Services
 			int begToken = 0;
 
 			//breaks down each line into tokens for username, password, email, etc.
-			for (int j = 0; j < line.length(); j++) {
+			for (int j = 0; static_cast<size_t>(j) < line.length(); j++) {
 
 				//separated by commas
 				if (line.at(j) == comma) {
-					tokens[tokIndex] = line.substr(begToken, j-begToken);
+					tokens[tokIndex] = line.substr(begToken, static_cast<size_t>(j) -static_cast<size_t>(begToken));
 					std::cout << tokens[tokIndex] << std::endl;
 					begToken = j+1;
 					j++;
@@ -153,8 +153,12 @@ namespace Services
 
 	bool SimpleDB::authorizePayment(std::string cardNum, std::string acctHolder, std::string secNum, std::string exprDate, std::string addr, std::string zip)
 	{
-		if (cardNum != " ")
+		//"use" parameters to avoid error in stub
+		if (!(cardNum.empty() || acctHolder.empty() || secNum.empty() ||
+			exprDate.empty() || addr.empty() || zip.empty()))
+		{
 			return true;
+		}
 		else return false;
 	}
 

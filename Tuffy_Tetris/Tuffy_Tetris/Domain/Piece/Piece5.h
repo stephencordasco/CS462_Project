@@ -19,7 +19,7 @@ namespace Domain
 	{
 	public:
 		Piece5(int x, int y);
-		void Piece::init();
+		void init() override;
 	};
 }
 

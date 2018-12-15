@@ -31,9 +31,9 @@ namespace Services
 
 
 		// Operations                           
-		bool checkDB(std::string username, std::string password, std::string email);
-		bool AddUser(std::string username, std::string password, std::string email);
-		bool authorizePayment(std::string, std::string, std::string, std::string, std::string, std::string);
+		bool checkDB(std::string username, std::string password, std::string email) override;
+		bool AddUser(std::string username, std::string password, std::string email) override;
+		bool authorizePayment(std::string, std::string, std::string, std::string, std::string, std::string) override;
 		bool checkSub(std::string) override;
 		std::string read_config_payment() override;
 		~SimpleDB() noexcept override;

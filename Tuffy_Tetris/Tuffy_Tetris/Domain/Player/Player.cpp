@@ -22,15 +22,8 @@ Parameters:	none
 Purpose:	Default constructor for Player class. Sets various properties to
 			default values.
 *******************************************************************************/
-Player::Player()
-{
-	setUsername("");
-	setPassword("");
-	setEmail("");
-	setHighScore(0);
-	setSubscription(false);
-	
-}
+Player::Player(): username(""), password(""), email(""), highScore(0), hasSubscription(false), 
+persist(nullptr) {}
 
 /*******************************************************************************
 Name:		Player
@@ -40,11 +33,12 @@ Purpose:	Overloaded constructor for Player class. Sets various properties to
 *******************************************************************************/
 Player::Player(std::string uname, const std::string pword, const std::string mail, int score, bool value)
 {
-	setUsername(uname);
-	setPassword(pword);
-	setEmail(mail);
-	setHighScore(score);
-	setSubscription(value);
+	username = uname;
+	password = pword;
+	email = mail;
+	highScore = score;
+	hasSubscription = value;
+	persist = nullptr;
 }
 
 /*******************************************************************************
@@ -184,13 +178,13 @@ Name:		login
 Parameters:	string 3x
 Purpose:	sends data to persistence
 *******************************************************************************/
-bool Player::login(std::string username, std::string password, std::string email) 
+bool Player::login(std::string p_username, std::string p_password, std::string p_email) 
 {
 	//todo, we need to make this actually retrieve the information correctly. temporary fix.
-	if (persist->checkDB(username, password, email))
+	if (persist->checkDB(p_username, p_password, p_email))
 	{
-		this->username = username;
-		this->email = email;
+		this->username = p_username;
+		this->email = p_email;
 		highScore = 0;
 		hasSubscription = false;
 		return true;
@@ -204,7 +198,7 @@ Name:		register_account
 Parameters:	string 3x
 Purpose:	sends data to persistence
 *******************************************************************************/
-bool Player::register_account(std::string username, std::string password, std::string email) 
+bool Player::register_account(std::string p_username, std::string p_password, std::string p_email) 
 {
-	return persist->AddUser(username, password, email);
+	return persist->AddUser(p_username, p_password, p_email);
 }

@@ -16,7 +16,6 @@ Purpose:	Concrete class for UI_console interface declares member functions and
 //forward declaration for Game_win class
 namespace Domain
 {
-	class Game_linux;
 	class Player;
 }
 
@@ -30,6 +29,8 @@ namespace UI
 
 		// print board
 		void print_Frame(std::string) override;
+		// kbhit for ncurses
+		int kbhit(void);
 
 		// game loop
 		void game_Loop() override;
