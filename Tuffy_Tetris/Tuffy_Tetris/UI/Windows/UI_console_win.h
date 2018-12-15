@@ -4,8 +4,8 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console_win.h
-Purpose:	child class of UI_console declares member functions and member
-			variables for Windows OS
+Purpose:	Concrete class for UI_console interface declares member functions and 
+			member variables for Windows OS
 *******************************************************************************/
 #ifndef UI_CONSOLE_WIN_H
 #define UI_CONSOLE_WIN_H

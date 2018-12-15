@@ -4,8 +4,8 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console_linux.h
-Purpose:	child class of UI_console declares member functions and member
-			variables for Linux OS
+Purpose:	Concrete class for UI_console interface declares member functions and 
+			member variables for Linux OS
 *******************************************************************************/
 
 #ifndef UI_CONSOLE_LINUX_H
@@ -47,6 +47,7 @@ namespace UI
 		// helper functions
 		void displayLogin() override;
 		void displayRegister() override;
+		void clear_screen() override;
 
 		// menu functionality
 		bool login() override;
@@ -67,9 +68,7 @@ namespace UI
 		std::string password;
 		std::string email;
 		int highScore;
-		bool hasSubscription;
 		Domain::Game* game;
-		Services::Game_server* server;
 		Domain::Player* player;
 	
 	};

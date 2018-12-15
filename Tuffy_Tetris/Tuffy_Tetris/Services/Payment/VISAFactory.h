@@ -1,4 +1,12 @@
-
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		VISAFactory.h
+Purpose:	Concrete factory class for the abstract PaymentFactory class.
+			Provides creation functionalty for VISA payment system.
+*******************************************************************************/
 
 #ifndef VISAFACTORY_H
 #define VISAFACTORY_H

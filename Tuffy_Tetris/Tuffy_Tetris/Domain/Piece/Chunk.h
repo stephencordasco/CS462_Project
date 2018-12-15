@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Chunk.h
+Purpose:	A concrete class for the Piece abstract type represents a chunk of
+			blocks that move down after rows are cleared from the board.
+*******************************************************************************/
+
 #ifndef CHUNK_H
 #define CHUNK_H
 

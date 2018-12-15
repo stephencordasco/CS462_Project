@@ -1,3 +1,11 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Chunk.cpp
+Purpose:	Defines method implementations for the Chunk concrete class.
+*******************************************************************************/
 
 #include "Chunk.h"
 

@@ -9,3 +9,13 @@
 2018-12-14 14:31:01 | New account successfully created
 2018-12-14 14:32:02 | Simple DB shutdown successfully
 2018-12-14 14:32:02 | Simple Logger shutdown successfully
+2018-12-14 16:58:41 | Logger being used and has been successfully initialized
+2018-12-14 16:58:41 | Simple DB being used and has been successfully initialized
+2018-12-14 16:58:45 | New account successfully created
+2018-12-14 16:58:48 | Simple DB shutdown successfully
+2018-12-14 16:58:48 | Simple Logger shutdown successfully
+2018-12-14 16:58:52 | Logger being used and has been successfully initialized
+2018-12-14 16:58:52 | Simple DB being used and has been successfully initialized
+2018-12-14 16:59:01 | User has successfully logged in
+2018-12-14 16:59:25 | Simple DB shutdown successfully
+2018-12-14 16:59:25 | Simple Logger shutdown successfully

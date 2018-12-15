@@ -4,7 +4,7 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console.cpp
-Purpose:	defines default constructor and setters for member variables
+Purpose:	Defines default constructor and setters for member variables
 *******************************************************************************/
 
 

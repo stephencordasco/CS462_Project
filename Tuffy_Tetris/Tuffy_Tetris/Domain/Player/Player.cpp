@@ -3,11 +3,8 @@ Project:	Tuffy Tetris
 Class:		CS 462 - SW Design
 Date:		8 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
-File:		Board.h
-Purpose:	Declares properties and methods for the Board class. The Board class
-			handles control of a Piece object, manages Board and Piece states,
-			and validates moves based on predefined game rules. Also generates
-			logical data frames for output.
+File:		Player.cpp
+Purpose:	Defines implementation of functionality for the Player class.
 *******************************************************************************/
 
 #include "./Player.h"
@@ -57,7 +54,6 @@ Purpose:	Destructor for Player class.
 *******************************************************************************/
 Player::~Player()
 {
-	// TODO
 }
 
 /*******************************************************************************

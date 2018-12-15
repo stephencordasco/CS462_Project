@@ -5,7 +5,7 @@ Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		main.cpp
 Purpose:	Includes main entry point for program and an inline factory class
-			for creating polymorphic UI and Game objects
+			for creating polymorphic UI object.
 *******************************************************************************/
 
 
@@ -13,7 +13,6 @@ Purpose:	Includes main entry point for program and an inline factory class
 #include "../UI/Windows/UI_console_win.h"
 #else
 #include "../UI/Linux/UI_console_linux.h"
-#include "Game/Linux/Game_linux.h"
 #endif
 
 #include "Game/GameTetris.h"

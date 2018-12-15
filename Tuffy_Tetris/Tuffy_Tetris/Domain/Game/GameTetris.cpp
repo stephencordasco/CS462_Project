@@ -3,8 +3,8 @@ Project:	Tuffy Tetris
 Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
-File:		Game.cpp
-Purpose:	Defines methods for the abstract Game class.
+File:		GameTetris.cpp
+Purpose:	Defines methods for the concrete GameTetris domain class.
 *******************************************************************************/
 
 #include "GameTetris.h"
@@ -151,7 +151,7 @@ int Domain::GameTetris::get_Userscore()
 {
 	//call to persistance interface
 	//todo stub
-	return 10000;
+	return 0;
 }
 
 std::string Domain::GameTetris::get_Email()

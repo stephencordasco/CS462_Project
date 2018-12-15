@@ -9,7 +9,6 @@ Purpose:	Declares class for a game piece. Contains properties and low level
 *******************************************************************************/
 
 #ifndef PIECE_H
-
 #define PIECE_H
 
 #include <algorithm>

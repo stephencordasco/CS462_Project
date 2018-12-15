@@ -1,3 +1,15 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Logger.h
+Purpose:	Concrete class for the LoggerHandler Interface provides logging
+			capability to file. Original code by Prof. Thomas Betten. and used
+			with permission.
+*******************************************************************************/
+
+
 #ifndef TechicalServices_Logging_SimpleLogger_hpp
 #define TechicalServices_Logging_SimpleLogger_hpp
 

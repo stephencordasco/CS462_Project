@@ -4,8 +4,7 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console.h
-Purpose:	interface class declares virtual member functions and member
-			variables
+Purpose:	Interface class. Declares virtual member functions for the UI interface 
 *******************************************************************************/
 
 #ifndef UI_CONSOLE_H
@@ -80,6 +79,16 @@ namespace UI
 		virtual ~UI_console();
 
 	};
+
+	inline UI_console::UI_console()
+	{
+
+	}
+
+
+	inline UI::UI_console::~UI_console()
+	{
+	}
 }
 
 #endif

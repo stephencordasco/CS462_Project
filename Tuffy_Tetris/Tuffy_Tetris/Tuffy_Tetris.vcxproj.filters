@@ -109,15 +109,12 @@
       <Filter>Header Files\Services</Filter>
     </ClInclude>
     <ClInclude Include="Services\Persistence\PersistenceHandler.h">
-      <Filter>Source Files\Services</Filter>
+      <Filter>Header Files\Services</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Domain\Board\Board.cpp">
       <Filter>Source Files\Domain</Filter>
-    </ClCompile>
-    <ClCompile Include="UI\UI_console.cpp">
-      <Filter>Source Files\UI</Filter>
     </ClCompile>
     <ClCompile Include="UI\Windows\UI_console_win.cpp">
       <Filter>Source Files\UI</Filter>
@@ -149,17 +146,11 @@
     <ClCompile Include="Domain\Player\Player.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
-    <ClCompile Include="Domain\Game\Game.cpp">
-      <Filter>Source Files\Domain</Filter>
-    </ClCompile>
     <ClCompile Include="Domain\Game\GameTetris.cpp">
       <Filter>Source Files\Domain</Filter>
     </ClCompile>
     <ClCompile Include="Domain\Piece\Chunk.cpp">
       <Filter>Source Files\Domain\Piece</Filter>
-    </ClCompile>
-    <ClCompile Include="Services\Payment\IPayment.cpp">
-      <Filter>Source Files\Services</Filter>
     </ClCompile>
     <ClCompile Include="Services\Payment\MCFactory.cpp">
       <Filter>Source Files\Services</Filter>

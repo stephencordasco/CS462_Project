@@ -4,7 +4,7 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		UI_console_win.cpp
-Purpose:	defines member functions for UI_console_win class
+Purpose:	Defines member functions for UI_console_win class
 *******************************************************************************/
 
 

@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		8 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		PaymentFactory.cpp
+Purpose:	Defines implementation of functionality for the PaymentFactory
+			abstract factory class.
+*******************************************************************************/
+
 #include "PaymentFactory.h"
 #include "MCFactory.h"
 #include "VISAFactory.h"

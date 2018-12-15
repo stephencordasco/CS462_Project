@@ -1,3 +1,14 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		8 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		SimpleDB.cpp
+Purpose:	Declaration for the PersistenceHandler class. This class provides
+			an interface for the Persistence technical services package.
+			Original code by Prof. Thomas Betten and used with permission
+*******************************************************************************/
+
 #ifndef Services_PersistenceHandler_h
 #define Services_PersistenceHandler_h
 
@@ -14,18 +25,6 @@ namespace Services
 	// Persistence Package within the Technical Services Layer Abstract class
 	struct PersistenceHandler
 	{
-
-		/**Functions from game_server.h for reference**/
-
-		/*virtual bool login(std::string user, std::string pass, std::string email = "");
-		virtual bool logout(std::string user);
-		virtual bool register_acct(std::string user, std::string pass, std::string email);
-		virtual bool save_hs(int current_score);
-		virtual bool check_hs(int current_score);
-		virtual bool update_sub(std::string cNum, std::string accName, std::string secNum,
-			std::string dExp, std::string addr, std::string zip);
-		virtual bool check_sub();*/
-
 		virtual std::string read_config_payment() = 0;
 
 		// Exceptions

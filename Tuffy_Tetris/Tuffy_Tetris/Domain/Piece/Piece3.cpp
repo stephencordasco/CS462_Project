@@ -1,3 +1,12 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Piece3.cpp
+Purpose:	Defines method implementations for the Piece3 concrete class.
+*******************************************************************************/
+
 #include "Piece3.h"
 
 using Domain::Piece3;

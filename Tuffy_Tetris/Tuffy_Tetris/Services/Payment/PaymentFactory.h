@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		PaymentFactory.h
+Purpose:	Abstract factory class for construction of payment processor system
+			classes. Delivers appropriate factory type for object creation.
+*******************************************************************************/
+
 
 #ifndef PAYMENTFACTORY_H
 #define PAYMENTFACTORY_H

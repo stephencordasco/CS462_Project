@@ -1,3 +1,15 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		SimpleDB.h
+Purpose:	Declares concrete class for PersistenceHandler interface class. This class
+			handles exchange and storage of data for the system with a simple
+			text file. Original code by Prof. Thomas Betten and used with permission.
+*******************************************************************************/
+
+
 #ifndef Services_SimpleDB_h
 #define Services_SimpleDB_h
 
@@ -25,17 +37,6 @@ namespace Services
 		bool checkSub(std::string) override;
 		std::string read_config_payment() override;
 		~SimpleDB() noexcept override;
-
-		/**Functions from game_server.h for reference**/
-
-		/*virtual bool login(std::string user, std::string pass, std::string email = "");
-		virtual bool logout(std::string user);
-		virtual bool register_acct(std::string user, std::string pass, std::string email);
-		virtual bool save_hs(int current_score);
-		virtual bool check_hs(int current_score);
-		virtual bool update_sub(std::string cNum, std::string accName, std::string secNum,
-			std::string dExp, std::string addr, std::string zip);
-		virtual bool check_sub();*/
 
 	private:
 		std::unique_ptr<Services::LoggerHandler>             _loggerPtr;

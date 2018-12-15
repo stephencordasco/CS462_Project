@@ -1,3 +1,12 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		MCFactory.h
+Purpose:	Concrete factory class for the abstract PaymentFactory class. 
+			Provides creation functionalty for Mastercard payment system.
+*******************************************************************************/
 
 #ifndef MCFACTORY_H
 #define MCFACTORY_H

@@ -4,9 +4,9 @@ Class:		CS 462 - SW Design
 Date:		3 November 2018
 Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
 File:		Game.h
-Purpose:	Declares abstract base class for a Game instance. Contains properties
-			and virtual methods for calling UI functions, communicating with the
-			Game_server instance, and controlling the game Board object.
+Purpose:	Declares abstract base class for a Game instance. Contains virtual
+			methods for domain functionality, communicating with the
+			services instances, and controlling the game Board object.
 *******************************************************************************/
 
 #ifndef GAME_H
@@ -51,6 +51,14 @@ namespace Domain {
 		virtual void set_Player(Domain::Player *) = 0;
 		virtual ~Game();
 	};
+
+	inline Game::Game()
+	{
+	}
+
+	inline Game::~Game()
+	{
+	}
 
 }
 

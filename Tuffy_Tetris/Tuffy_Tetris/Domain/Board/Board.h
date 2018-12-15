@@ -35,9 +35,7 @@ namespace Domain
 		bool move_Right();
 		bool rotate_Piece();
 		bool system_Move();
-		// TODO -- under construction --
 		void checkFullRow();
-		//void clearRow(std::list<int>);
 		void clearRow(int row);
 
 	private:

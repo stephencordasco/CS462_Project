@@ -1,3 +1,13 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		3 November 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		PieceFactory.h
+Purpose:	Factory class for the Piece abstract class. Creates a given concrete
+			object, given a type and set of coordinates
+*******************************************************************************/
+
 #ifndef PIECEFACTORY_H
 #define PIECEFACTORY_H
 

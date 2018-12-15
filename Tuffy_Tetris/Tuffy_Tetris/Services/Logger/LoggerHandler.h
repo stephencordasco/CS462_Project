@@ -1,3 +1,14 @@
+/*******************************************************************************
+Project:	Tuffy Tetris
+Class:		CS 462 - SW Design
+Date:		14 December 2018
+Members:	Stephen Cordasco, Ryan Oune, Noah Roberson
+File:		Logger.h
+Purpose:	Interface class for the logger interface to technical services layer.
+			Provides logging capability to file. Original code by
+			Prof. Thomas Betten and used with permission.
+*******************************************************************************/
+
 #ifndef Services_LoggerHandler_h
 #define Services_LoggerHandler_h
 
